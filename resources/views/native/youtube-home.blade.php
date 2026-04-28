@@ -1,22 +1,11 @@
 {{-- @include('native.partials.demo-nav', ['title' => 'YouTube']) --}}
 
+{{-- Header is provided by the framework NavBar (StackLayout) — back arrow + "YouTube" title.
+     The search action used to live here; promote to NavBar actions via
+     navigationOptions() on YouTubeHome if you want it back. --}}
+
 <native:scroll-view class="w-full h-full bg-[#0F0F0F]">
     <native:column class="w-full gap-0 ">
-
-        {{-- Top Bar --}}
-        <native:row class="w-full px-4 pt-3 pb-2 items-center justify-between">
-            <native:row class="items-center gap-2">
-                <native:icon name="play_circle_filled" :size="28" color="#FF0000" />
-                <native:text class="text-[20] font-bold text-white">YouTube</native:text>
-            </native:row>
-            <native:row class="items-center gap-4">
-                <native:icon name="cast" :size="22" color="#FFFFFF" />
-                <native:icon name="notifications_none" :size="24" color="#FFFFFF" />
-                <native:column @press="viewSearch" class="w-[32] h-[32] items-center justify-center">
-                    <native:icon name="search" :size="24" color="#FFFFFF" />
-                </native:column>
-            </native:row>
-        </native:row>
 
         {{-- Category Chips --}}
         <native:scroll-view horizontal>

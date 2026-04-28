@@ -10,11 +10,11 @@
     "repositories": {
         "mobile": {
             "type": "vcs",
-            "url": "https://github.com/nativephp/mobile-air"
+            "url": "https://github.com/NativePHP/mobile-air.git"
         },
         "ui": {
             "type": "vcs",
-            "url": "https://github.com/nativephp/native-ui"
+            "url": "https://github.com/NativePHP/native-ui.git"
         },
         "plugins": {
             "type": "composer",

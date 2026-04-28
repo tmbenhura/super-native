@@ -4,6 +4,8 @@ namespace App\NativeComponents;
 
 use App\NativeComponents\Concerns\HasYouTubeData;
 use Native\Mobile\Edge\Element;
+use Native\Mobile\Edge\Layouts\Builders\NavAction;
+use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Edge\Transition;
 
@@ -16,6 +18,29 @@ class YouTubeHome extends NativeComponent
     public function navTitle(): string
     {
         return 'YouTube';
+    }
+
+    /**
+     * Surface YouTube's right-side actions in the framework NavBar instead
+     * of a duplicate inline top row. StackLayout reads this and merges into
+     * its NavBar.
+     */
+    public function navigationOptions(): ?NavBarOptions
+    {
+        return NavBarOptions::make()
+            ->action(NavAction::make('cast')->icon('cart')->press('castDevice'))
+            ->action(NavAction::make('alerts')->icon('notifications')->press('viewNotifications'))
+            ->action(NavAction::make('search')->icon('search')->press('viewSearch'));
+    }
+
+    public function castDevice(): void
+    {
+        // No-op stub for the demo — real impl would open AirPlay / cast picker.
+    }
+
+    public function viewNotifications(): void
+    {
+        // No-op stub for the demo.
     }
 
     public function viewVideo(int $index): void

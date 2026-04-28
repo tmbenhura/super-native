@@ -20,7 +20,8 @@
         <native:column class="gap-1">
             <native:text class="text-sm text-gray-600">Live (every drag tick)</native:text>
             <native:slider native:model.live="slideValue" :min="0" :max="100" class="w-full"/>
-            <native:text class="text-base">Value: {{ number_format($slideValue, 1) }}</native:text>
+            <native:text class="text-base">Value: {{ number_format($slideValue, 3) }}</native:text>
+            <native:text class="text-base">Value: {{ number_format($slideValue * 12, 3)  }}</native:text>
         </native:column>
 
         <native:column class="gap-1">

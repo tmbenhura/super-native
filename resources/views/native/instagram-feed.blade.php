@@ -1,16 +1,10 @@
 {{-- @include('native.partials.demo-nav', ['title' => 'Instagram']) --}}
 
+{{-- Header is provided by the framework NavBar (StackLayout) — back arrow + "Instagram" title.
+     Action icons (heart, chat) move into navigationOptions() on the screen if needed. --}}
+
 <native:scroll-view class="w-full h-full bg-white">
     <native:column class="w-full gap-0 ">
-
-        {{-- Top Bar --}}
-        <native:row class="w-full px-4 py-3 items-center justify-between">
-            <native:text class="text-[24] font-bold text-slate-700" style="font-family: cursive">Instagram</native:text>
-            <native:row class="items-center gap-4">
-                <native:icon name="favorite_border" :size="24" color="#262626" />
-                <native:icon name="chat_bubble_outline" :size="24" color="#262626" />
-            </native:row>
-        </native:row>
 
         {{-- Stories --}}
         <native:scroll-view horizontal>

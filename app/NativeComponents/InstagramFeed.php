@@ -4,6 +4,8 @@ namespace App\NativeComponents;
 
 use App\NativeComponents\Concerns\HasInstagramData;
 use Native\Mobile\Edge\Element;
+use Native\Mobile\Edge\Layouts\Builders\NavAction;
+use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Edge\Transition;
 
@@ -17,6 +19,27 @@ class InstagramFeed extends NativeComponent
     public function navTitle(): string
     {
         return 'Instagram';
+    }
+
+    /**
+     * Surface Instagram's right-side actions (likes activity, DMs) in the
+     * framework NavBar rather than a duplicate inline top row.
+     */
+    public function navigationOptions(): ?NavBarOptions
+    {
+        return NavBarOptions::make()
+            ->action(NavAction::make('activity')->icon('favorite_border')->press('viewActivity'))
+            ->action(NavAction::make('messages')->icon('chat_bubble_outline')->press('viewMessages'));
+    }
+
+    public function viewActivity(): void
+    {
+        // No-op stub for the demo — real impl would push an activity feed screen.
+    }
+
+    public function viewMessages(): void
+    {
+        // No-op stub for the demo.
     }
 
     /** @var array<int, bool> */

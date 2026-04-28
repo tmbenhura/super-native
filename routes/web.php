@@ -46,7 +46,8 @@ Route::native('/', DemoLauncher::class)->name('demos');
 
 // ── Layout demo (Tabs) ──
 Route::nativeGroup(TabsLayout::class, function () {
-    Route::native('/tabs/browse', Browse::class)->name('browse');
+    Route::native('/tabs',         Home::class)->name('home');
+    Route::native('/tabs/browse',  Browse::class)->name('browse');
     Route::native('/tabs/profile', Profile::class)->name('profile');
 });
 
@@ -57,8 +58,6 @@ Route::native('/item/{id}', ItemDetail::class)
 
 // ── Demo HOME routes — get a back-arrow TopBar via StackLayout ──
 Route::nativeGroup(StackLayout::class, function () {
-    Route::native('/tabs', Home::class)->name('home');
-
     // Component showcases (broken out from explore)
     Route::native('/explore/buttons', ExploreButtons::class)->name('explore.buttons');
     Route::native('/explore/forms', ExploreForms::class)->name('explore.forms');

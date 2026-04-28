@@ -17,6 +17,7 @@ class TabsLayout extends NativeLayout
     public function navBar(NativeComponent $screen): ?NavBar
     {
         return NavBar::make()
+            ->back()
             ->title($screen->navTitle());
     }
 
