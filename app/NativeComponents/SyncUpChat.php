@@ -20,6 +20,14 @@ class SyncUpChat extends NativeComponent
     /** Tracks whether we've seeded $messages from the conversation id yet. */
     public bool $seeded = false;
 
+    /** Modal visibility for the more-actions overlay. */
+    public bool $showMoreActions = false;
+
+    /** Confirmation modal for clear-history (dismissible=false). */
+    public bool $showClearConfirm = false;
+
+    public bool $isMuted = false;
+
     public function mount(): void
     {
         $id = (int) $this->param('id', 1);
@@ -68,7 +76,41 @@ class SyncUpChat extends NativeComponent
     public function openMore(): void    { /* stub */ }
     public function startCall(): void   { /* stub */ }
     public function startVideo(): void  { /* stub */ }
-    public function openMenu(): void    { /* stub */ }
+
+    /** Tapped from the NavBar ellipsis — opens the more-actions modal. */
+    public function openMenu(): void
+    {
+        $this->showMoreActions = true;
+    }
+
+    public function closeMoreActions(): void
+    {
+        $this->showMoreActions = false;
+    }
+
+    public function toggleMute(): void
+    {
+        $this->isMuted = ! $this->isMuted;
+        $this->showMoreActions = false;
+    }
+
+    /** Bridges from more-actions modal → blocking confirm modal. */
+    public function askClearHistory(): void
+    {
+        $this->showMoreActions = false;
+        $this->showClearConfirm = true;
+    }
+
+    public function confirmClearHistory(): void
+    {
+        $this->messages = [];
+        $this->showClearConfirm = false;
+    }
+
+    public function cancelClearHistory(): void
+    {
+        $this->showClearConfirm = false;
+    }
 
     /** Resolve the friend (other party) for the conversation. */
     private function friend(): array

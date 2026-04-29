@@ -68,4 +68,53 @@
         <native:icon name="paperplane.fill" :size="24" color="#94a3b8"/>
     </native:row>
 
+    {{-- More-actions modal — opened by the NavBar ellipsis. Dismissible
+         (tap backdrop to close). --}}
+    <native:modal :visible="$showMoreActions" :dismissible="true" @dismiss="closeMoreActions">
+        <native:column class="w-full p-2 bg-white rounded-3xl">
+            <native:column @press="toggleMute" class="w-full px-5 py-4">
+                <native:row class="items-center gap-3">
+                    <native:icon name="{{ $isMuted ? 'speaker.slash.fill' : 'bell.fill' }}" :size="20" color="#0F172A" />
+                    <native:column class="flex-1 gap-1">
+                        <native:text class="text-base font-semibold text-[#0F172A]">{{ $isMuted ? 'Unmute notifications' : 'Mute notifications' }}</native:text>
+                        <native:text class="text-[12] text-[#64748b]">{{ $isMuted ? 'You will hear notifications again.' : 'No banners or sounds for this chat.' }}</native:text>
+                    </native:column>
+                </native:row>
+            </native:column>
+            <native:divider />
+            <native:column @press="askClearHistory" class="w-full px-5 py-4">
+                <native:row class="items-center gap-3">
+                    <native:icon name="trash.fill" :size="20" color="#EF4444" />
+                    <native:column class="flex-1 gap-1">
+                        <native:text class="text-base font-semibold text-[#EF4444]">Clear history</native:text>
+                        <native:text class="text-[12] text-[#94a3b8]">Removes every message in this chat. Cannot be undone.</native:text>
+                    </native:column>
+                </native:row>
+            </native:column>
+            <native:divider />
+            <native:column @press="closeMoreActions" class="w-full px-5 py-4">
+                <native:row class="items-center justify-center gap-2">
+                    <native:text class="text-base font-medium text-[#64748b]">Cancel</native:text>
+                </native:row>
+            </native:column>
+        </native:column>
+    </native:modal>
+
+    {{-- Blocking clear-history confirmation. dismissible=false so the user
+         must explicitly choose. --}}
+    <native:modal :visible="$showClearConfirm" :dismissible="false">
+        <native:column class="w-full p-6 gap-4 bg-white rounded-3xl">
+            <native:text class="text-xl font-bold text-[#0F172A]">Clear chat history?</native:text>
+            <native:text class="text-sm text-[#64748b]">This permanently deletes the message thread. There's no undo.</native:text>
+            <native:row class="w-full gap-2 mt-2">
+                <native:column @press="cancelClearHistory" class="flex-1 px-4 py-3 rounded-xl bg-[#E2E8F0] items-center">
+                    <native:text class="font-semibold text-[#0F172A]">Cancel</native:text>
+                </native:column>
+                <native:column @press="confirmClearHistory" class="flex-1 px-4 py-3 rounded-xl bg-[#EF4444] items-center">
+                    <native:text class="text-white font-semibold">Delete</native:text>
+                </native:column>
+            </native:row>
+        </native:column>
+    </native:modal>
+
 </native:column>

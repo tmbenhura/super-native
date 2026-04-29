@@ -17,6 +17,8 @@ class SyncUpChats extends NativeComponent
 
     public string $search = '';
 
+    public bool $showNewMessage = false;
+
     public function navTitle(): string
     {
         return 'SyncUp';
@@ -51,7 +53,19 @@ class SyncUpChats extends NativeComponent
 
     public function newMessage(): void
     {
-        // Demo stub — would push a recipient picker.
+        $this->showNewMessage = true;
+    }
+
+    public function closeNewMessage(): void
+    {
+        $this->showNewMessage = false;
+    }
+
+    public function startChatWith(int $userId): void
+    {
+        $this->showNewMessage = false;
+        $this->navigate("/syncup/chat/{$userId}")
+            ->transition(Transition::SlideFromRight);
     }
 
     public function addSuggestion(int $id): void
@@ -93,10 +107,14 @@ class SyncUpChats extends NativeComponent
             }
         }
 
+        // Friends for the "new message" bottom-sheet (skip "You" at id 0).
+        $friends = array_values(array_filter($users, fn ($u) => $u['id'] !== 0));
+
         return $this->view('syncup.chats', [
             'rows' => $rows,
             'filters' => self::suFilters(),
             'suggestions' => self::suSuggestions(),
+            'friends' => $friends,
         ]);
     }
 }

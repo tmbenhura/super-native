@@ -114,4 +114,38 @@
         <native:icon name="plus.message.fill" :size="24" color="#FFFFFF" />
     </native:column>
 
+    {{-- New Message bottom-sheet — friend picker. Tap a row to start a
+         chat with that friend. --}}
+    <native:bottom-sheet :visible="$showNewMessage" @dismiss="closeNewMessage" detents="medium,large">
+        <native:column class="w-full">
+            <native:column class="w-full px-5 py-4 gap-1">
+                <native:text class="text-[18] font-bold text-[#191c1e]">New Message</native:text>
+                <native:text class="text-[14] text-[#64748b]">Pick a friend to start a chat with.</native:text>
+            </native:column>
+            <native:divider />
+            <native:scroll-view class="w-full">
+                <native:column class="w-full">
+                    @foreach ($friends as $f)
+                        <native:row @press="startChatWith({{ $f['id'] }})" class="w-full px-5 py-3 items-center gap-4">
+                            <native:stack class="w-[44] h-[44]">
+                                <native:image src="{{ $f['avatarUrl'] }}" class="w-[44] h-[44] rounded-full" :fit="2" />
+                                @if ($f['status'] === 'online')
+                                    <native:row class="w-[44] h-[44] items-end justify-end">
+                                        <native:column class="w-[12] h-[12] rounded-full bg-[#22c55e] border-2 border-white" />
+                                    </native:row>
+                                @endif
+                            </native:stack>
+                            <native:column class="flex-1 gap-1">
+                                <native:text class="text-[16] font-semibold text-[#191c1e]" :maxLines="1">{{ $f['name'] }}</native:text>
+                                <native:text class="text-[12] text-[#64748b]" :maxLines="1">{{ $f['statusText'] }}</native:text>
+                            </native:column>
+                            <native:icon name="chevron.right" :size="18" color="#94a3b8" />
+                        </native:row>
+                        <native:divider />
+                    @endforeach
+                </native:column>
+            </native:scroll-view>
+        </native:column>
+    </native:bottom-sheet>
+
 </native:column>
