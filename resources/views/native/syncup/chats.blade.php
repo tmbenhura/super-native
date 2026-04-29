@@ -1,0 +1,117 @@
+<native:column class="w-full h-full bg-[#f7f9fb]">
+
+    <native:scroll-view class="w-full flex-1">
+        <native:column class="w-full px-3 py-4 gap-6 pb-4">
+
+            {{-- Search input --}}
+            <native:row class="w-full bg-white border border-[#f1f5f9] rounded-2xl  p-1 items-center gap-2">
+                <native:outlined-text-input
+                    leading-icon="search"
+                    value="{{ $search }}"
+                    placeholder="Search conversations..."
+                    @change="updateSearch"
+                    :variant="0"
+                    class="flex-1"
+                />
+            </native:row>
+
+            {{-- Filter chips --}}
+            <native:scroll-view horizontal :showsIndicators="false">
+                <native:row class="gap-2 pb-1">
+                    @foreach ($filters as $name)
+                        @php $active = $activeFilter === $name; @endphp
+                        <native:column
+                            @press="setFilter('{{ $name }}')"
+                            class="px-5 py-2 rounded-full {{ $active ? 'bg-[#00b4d8]' : 'bg-[#f2f4f6]' }}"
+                        >
+                            <native:text class="text-[12] font-semibold {{ $active ? 'text-[#00414f]' : 'text-[#475569]' }}">{{ $name }}</native:text>
+                        </native:column>
+                    @endforeach
+                </native:row>
+            </native:scroll-view>
+
+            {{-- Conversation card --}}
+            <native:column class="w-full gap-2">
+                <native:text class="text-[12] font-semibold text-[#94a3b8] px-1">RECENT CHATS</native:text>
+                <native:column class="w-full bg-white rounded-3xl border border-[#f1f5f9]">
+                    @foreach ($rows as $i => $row)
+                        @php $isLast = $i === count($rows) - 1; @endphp
+
+                        <native:row @press="openChat({{ $row['id'] }})" class="w-full px-4 py-3 items-center gap-4">
+                            {{-- Avatar (or group icon) with status dot --}}
+                            <native:stack class="w-[56] h-[56]">
+                                @if ($row['isGroup'])
+                                    <native:column class="w-[56] h-[56] rounded-full bg-[#cffafe] items-center justify-center">
+                                        <native:icon name="person.3.fill" :size="24" color="#0891b2" />
+                                    </native:column>
+                                @else
+                                    <native:image src="{{ $row['avatarUrl'] }}" class="w-[56] h-[56] rounded-full" :fit="2" />
+                                    @if (($row['status'] ?? '') === 'online')
+                                        <native:row class="w-[56] h-[56] items-end justify-end">
+                                            <native:column class="w-[14] h-[14] rounded-full bg-[#22c55e] border-2 border-white" />
+                                        </native:row>
+                                    @endif
+                                @endif
+                            </native:stack>
+
+                            {{-- Name + snippet --}}
+                            <native:column class="flex-1 gap-1">
+                                <native:row class="w-full justify-between items-center">
+                                    <native:text class="text-[16] font-semibold text-[#191c1e]" :maxLines="1">{{ $row['displayName'] }}</native:text>
+                                    <native:text class="text-[11] {{ $row['status'] === 'unread' ? 'text-[#0891b2] font-semibold' : 'text-[#94a3b8]' }}">{{ $row['time'] }}</native:text>
+                                </native:row>
+                                <native:row class="w-full items-center gap-2">
+                                    @if ($row['lastSenderName'])
+                                        <native:text class="text-[14] font-semibold text-[#475569]" :maxLines="1">{{ $row['lastSenderName'] }}:</native:text>
+                                    @endif
+                                    <native:text class="flex-1 text-[14] {{ $row['status'] === 'unread' ? 'text-[#191c1e] font-semibold' : 'text-[#64748b]' }}" :maxLines="1">{{ $row['lastMessage'] }}</native:text>
+                                    @if ($row['status'] === 'unread')
+                                        <native:column class="bg-[#06b6d4] rounded-full px-2 py-px items-center justify-center min-w-[20]">
+                                            <native:text class="text-[10] font-bold text-white">{{ $row['unread'] }}</native:text>
+                                        </native:column>
+                                    @elseif ($row['status'] === 'read')
+                                        <native:icon name="checkmark" :size="16" color="#06b6d4" />
+                                    @elseif ($row['status'] === 'sent')
+                                        <native:icon name="checkmark" :size="16" color="#cbd5e1" />
+                                    @endif
+                                </native:row>
+                            </native:column>
+                        </native:row>
+
+                        @if (! $isLast)
+                            <native:column class="w-full mx-4 h-px bg-[#f1f5f9]" />
+                        @endif
+                    @endforeach
+                </native:column>
+            </native:column>
+
+            {{-- New connections horizontal --}}
+            <native:column class="w-full gap-3">
+                <native:text class="text-[12] font-semibold text-[#94a3b8] px-1">NEW CONNECTIONS</native:text>
+                <native:scroll-view horizontal :showsIndicators="false">
+                    <native:row class="gap-3 py-1">
+                        @foreach ($suggestions as $s)
+                            <native:column class="w-[128] bg-white p-4 rounded-3xl border border-[#f1f5f9] items-center gap-3">
+                                <native:image src="{{ $s['avatarUrl'] }}" class="w-[48] h-[48] rounded-full" :fit="2" />
+                                <native:text class="text-[12] font-semibold text-[#191c1e]" :maxLines="1">{{ $s['name'] }}</native:text>
+                                <native:column @press="addSuggestion({{ $s['id'] }})" class="w-full py-2 bg-[#ecfeff] rounded-lg items-center">
+                                    <native:text class="text-[11] font-semibold text-[#0891b2]">Add</native:text>
+                                </native:column>
+                            </native:column>
+                        @endforeach
+                    </native:row>
+                </native:scroll-view>
+            </native:column>
+
+        </native:column>
+    </native:scroll-view>
+
+    {{-- Floating Action Button — absolutely positioned at the bottom-right
+         of the screen content. The absolute child only occupies its placed
+         (56x56) bounds, so it overlays without blocking scroll touches. --}}
+    <native:column @press="newMessage"
+        class="absolute bottom-[20] right-[20] w-[56] h-[56] rounded-2xl bg-[#00677d] items-center justify-center">
+        <native:icon name="plus.message.fill" :size="24" color="#FFFFFF" />
+    </native:column>
+
+</native:column>

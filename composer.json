@@ -14,7 +14,7 @@
         },
         "ui": {
             "type": "vcs",
-            "url": "https://github.com/NativePHP/native-ui.git"
+            "url": "https://github.com/NativePHP/compose-ui.git"
         },
         "plugins": {
             "type": "composer",

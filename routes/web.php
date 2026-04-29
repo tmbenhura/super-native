@@ -25,12 +25,19 @@ use App\NativeComponents\InstagramProfile;
 use App\NativeComponents\InstagramSearch;
 use App\NativeComponents\ItemDetail;
 use App\NativeComponents\Layouts\StackLayout;
+use App\NativeComponents\Layouts\SyncUpTabsLayout;
 use App\NativeComponents\Layouts\TabsLayout;
 use App\NativeComponents\Profile;
 use App\NativeComponents\SpotifyArtist;
 use App\NativeComponents\SpotifyHome;
 use App\NativeComponents\SpotifyPlaylist;
 use App\NativeComponents\SpotifySearch;
+use App\NativeComponents\SyncUpChat;
+use App\NativeComponents\SyncUpChats;
+use App\NativeComponents\SyncUpFriends;
+use App\NativeComponents\SyncUpLogin;
+use App\NativeComponents\SyncUpProfile;
+use App\NativeComponents\TestLayout;
 use App\NativeComponents\TweetDetail;
 use App\NativeComponents\TwitterFeed;
 use App\NativeComponents\TwitterProfile;
@@ -65,6 +72,7 @@ Route::nativeGroup(StackLayout::class, function () {
     Route::native('/explore/cards', ExploreCards::class)->name('explore.cards');
     Route::native('/explore/icons', ExploreIcons::class)->name('explore.icons');
     Route::native('/explore/layout', ExploreLayout::class)->name('explore.layout');
+    Route::native('/layout-test', TestLayout::class)->name('layout.test');
 
     // Mini app demos
     Route::native('/twitter', TwitterFeed::class)->name('twitter.feed');
@@ -106,6 +114,18 @@ Route::native('/spotify/search', SpotifySearch::class)->name('spotify.search');
 Route::native('/youtube/video/{id}', YouTubeVideo::class)->name('youtube.video');
 Route::native('/youtube/channel/{id}', YouTubeChannel::class)->name('youtube.channel');
 Route::native('/youtube/search', YouTubeSearch::class)->name('youtube.search');
+
+// SyncUp messaging — three tab roots share SyncUpTabsLayout; chat detail
+// pushes via StackLayout; login is a chrome-less entry screen.
+Route::nativeGroup(SyncUpTabsLayout::class, function () {
+    Route::native('/syncup',         SyncUpChats::class)->name('syncup.chats');
+    Route::native('/syncup/friends', SyncUpFriends::class)->name('syncup.friends');
+    Route::native('/syncup/profile', SyncUpProfile::class)->name('syncup.profile');
+});
+Route::native('/syncup/chat/{id}', SyncUpChat::class)
+    ->layout(StackLayout::class)
+    ->name('syncup.chat');
+Route::native('/syncup/login', SyncUpLogin::class)->name('syncup.login');
 
 // ── Extras ──
 Route::native('/benchmark', BenchmarkComponent::class)->name('benchmark');
