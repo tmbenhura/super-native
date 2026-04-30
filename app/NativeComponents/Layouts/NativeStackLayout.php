@@ -7,10 +7,9 @@ use Native\Mobile\Edge\Layouts\NativeLayout;
 use Native\Mobile\Edge\NativeComponent;
 
 /**
- * Phase 2 of the native chrome swap — a `StackLayout` clone that flips
- * `usesNativeChrome()` to `true`. Routes attached to this layout get
- * their NavBar rendered via SwiftUI's `NavigationStack` instead of the
- * custom HStack-based `TopBar` element.
+ * `StackLayout` clone that flips `usesNativeChrome()` to `true`. Routes
+ * attached to this layout get their NavBar rendered via SwiftUI's
+ * `NavigationStack` instead of the custom HStack-based `TopBar` element.
  *
  * On iOS 26+ this enables Liquid Glass material on the bar by default.
  * On older iOS, it gives a standard `UINavigationBar` look.

@@ -6,9 +6,10 @@ use Native\Mobile\Edge\Element;
 use Native\Mobile\Edge\Layouts\Builders\NavAction;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
+use Native\Mobile\Edge\Transition;
 
 /**
- * Phase 2 alpha test screen. Routed under `NativeStackLayout` (which
+ * Native-chrome demo screen. Routed under `NativeStackLayout` (which
  * sets `usesNativeChrome() = true`), so the top bar is rendered via
  * SwiftUI's `NavigationStack` instead of the custom HStack `TopBar`
  * element. On iOS 26+ the bar should pick up Liquid Glass material.
@@ -33,7 +34,7 @@ class NativeChromeDemo extends NativeComponent
     public function navigationOptions(): ?NavBarOptions
     {
         return NavBarOptions::make()
-            ->subtitle('Phase 2 alpha')
+            ->subtitle('NavigationStack toolbar')
             // A plain icon — fires its press handler directly.
             ->action(NavAction::make('share')->icon('share')->press('shareIt'))
             // A pull-down menu — tap to reveal sub-items. Each sub-item
@@ -75,6 +76,13 @@ class NativeChromeDemo extends NativeComponent
     public function mute(): void        { $this->lastAction = 'Mute notifications'; }
     public function archive(): void     { $this->lastAction = 'Archive'; }
     public function deleteIt(): void    { $this->lastAction = 'Delete (destructive)'; }
+
+    /** Push the detail screen — exercises the multi-level NavigationStack. */
+    public function pushDetail(): void
+    {
+        $this->navigate('/native-chrome/detail')
+            ->transition(Transition::SlideFromRight);
+    }
 
     public function render(): Element
     {

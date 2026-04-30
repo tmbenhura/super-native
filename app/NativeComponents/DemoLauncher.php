@@ -21,7 +21,8 @@ class DemoLauncher extends NativeComponent
         ['id' => 'icons', 'title' => 'Icons', 'subtitle' => 'IconHelper catalog + direct SF Symbols', 'icon' => 'star.fill', 'color' => '#EC4899', 'url' => '/explore/icons'],
         ['id' => 'layout', 'title' => 'Layout & Canvas', 'subtitle' => 'Flex, stack, canvas shapes, activity indicator', 'icon' => 'rectangle.3.group', 'color' => '#6366F1', 'url' => '/explore/layout'],
         ['id' => 'sheets', 'title' => 'Sheets & Modals', 'subtitle' => 'Bottom-sheet detents, dismissible + blocking modals', 'icon' => 'rectangle.portrait.bottomthird.inset.filled', 'color' => '#A855F7', 'url' => '/explore/sheets'],
-        ['id' => 'nativechrome', 'title' => 'Native Chrome (Phase 2)', 'subtitle' => 'NavigationStack-rendered top bar; Liquid Glass on iOS 26+', 'icon' => 'square.stack.3d.up.fill', 'color' => '#A855F7', 'url' => '/native-chrome'],
+        ['id' => 'nativechrome', 'title' => 'Native Chrome', 'subtitle' => 'NavigationStack-rendered top bar; Liquid Glass on iOS 26+', 'icon' => 'square.stack.3d.up.fill', 'color' => '#A855F7', 'url' => '/native-chrome'],
+        ['id' => 'nativetabs', 'title' => 'Native Tabs', 'subtitle' => 'TabView-rendered bottom bar; Liquid Glass on iOS 26+', 'icon' => 'rectangle.bottomthird.inset.filled', 'color' => '#A855F7', 'url' => '/native-tabs'],
 
         // ── Mini app demos ──
         ['id' => 'tabs', 'title' => 'Layout Demo', 'subtitle' => 'TabsLayout + StackLayout (Home / Browse / Profile + push detail)', 'icon' => 'dashboard', 'color' => '#6366F1', 'url' => '/tabs'],

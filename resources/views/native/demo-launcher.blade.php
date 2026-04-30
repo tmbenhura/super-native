@@ -10,7 +10,7 @@
         @foreach ($demos as $demo)
             <native:row
                 @press="navigate('{{ $demo['url'] }}')"
-                class="items-start gap-4 p-4 bg-gray-100 rounded-xl"
+                class="items-start gap-4 p-4 bg-gray-50 rounded-xl"
             >
                 <native:column class="w-[44] h-[44] rounded-full items-center justify-center bg-[{{ $demo['color'] }}]">
                     <native:icon :name="$demo['icon']" :size="22" color="#FFFFFF" />

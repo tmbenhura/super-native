@@ -26,10 +26,14 @@ use App\NativeComponents\InstagramProfile;
 use App\NativeComponents\InstagramSearch;
 use App\NativeComponents\ItemDetail;
 use App\NativeComponents\Layouts\NativeStackLayout;
+use App\NativeComponents\Layouts\NativeTabsLayout;
 use App\NativeComponents\Layouts\StackLayout;
 use App\NativeComponents\Layouts\SyncUpTabsLayout;
 use App\NativeComponents\Layouts\TabsLayout;
 use App\NativeComponents\NativeChromeDemo;
+use App\NativeComponents\NativeChromeDetail;
+use App\NativeComponents\NativeTabsHome;
+use App\NativeComponents\NativeTabsProfile;
 use App\NativeComponents\Profile;
 use App\NativeComponents\SpotifyArtist;
 use App\NativeComponents\SpotifyHome;
@@ -131,10 +135,21 @@ Route::native('/syncup/chat/{id}', SyncUpChat::class)
     ->name('syncup.chat');
 Route::native('/syncup/login', SyncUpLogin::class)->name('syncup.login');
 
-// ── Native chrome (Phase 2 alpha) — NavigationStack-rendered top bar ──
+// ── Native chrome — NavigationStack-rendered top bar ──
 Route::native('/native-chrome', NativeChromeDemo::class)
     ->layout(NativeStackLayout::class)
     ->name('native.chrome');
+Route::native('/native-chrome/detail', NativeChromeDetail::class)
+    ->layout(NativeStackLayout::class)
+    ->name('native.chrome.detail');
+
+// ── Native chrome — TabView-rendered bottom bar ──
+Route::native('/native-tabs', NativeTabsHome::class)
+    ->layout(NativeTabsLayout::class)
+    ->name('native.tabs.home');
+Route::native('/native-tabs/profile', NativeTabsProfile::class)
+    ->layout(NativeTabsLayout::class)
+    ->name('native.tabs.profile');
 
 // ── Extras ──
 Route::native('/benchmark', BenchmarkComponent::class)->name('benchmark');

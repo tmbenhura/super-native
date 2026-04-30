@@ -43,7 +43,7 @@ class SyncUpTabsLayout extends NativeLayout
     public function tabBar(NativeComponent $screen): ?TabBar
     {
         return TabBar::make()
-            ->dark()                                                // dark surface variant
+//            ->dark()                                                // dark surface variant
 //            ->backgroundColor('#e0dcdc')
 //            ->textColor('#000000')
             ->activeColor('#0891b2')                                // active item color
