@@ -40,19 +40,19 @@ class SyncUpNativeTabsLayout extends NativeLayout
     public function tabBar(NativeComponent $screen): ?TabBar
     {
         return TabBar::make()
-            ->add(Tab::link('Messages', '/syncup-native',         sf: SF::Message, material: Material::ChatBubble)->badge($this->getUnreadMessageCount()))
-            ->add(Tab::link('Friends',  '/syncup-native/friends', sf: SF::Person3, material: Material::Group)->news($this->showNewsIndicator()))
-            ->add(Tab::link('Profile',  '/syncup-native/profile', sf: SF::Person,  material: Material::Person));
+            ->add(Tab::link('Messages', '/syncup-native', sf: SF::Message, material: Material::ChatBubble)->badge($this->getUnreadMessageCount()))
+            ->add(Tab::link('Friends', '/syncup-native/friends', sf: SF::Person3, material: Material::Group)->news($this->showNewsIndicator()))
+            ->add(Tab::link('Profile', '/syncup-native/profile', sf: SF::Person, material: Material::Person));
     }
 
     public function getUnreadMessageCount()
     {
-        return 23;
+        return 2;
     }
 
     public function showNewsIndicator()
     {
-        return false;
+        return true;
     }
 
 }

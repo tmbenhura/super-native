@@ -23,7 +23,7 @@ class Counter extends NativeComponent
 
     public function navTitle(): string
     {
-        return 'Counter';
+        return 'Counter!!';
     }
 
     public function render(): \Illuminate\View\View

@@ -9,7 +9,7 @@
         </column>
 
         <column @press="increment" class="px-8 py-4 shadow rounded bg-blue-500" >
-            <icon :size="40" class="text-center text-white"
+            <native:icon :size="40" class="text-center text-white"
                   :material="App\Icons\MaterialOutlined::AccessAlarm"
                   :sf="App\Icons\SF::ChevronUp"
             />
