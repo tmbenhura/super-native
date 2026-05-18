@@ -9,6 +9,11 @@ use Native\Mobile\Facades\Dialog;
 
 class Counter extends NativeComponent
 {
+    public function navTitle(): string
+    {
+        return 'Counter';
+    }
+
     public $count = 0;
 
     public function increment()
@@ -19,11 +24,6 @@ class Counter extends NativeComponent
     public function decrement()
     {
         $this->count--;
-    }
-
-    public function navTitle(): string
-    {
-        return 'Counter!!';
     }
 
     public function render(): \Illuminate\View\View

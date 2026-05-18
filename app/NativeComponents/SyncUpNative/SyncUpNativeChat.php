@@ -5,6 +5,7 @@ namespace App\NativeComponents\SyncUpNative;
 use App\Icons\MaterialOutlined;
 use App\NativeComponents\Concerns\HasSyncUpData;
 use Illuminate\View\View;
+use Livewire\Attributes\Layout;
 use Native\Mobile\Edge\Element;
 use Native\Mobile\Edge\Elements\Divider;
 use Native\Mobile\Edge\Layouts\Builders\NavAction;
@@ -44,7 +45,7 @@ class SyncUpNativeChat extends NativeComponent
 
     public function navTitle(): string
     {
-        return "Simon Says";
+        return "Hello ";
     }
 
     public function navigationOptions(): ?NavBarOptions

@@ -3,11 +3,13 @@
 namespace App\NativeComponents\SyncUpNative;
 
 use App\NativeComponents\Concerns\HasSyncUpData;
+use Livewire\Attributes\Layout;
 use Native\Mobile\Edge\Layouts\Builders\NavAction;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Edge\Transition;
 use Native\Mobile\Facades\Dialog;
+
 
 class SyncUpNativeChats extends NativeComponent
 {

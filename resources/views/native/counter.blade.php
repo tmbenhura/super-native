@@ -1,9 +1,9 @@
 <column class="w-full h-full items-center justify-center bg-white gap-4">
-    <text class="text-[100] font-bold text-purple-500">{{$count * now()->dayOfDecade()}}</text>
+    <text class="text-[100] font-bold text-red-500">{{$count }}</text>
     <row class="gap-8 justify-center">
         <column @press="decrement" class="px-8 py-4 shadow rounded bg-red-500">
             <native:icon :size="40" class="text-center  text-white"
-                         :material="App\Icons\Material::Dehaze"
+                         :material="App\Icons\Material::DownhillSkiing"
                          :sf="App\Icons\SF::ChevronDown"
             />
         </column>

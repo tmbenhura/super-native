@@ -33,7 +33,6 @@ class SyncUpNativeTabsLayout extends NativeLayout
     {
         return NavBar::make()
             ->title($screen->navTitle())
-            ->subtitle('All caught up')
             ->back();
     }
 
@@ -52,7 +51,7 @@ class SyncUpNativeTabsLayout extends NativeLayout
 
     public function showNewsIndicator()
     {
-        return true;
+        return false;
     }
 
 }

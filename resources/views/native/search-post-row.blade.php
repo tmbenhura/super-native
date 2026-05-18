@@ -10,7 +10,7 @@
             {{ \Illuminate\Support\Str::limit($post['body'], 120) }}
         </native:text>
     </native:column>
-    <native:text class="text-xs text-gray-400 px-2 py-1 rounded bg-gray-100">
+    <native:text class="text-xs text-slate-700 px-2 py-1 rounded bg-gray-100">
         #{{ $post['id'] }}
     </native:text>
 </native:row>

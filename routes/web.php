@@ -3,6 +3,7 @@
 use App\NativeComponents\Animate;
 use App\NativeComponents\Browse;
 use App\NativeComponents\MailDemo;
+use App\NativeComponents\PerfDemo;
 use App\NativeComponents\RefreshableDemo;
 use App\NativeComponents\ButtonsForm;
 use App\NativeComponents\ComposeTweet;
@@ -75,8 +76,8 @@ Route::nativeGroup(NativeStackLayout::class, function () {
 
 // ── Layout demo (Tabs) ──
 Route::nativeGroup(TabsLayout::class, function () {
-    Route::native('/tabs',         Home::class)->name('home');
-    Route::native('/tabs/browse',  Browse::class)->name('browse');
+    Route::native('/tabs', Home::class)->name('home');
+    Route::native('/tabs/browse', Browse::class)->name('browse');
     Route::native('/tabs/profile', Profile::class)->name('profile');
 });
 
@@ -92,6 +93,8 @@ Route::nativeGroup(StackLayout::class, function () {
     Route::native('/animate', Animate::class)->name('animate');
     Route::native('/mail-demo', MailDemo::class)->name('mail.demo');
     Route::native('/refreshable-demo', RefreshableDemo::class)->name('refreshable.demo');
+    Route::native('/perf', PerfDemo::class)->name('perf.demo');
+    Route::native('/benchmark', BenchmarkComponent::class)->name('benchmark');
     Route::native('/explore/buttons', ExploreButtons::class)->name('explore.buttons');
     Route::native('/explore/forms', ExploreForms::class)->name('explore.forms');
     Route::native('/explore/typography', ExploreTypography::class)->name('explore.typography');
@@ -146,7 +149,7 @@ Route::native('/youtube/search', YouTubeSearch::class)->name('youtube.search');
 // SyncUp messaging — three tab roots share SyncUpTabsLayout; chat detail
 // pushes via StackLayout; login is a chrome-less entry screen.
 Route::nativeGroup(SyncUpTabsLayout::class, function () {
-    Route::native('/syncup',         SyncUpChats::class)->name('syncup.chats');
+    Route::native('/syncup', SyncUpChats::class)->name('syncup.chats');
     Route::native('/syncup/friends', SyncUpFriends::class)->name('syncup.friends');
     Route::native('/syncup/profile', SyncUpProfile::class)->name('syncup.profile');
 });
@@ -161,9 +164,9 @@ Route::native('/syncup/login', SyncUpLogin::class)->name('syncup.login');
 // tab bar persists when pushing into a chat (per-tab path tracking lets
 // the push happen INSIDE the Chats tab's NavigationStack).
 Route::nativeGroup(SyncUpNativeTabsLayout::class, function () {
-    Route::native('/syncup-native',           SyncUpNativeChats::class)->name('syncup-native.chats');
-    Route::native('/syncup-native/friends',   SyncUpNativeFriends::class)->name('syncup-native.friends');
-    Route::native('/syncup-native/profile',   SyncUpNativeProfile::class)->name('syncup-native.profile');
+    Route::native('/syncup-native', SyncUpNativeChats::class)->name('syncup-native.chats');
+    Route::native('/syncup-native/friends', SyncUpNativeFriends::class)->name('syncup-native.friends');
+    Route::native('/syncup-native/profile', SyncUpNativeProfile::class)->name('syncup-native.profile');
     Route::native('/syncup-native/chat/{id}', SyncUpNativeChat::class)->name('syncup-native.chat');
 });
 
@@ -186,4 +189,4 @@ Route::nativeGroup(NativeTabsLayout::class, function () {
 });
 
 // ── Extras ──
-Route::native('/benchmark', BenchmarkComponent::class)->name('benchmark');
+// (note: /benchmark is registered above inside the StackLayout group so it gets a back-chevron)

@@ -12,6 +12,7 @@ use Native\Mobile\Edge\Elements\Image;
 use Native\Mobile\Edge\Elements\Row;
 use Native\Mobile\Edge\Elements\Text;
 use Native\Mobile\Edge\NativeComponent;
+use Native\Mobile\Facades\Dialog;
 
 class NativeTabsHome extends NativeComponent
 {
@@ -22,24 +23,29 @@ class NativeTabsHome extends NativeComponent
         return 'Home';
     }
 
-
-    public function searchItems(): ?array
+    public function openPost()
     {
-        return [
-            ['title' => 'Ada Lovelace', 'subtitle' => 'Analytical Engine programmer', 'url' => '/'],
-            ['title' => 'Brian Kernighan', 'subtitle' => 'Co-author of C', 'url' => '/'],
-            ['title' => 'Charlie Munger', 'subtitle' => 'Investor', 'url' => '/'],
-            ['title' => 'Dana Scott', 'subtitle' => 'Domain theory', 'url' => '/'],
-            ['title' => 'Edsger Dijkstra', 'subtitle' => 'Algorithms', 'url' => '/'],
-            ['title' => 'Fei-Fei Li', 'subtitle' => 'Computer vision', 'url' => '/'],
-            ['title' => 'Grace Hopper', 'subtitle' => 'COBOL pioneer', 'url' => '/'],
-            ['title' => 'Hedy Lamarr', 'subtitle' => 'Frequency hopping', 'url' => '/'],
-            ['title' => 'Ivan Sutherland', 'subtitle' => 'Sketchpad / 3D graphics', 'url' => '/'],
-            ['title' => 'James Gosling', 'subtitle' => 'Java', 'url' => '/'],
-            ['title' => 'Katherine Johnson', 'subtitle' => 'NASA mathematician', 'url' => '/'],
-            ['title' => 'Linus Torvalds', 'subtitle' => 'Linux & Git', 'url' => '/'],
-        ];
+        Dialog::alert("hello", "world");
     }
+
+
+//    public function searchItems(): ?array
+//    {
+//        return [
+//            ['title' => 'Ada Lovelace', 'subtitle' => 'Analytical Engine programmer', 'url' => '/'],
+//            ['title' => 'Brian Kernighan', 'subtitle' => 'Co-author of C', 'url' => '/'],
+//            ['title' => 'Charlie Munger', 'subtitle' => 'Investor', 'url' => '/'],
+//            ['title' => 'Dana Scott', 'subtitle' => 'Domain theory', 'url' => '/'],
+//            ['title' => 'Edsger Dijkstra', 'subtitle' => 'Algorithms', 'url' => '/'],
+//            ['title' => 'Fei-Fei Li', 'subtitle' => 'Computer vision', 'url' => '/'],
+//            ['title' => 'Grace Hopper', 'subtitle' => 'COBOL pioneer', 'url' => '/'],
+//            ['title' => 'Hedy Lamarr', 'subtitle' => 'Frequency hopping', 'url' => '/'],
+//            ['title' => 'Ivan Sutherland', 'subtitle' => 'Sketchpad / 3D graphics', 'url' => '/'],
+//            ['title' => 'James Gosling', 'subtitle' => 'Java', 'url' => '/'],
+//            ['title' => 'Katherine Johnson', 'subtitle' => 'NASA mathematician', 'url' => '/'],
+//            ['title' => 'Linus Torvalds', 'subtitle' => 'Linux & Git', 'url' => '/'],
+//        ];
+//    }
 
 
 //    public function onSearchQuery(string $query): array
@@ -86,23 +92,23 @@ class NativeTabsHome extends NativeComponent
 //    }
 
 
-//     public function onSearchQuery(string $query): array
-//     {
-//         $needle = trim($query);
-//         if ($needle === '') {
-//             return [];
-//         }
-//
-//         $posts = Http::timeout(5)
-//             ->get('https://jsonplaceholder.typicode.com/posts', ['q' => $needle])
-//             ->json() ?? [];
-//
-//         return collect($posts)
-//             ->take(20)
-//             ->map(fn ($p) => view('search-post-row', ['post' => $p]))
-//             ->values()
-//             ->toArray();
-//     }
+     public function onSearchQuery(string $query): array
+     {
+         $needle = trim($query);
+         if ($needle === '') {
+             return [];
+         }
+
+         $posts = Http::timeout(5)
+             ->get('https://jsonplaceholder.typicode.com/posts', ['q' => $needle])
+             ->json() ?? [];
+
+         return collect($posts)
+             ->take(20)
+             ->map(fn ($p) => view('search-post-row', ['post' => $p]))
+             ->values()
+             ->toArray();
+     }
 
 
 

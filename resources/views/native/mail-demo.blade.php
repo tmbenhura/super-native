@@ -3,7 +3,7 @@
     use App\Icons\Material;
 @endphp
 
-<native:list @refresh="refresh" :separator="true" class="w-full h-full bg-theme-background">
+<native:list @refresh="refresh" :separator="true" class="w-full h-full ">
 
     @foreach ($emails as $email)
         <native:list-item
@@ -13,9 +13,6 @@
             :overline="$email['from']"
             :headline="$email['subject']"
             :supporting="$email['preview']"
-            {{-- Trailing status badges — stack both flag and pin
-                 when both are set, in that order. Each badge has its
-                 own color. Empty array → no trailing content. --}}
             :trailing-badges="array_values(array_filter([
                 $email['flagged'] ? [
                     'sf'       => SF::FlagFill,
