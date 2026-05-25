@@ -2,6 +2,7 @@
 
 use App\NativeComponents\Animate;
 use App\NativeComponents\Browse;
+use App\NativeComponents\Glass;
 use App\NativeComponents\MailDemo;
 use App\NativeComponents\PerfDemo;
 use App\NativeComponents\RefreshableDemo;
@@ -104,6 +105,7 @@ Route::nativeGroup(StackLayout::class, function () {
     Route::native('/explore/sheets', ExploreSheets::class)->name('explore.sheets');
     Route::native('/explore/menus', ExploreMenus::class)->name('explore.menus');
     Route::native('/buttons-form', ButtonsForm::class)->name('buttons.form');
+    Route::native('/glass', Glass::class)->name('glass');
     Route::native('/layout-test', TestLayout::class)->name('layout.test');
 
     // Mini app demos

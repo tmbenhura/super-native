@@ -1,21 +1,21 @@
 @php
     use Native\Mobile\Edge\Layouts\Builders\NavAction;
-    use App\Icons\Material;
-    use App\Icons\SF;
+    use App\Icons\Android;
+    use App\Icons\Ios;
 
     $pressableMenu = [
         NavAction::make('record')
             ->label('Record audio')
-            ->icon(sf: SF::Mic, material: Material::Mic)
+            ->icon(ios: Ios::Mic, android: Android::Mic)
             ->press('logRecord'),
         NavAction::make('upload')
             ->label('Upload file')
-            ->icon(sf: SF::ArrowUp, material: Material::ArrowUpward)
+            ->icon(ios: Ios::ArrowUp, android: Android::ArrowUpward)
             ->press('logUpload'),
         NavAction::divider(),
         NavAction::make('settings')
             ->label('Audio settings')
-            ->icon(sf: SF::Gear, material: Material::Settings)
+            ->icon(ios: Ios::Gear, android: Android::Settings)
             ->press('logSettings'),
     ];
 @endphp

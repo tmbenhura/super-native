@@ -2,7 +2,7 @@
 
 namespace App\Icons;
 
-use Native\Mobile\Icon\MaterialSymbol;
+use Native\Mobile\Icon\AndroidSymbol;
 
 /**
  * Material Icons — Outlined variant.
@@ -11,7 +11,7 @@ use Native\Mobile\Icon\MaterialSymbol;
  * Run `php artisan native-ui:generate-icons` to regenerate from
  * `resources/icons/*.json` snapshots.
  */
-enum MaterialOutlined: string implements MaterialSymbol
+enum AndroidOutlined: string implements AndroidSymbol
 {
     public function variant(): string
     {

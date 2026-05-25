@@ -4,14 +4,14 @@
         <native:column class="w-full px-3 py-4 gap-6 pb-4">
 
             {{-- Search input --}}
-            <native:row class="w-full bg-theme-surface border border-theme-outline rounded-2xl  p-1 items-center gap-2">
+            <native:row class="w-full  items-center gap-2">
                 <native:outlined-text-input
                     leading-icon="search"
                     value="{{ $search }}"
                     placeholder="Search conversations..."
                     @change="updateSearch"
                     :variant="0"
-                    class="flex-1"
+                    class="flex-1 bg-white"
                 />
             </native:row>
 
@@ -110,8 +110,8 @@
          of the screen content. The absolute child only occupies its placed
          (56x56) bounds, so it overlays without blocking scroll touches. --}}
     <native:column @press="newMessage"
-        class="absolute bottom-[20] right-[20] w-[56] h-[56] rounded-2xl bg-[#00677d] items-center justify-center">
-        <native:icon name="plus.message.fill" :size="24" color="#FFFFFF" />
+        class="absolute bottom-[20] right-[20] w-[56] h-[56] rounded-full shadow-xl bg-cyan-600 items-center justify-center">
+        <native:icon :ios="\App\Icons\Ios::PlusCircleFill" class="text-white text-3xl" />
     </native:column>
 
     {{-- New Message bottom-sheet — friend picker. Tap a row to start a

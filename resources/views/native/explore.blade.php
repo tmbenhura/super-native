@@ -1,8 +1,9 @@
-{{-- <native:screen> applies theme.background + sets default text color to theme.onBackground
-     for everything inside. Adapts automatically to system dark mode. --}}
-<native:screen>
-    <native:scroll-view class="flex-1 w-full ">
-        <native:column class="flex-1 p-5 gap-5 safe-area">
+{{-- Page wrapper: scroll-view with theme.background + safe-area. Web devs
+     typically pull this into an `<x-layouts.app>` component — see
+     resources/views/components/layouts/app.blade.php published from the
+     nativephp/native-ui plugin. --}}
+<native:scroll-view class="flex-1 w-full bg-theme-background">
+    <native:column class="flex-1 p-5 gap-5 safe-area">
 
         {{-- ============================================= --}}
         {{-- HEADER --}}
@@ -548,7 +549,7 @@
 {{--        --}}{{-- Color token swatches. `bg-theme-<token>` + `text-theme-on-<token>`--}}
 {{--             resolve against `config/native-ui.php`. Tokens are LIGHT-mode hex--}}
 {{--             values at parse time; full dark-mode component theming is handled--}}
-{{--             by <native:screen> (page backdrop) and upcoming Card components. --}}
+{{--             at the layout wrapper (see <x-layouts.app>) plus theme-aware classes. --}}
 {{--        <native:row class="w-full gap-2 flex-wrap">--}}
 {{--            <native:column class="flex-1 h-[72] rounded-lg p-3 bg-theme-primary justify-center items-center min-w-[120]">--}}
 {{--                <native:text class="font-semibold text-theme-on-primary">Primary</native:text>--}}
@@ -571,9 +572,9 @@
 {{--        </native:row>--}}
 
 {{--        --}}{{-- Surface-on-background: demonstrates visual hierarchy. The outer--}}
-{{--             <native:screen> is painting theme.background; this card uses--}}
+{{--             scroll-view is painting theme.background; this column uses--}}
 {{--             theme.surface. On most themes surface is subtly lighter than--}}
-{{--             background — notice how the card visibly "floats" on the page. --}}
+{{--             background — notice how the surface visibly "floats" on the page. --}}
 {{--        <native:column class="bg-theme-surface rounded-lg p-4 gap-2">--}}
 {{--            <native:text class="font-semibold text-theme-on-surface">Surface card</native:text>--}}
 {{--            <native:text class="text-sm text-theme-on-surface">--}}
@@ -1615,7 +1616,6 @@
 
     </native:column>
 </native:scroll-view>
-</native:screen>
 {{--</native:column>--}}
 
 {{-- Bottom Navigation --}}

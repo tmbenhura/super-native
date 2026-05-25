@@ -1,6 +1,6 @@
 @php
-    use App\Icons\SF;
-    use App\Icons\Material;
+    use App\Icons\Ios;
+    use App\Icons\Android;
 @endphp
 
 <native:list @refresh="refresh" :separator="true" class="w-full h-full ">
@@ -15,46 +15,46 @@
             :supporting="$email['preview']"
             :trailing-badges="array_values(array_filter([
                 $email['flagged'] ? [
-                    'sf'       => SF::FlagFill,
-                    'material' => Material::Flag,
-                    'color'    => '#EF4444',
+                    'ios'     => Ios::FlagFill,
+                    'android' => Android::Flag,
+                    'color'   => '#EF4444',
                 ] : null,
                 $email['pinned'] ? [
-                    'sf'       => 'pin.fill',
-                    'material' => Material::PushPin,
-                    'color'    => '#F59E0B',
+                    'ios'     => 'pin.fill',
+                    'android' => Android::PushPin,
+                    'color'   => '#F59E0B',
                 ] : null,
             ]))"
             :leading-actions="[
                 [
-                    'method'   => $email['unread'] ? 'open(\'' . $email['id'] . '\')' : 'toggleRead(\'' . $email['id'] . '\')',
-                    'label'    => $email['unread'] ? 'Read' : 'Unread',
-                    'sf'       => $email['unread'] ? SF::Envelope : SF::EnvelopeFill,
-                    'material' => Material::MarkEmailRead,
-                    'tint'     => '#3B82F6',
+                    'method'  => $email['unread'] ? 'open(\'' . $email['id'] . '\')' : 'toggleRead(\'' . $email['id'] . '\')',
+                    'label'   => $email['unread'] ? 'Read' : 'Unread',
+                    'ios'     => $email['unread'] ? Ios::Envelope : Ios::EnvelopeFill,
+                    'android' => Android::MarkEmailRead,
+                    'tint'    => '#3B82F6',
                 ],
                 [
-                    'method'   => 'togglePin(\'' . $email['id'] . '\')',
-                    'label'    => $email['pinned'] ? 'Unpin' : 'Pin',
-                    'sf'       => 'pin.fill',
-                    'material' => Material::PushPin,
-                    'tint'     => $email['pinned'] ? '#D97706' : '#F59E0B',
+                    'method'  => 'togglePin(\'' . $email['id'] . '\')',
+                    'label'   => $email['pinned'] ? 'Unpin' : 'Pin',
+                    'ios'     => 'pin.fill',
+                    'android' => Android::PushPin,
+                    'tint'    => $email['pinned'] ? '#D97706' : '#F59E0B',
                 ],
             ]"
             :trailing-actions="[
                 [
-                    'method'   => 'toggleFlag(\'' . $email['id'] . '\')',
-                    'label'    => $email['flagged'] ? 'Unflag' : 'Flag',
-                    'sf'       => SF::Flag,
-                    'material' => Material::Flag,
-                    'tint'     => $email['flagged'] ? '#EA580C' : '#F97316',
+                    'method'  => 'toggleFlag(\'' . $email['id'] . '\')',
+                    'label'   => $email['flagged'] ? 'Unflag' : 'Flag',
+                    'ios'     => Ios::Flag,
+                    'android' => Android::Flag,
+                    'tint'    => $email['flagged'] ? '#EA580C' : '#F97316',
                 ],
                 [
-                    'method'   => 'delete(\'' . $email['id'] . '\')',
-                    'label'    => 'Delete',
-                    'sf'       => SF::Trash,
-                    'material' => Material::Delete,
-                    'role'     => 'destructive',
+                    'method'  => 'delete(\'' . $email['id'] . '\')',
+                    'label'   => 'Delete',
+                    'ios'     => Ios::Trash,
+                    'android' => Android::Delete,
+                    'role'    => 'destructive',
                 ],
             ]" />
     @endforeach

@@ -2,7 +2,7 @@
 
 namespace App\Icons;
 
-use Native\Mobile\Icon\SFSymbol;
+use Native\Mobile\Icon\IosSymbol;
 
 /**
  * SF Symbols (iOS).
@@ -11,7 +11,7 @@ use Native\Mobile\Icon\SFSymbol;
  * Run `php artisan native-ui:generate-icons` to regenerate from
  * `resources/icons/*.json` snapshots.
  */
-enum SF: string implements SFSymbol
+enum Ios: string implements IosSymbol
 {
     case Airplane                                 = 'airplane';
     case Alarm                                    = 'alarm';

@@ -36,6 +36,6 @@ class ExploreForms extends NativeComponent
 
     public function render(): \Illuminate\View\View
     {
-        return view('explore.forms');
+        return view('native.explore.forms');
     }
 }

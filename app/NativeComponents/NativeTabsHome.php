@@ -23,12 +23,6 @@ class NativeTabsHome extends NativeComponent
         return 'Home';
     }
 
-    public function openPost()
-    {
-        Dialog::alert("hello", "world");
-    }
-
-
 //    public function searchItems(): ?array
 //    {
 //        return [

@@ -2,8 +2,8 @@
 
 namespace App\NativeComponents;
 
-use App\Icons\MaterialOutlined;
-use App\Icons\SF;
+use App\Icons\AndroidOutlined;
+use App\Icons\Ios;
 use Native\Mobile\Edge\Layouts\Builders\NavAction;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
@@ -51,7 +51,7 @@ class NativeChromeDemo extends NativeComponent
                             ->label('Mark all read')
                             ->press('markAllRead'),
                         NavAction::make('mute')
-                            ->icon(sf: SF::BellSlash, material: MaterialOutlined::VolumeMute)
+                            ->icon(ios: Ios::BellSlash, android: AndroidOutlined::VolumeMute)
                             ->label('Mute notifications')
                             ->press('mute'),
                         NavAction::make('archive')

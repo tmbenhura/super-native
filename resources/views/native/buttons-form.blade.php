@@ -176,35 +176,29 @@
         </native:stack>
         <native:column class="w-full gap-2">
             <native:text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Glass · cards</native:text>
-            <native:card class="glass:interactive">
-                <native:column class="w-full p-5 gap-2">
-                    <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · regular</native:text>
-                    <native:text class="text-sm text-theme-on-surface-variant">
-                        Liquid Glass surface (iOS 26+) / `.regularMaterial` (older).
-                        The card variant ("filled" / "outlined" / "elevated") is
-                        overridden when `class="glass"` is set.
-                    </native:text>
-                </native:column>
-            </native:card>
-            <native:card class="glass:clear:interactive">
-                <native:column class="w-full p-5 gap-2">
-                    <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · clear</native:text>
-                    <native:text class="text-sm text-theme-on-surface-variant">
-                        `.glassEffect(.clear)` (iOS 26+) / `.ultraThinMaterial` (older).
-                        Reads transparent — best over a colorful or photographic backdrop.
-                    </native:text>
-                </native:column>
-            </native:card>
-            <native:card class="glass:clear:interactive bg-red-300/50">
-                <native:column class="w-full p-5 gap-2">
-                    <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · tinted</native:text>
-                    <native:text class="text-sm text-theme-on-surface-variant">
-                        `class="glass:clear bg-red-300/30"` — clear glass over a 30%
-                        opacity red wash. Tailwind v3+ slash-opacity syntax. Backdrop
-                        is still partially visible through the tint.
-                    </native:text>
-                </native:column>
-            </native:card>
+            <native:column class="w-full p-5 gap-2 rounded-2xl glass:interactive">
+                <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · regular</native:text>
+                <native:text class="text-sm text-theme-on-surface-variant">
+                    Liquid Glass surface (iOS 26+) / `.regularMaterial` (older).
+                    Built from a column — style your own surface with theme
+                    tokens + the `glass:*` modifier classes.
+                </native:text>
+            </native:column>
+            <native:column class="w-full p-5 gap-2 rounded-2xl glass:clear:interactive">
+                <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · clear</native:text>
+                <native:text class="text-sm text-theme-on-surface-variant">
+                    `.glassEffect(.clear)` (iOS 26+) / `.ultraThinMaterial` (older).
+                    Reads transparent — best over a colorful or photographic backdrop.
+                </native:text>
+            </native:column>
+            <native:column class="w-full p-5 gap-2 rounded-2xl glass:clear:interactive bg-red-300/50">
+                <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · tinted</native:text>
+                <native:text class="text-sm text-theme-on-surface-variant">
+                    `class="glass:clear bg-red-300/30"` — clear glass over a 30%
+                    opacity red wash. Tailwind v3+ slash-opacity syntax. Backdrop
+                    is still partially visible through the tint.
+                </native:text>
+            </native:column>
         </native:column>
         @endios
 

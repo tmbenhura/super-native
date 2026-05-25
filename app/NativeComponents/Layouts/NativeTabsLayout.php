@@ -2,8 +2,8 @@
 
 namespace App\NativeComponents\Layouts;
 
-use App\Icons\Material;
-use App\Icons\SF;
+use App\Icons\Android;
+use App\Icons\Ios;
 use Native\Mobile\Edge\Element;
 use Native\Mobile\Edge\Elements\Icon;
 use Native\Mobile\Edge\Elements\Row;
@@ -39,24 +39,19 @@ class NativeTabsLayout extends NativeLayout
 
     public function tabBar(NativeComponent $screen): ?TabBar
     {
-        // The search tab's corpus comes from the active screen via
-        // `searchItems()` (static) or `onSearchQuery($q)` (dynamic).
-        // Screens that don't override either are hidden from the search
-        // tab automatically. No URL on the search tab — it's an
-        // iOS-side overlay, not a navigation destination.
         return TabBar::make()
             ->activeColor('#A855F7')
             ->minimizeOnScroll()
             ->add(Tab::link('Home', '/native-tabs',
-                sf: SF::House, material: Material::Home)->badge('3'))
+                ios: Ios::House, android: Android::Home)->badge('3'))
             ->add(Tab::search(
                 'Search',
                 placeholder: 'Search articles, songs, people…',
-                sf: SF::Magnifyingglass,
-                material: Material::Search,
+                ios: Ios::Magnifyingglass,
+                android: Android::Search,
             ))
             ->add(Tab::link('Profile', '/native-tabs/profile',
-                sf: SF::Person, material: Material::Person));
+                ios: Ios::Person, android: Android::Person));
     }
 
     /**

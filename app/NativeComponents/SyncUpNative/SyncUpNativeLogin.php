@@ -54,6 +54,6 @@ class SyncUpNativeLogin extends NativeComponent
 
     public function render(): \Illuminate\View\View
     {
-        return view('syncup.login');
+        return view('native.syncup.login');
     }
 }

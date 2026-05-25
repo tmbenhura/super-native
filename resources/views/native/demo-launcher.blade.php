@@ -16,12 +16,10 @@
 {{--            class="w-full h-[500]"--}}
 {{--            :fit="2" />--}}
 {{--        <native:column class="w-full gap-2 px-4 items-center justify-center">--}}
-{{--            <native:card class="glass:clear:interactive bg-purple-400/40">--}}
-{{--                <native:column class="w-full p-5 gap-2 ">--}}
-{{--                    <native:text class="text-lg font-semibold text-theme-on-surface">Welcome to The Vibes</native:text>--}}
-{{--                    <native:text class="text-sm text-black">We are building the future one day, one component at a time!</native:text>--}}
-{{--                </native:column>--}}
-{{--            </native:card>--}}
+{{--            <native:column class="w-full p-5 gap-2 rounded-2xl glass:clear:interactive bg-purple-400/40">--}}
+{{--                <native:text class="text-lg font-semibold text-theme-on-surface">Welcome to The Vibes</native:text>--}}
+{{--                <native:text class="text-sm text-black">We are building the future one day, one component at a time!</native:text>--}}
+{{--            </native:column>--}}
 {{--            <native:button class="px-4 text-center py-2 mt-8 font-bold rounded-full text-2xl text-red-500">Hello World</native:button>--}}
 {{--        </native:column>--}}
 {{--    </native:stack>--}}
@@ -33,15 +31,13 @@
 {{--            :fit="2"--}}
 {{--        />--}}
 {{--        <native:column class="w-full gap-2 px-4">--}}
-{{--            <native:card class="glass:clear:interactive bg-purple-400/30">--}}
-{{--                <native:column class="w-full p-5 gap-2 ">--}}
-{{--                    <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · clear</native:text>--}}
-{{--                    <native:text class="text-sm text-theme-on-surface-variant">--}}
-{{--                        `.glassEffect(.clear)` (iOS 26+) / `.ultraThinMaterial` (older).--}}
-{{--                        Reads transparent — best over a colorful or photographic backdrop.--}}
-{{--                    </native:text>--}}
-{{--                </native:column>--}}
-{{--            </native:card>--}}
+{{--            <native:column class="w-full p-5 gap-2 rounded-2xl glass:clear:interactive bg-purple-400/30">--}}
+{{--                <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · clear</native:text>--}}
+{{--                <native:text class="text-sm text-theme-on-surface-variant">--}}
+{{--                    `.glassEffect(.clear)` (iOS 26+) / `.ultraThinMaterial` (older).--}}
+{{--                    Reads transparent — best over a colorful or photographic backdrop.--}}
+{{--                </native:text>--}}
+{{--            </native:column>--}}
 {{--            <native:text class="px-4 text-center py-2 mt-8 font-bold rounded-full glass:interactive text-2xl text-red-500 ">Action</native:text>--}}
 {{--        </native:column>--}}
 {{--    </native:stack>--}}

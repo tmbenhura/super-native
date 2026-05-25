@@ -468,30 +468,24 @@
                 <native:column class="w-full p-4 mx-4 mb-3 rounded-2xl gap-3 border border-[{{ $border }}]" :bg="$card">
                     <native:text class="text-2xl font-bold" :color="$fg">20. Card</native:text>
                     <native:spacer class="h-2" />
-                    <native:card class="w-full" :variant="0">
-                        <native:column class="p-4 gap-1">
-                            <native:text class="text-lg font-semibold" :color="$fg">Filled Card</native:text>
-                            <native:text class="text-base" :color="$muted">Default M3 filled card style</native:text>
+                    <native:column class="w-full p-4 gap-1 bg-theme-surface-variant rounded-2xl">
+                        <native:text class="text-lg font-semibold" :color="$fg">Filled</native:text>
+                        <native:text class="text-base" :color="$muted">surface-variant background, no stroke</native:text>
+                    </native:column>
+                    <native:column class="w-full p-4 gap-1 bg-theme-surface rounded-2xl border border-theme-outline">
+                        <native:text class="text-lg font-semibold" :color="$fg">Outlined</native:text>
+                        <native:text class="text-base" :color="$muted">surface background + outline stroke</native:text>
+                    </native:column>
+                    <native:column class="w-full p-4 gap-1 bg-theme-surface rounded-2xl shadow">
+                        <native:text class="text-lg font-semibold" :color="$fg">Elevated</native:text>
+                        <native:text class="text-base" :color="$muted">surface + soft shadow</native:text>
+                    </native:column>
+                    <native:pressable @press="tap" class="w-full">
+                        <native:column class="w-full p-4 gap-1 bg-theme-surface-variant rounded-2xl">
+                            <native:text class="text-lg font-semibold" :color="$accentText">Tappable</native:text>
+                            <native:text class="text-base" :color="$muted">wrap in `<native:pressable>` for taps</native:text>
                         </native:column>
-                    </native:card>
-                    <native:card class="w-full" :variant="1">
-                        <native:column class="p-4 gap-1">
-                            <native:text class="text-lg font-semibold" :color="$fg">Outlined Card</native:text>
-                            <native:text class="text-base" :color="$muted">Card with border outline</native:text>
-                        </native:column>
-                    </native:card>
-                    <native:card class="w-full" :variant="2">
-                        <native:column class="p-4 gap-1">
-                            <native:text class="text-lg font-semibold" :color="$fg">Elevated Card</native:text>
-                            <native:text class="text-base" :color="$muted">Card with shadow elevation</native:text>
-                        </native:column>
-                    </native:card>
-                    <native:card class="w-full" :variant="0" @press="tap">
-                        <native:column class="p-4 gap-1">
-                            <native:text class="text-lg font-semibold" :color="$accentText">Tappable Card</native:text>
-                            <native:text class="text-base" :color="$muted">Cards support @press too</native:text>
-                        </native:column>
-                    </native:card>
+                    </native:pressable>
                 </native:column>
 
         {{-- 22. List Item --}}

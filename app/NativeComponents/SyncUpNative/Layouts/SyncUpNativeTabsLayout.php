@@ -2,14 +2,15 @@
 
 namespace App\NativeComponents\SyncUpNative\Layouts;
 
-use App\Icons\Material;
-use App\Icons\SF;
+use App\Icons\Android;
+use App\Icons\Ios;
 use Native\Mobile\Edge\Layouts\Builders\NavAction;
 use Native\Mobile\Edge\Layouts\Builders\NavBar;
 use Native\Mobile\Edge\Layouts\Builders\Tab;
 use Native\Mobile\Edge\Layouts\Builders\TabBar;
 use Native\Mobile\Edge\Layouts\NativeLayout;
 use Native\Mobile\Edge\NativeComponent;
+use Native\Mobile\Facades\Dialog;
 
 /**
  * Native-chrome variant of SyncUp's tabs layout. Same shape as the
@@ -39,9 +40,16 @@ class SyncUpNativeTabsLayout extends NativeLayout
     public function tabBar(NativeComponent $screen): ?TabBar
     {
         return TabBar::make()
-            ->add(Tab::link('Messages', '/syncup-native', sf: SF::Message, material: Material::ChatBubble)->badge($this->getUnreadMessageCount()))
-            ->add(Tab::link('Friends', '/syncup-native/friends', sf: SF::Person3, material: Material::Group)->news($this->showNewsIndicator()))
-            ->add(Tab::link('Profile', '/syncup-native/profile', sf: SF::Person, material: Material::Person));
+            ->labelVisibility('unlabeled')
+            ->add(Tab::link('Messages', '/syncup-native', ios: Ios::Message, android: Android::ChatBubble)
+                ->badge($this->getUnreadMessageCount()))
+            ->add(Tab::link('Friends', '/syncup-native/friends', ios: Ios::Person3, android: Android::Group)->news($this->showNewsIndicator()))
+            ->add(Tab::link('Profile', '/syncup-native/profile', ios: Ios::Person, android: Android::Person));
+    }
+
+    public function doIt()
+    {
+        Dialog::toast("Did it");
     }
 
     public function getUnreadMessageCount()
@@ -51,7 +59,7 @@ class SyncUpNativeTabsLayout extends NativeLayout
 
     public function showNewsIndicator()
     {
-        return false;
+        return true;
     }
 
 }

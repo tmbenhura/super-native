@@ -228,8 +228,8 @@
                     animate-easing="ease-in-out">
                     <native:icon
                         :size="50"
-                        :sf="\App\Icons\SF::ArrowUp"
-                        :material="\App\Icons\Material::ArrowCircleUp"
+                        :ios="\App\Icons\Ios::ArrowUp"
+                        :android="\App\Icons\Android::ArrowCircleUp"
                         class="text-white text-base font-semibold" />
                 </native:column>
             </native:row>
@@ -442,8 +442,8 @@
                         animate-easing="ease-out"
                         :press-scale="0.85">
                         <native:icon class="text-white text-base"
-                                     :material="\App\Icons\Material::Camera"
-                                     :sf="\App\Icons\SF::Camera "/>
+                                     :android="\App\Icons\Android::Camera"
+                                     :ios="\App\Icons\Ios::Camera "/>
                     </native:column>
 
                     <native:column
@@ -455,8 +455,8 @@
                         animate-easing="ease-out"
                         :press-scale="0.85">
                         <native:icon class="text-white text-base"
-                                     :material="\App\Icons\Material::MusicNote"
-                                     :sf="\App\Icons\SF::MusicNote "/>
+                                     :android="\App\Icons\Android::MusicNote"
+                                     :ios="\App\Icons\Ios::MusicNote "/>
                     </native:column>
 
                     <native:column
@@ -469,8 +469,8 @@
                         animate-easing="ease-out"
                         :press-scale="0.85">
                         <native:icon class="text-white text-base"
-                                     :material="\App\Icons\Material::AttachFile"
-                                     :sf="\App\Icons\SF::Paperclip "/>
+                                     :android="\App\Icons\Android::AttachFile"
+                                     :ios="\App\Icons\Ios::Paperclip "/>
                     </native:column>
 
                     {{-- Main FAB — rotates 45° when open so + becomes × --}}
@@ -482,8 +482,8 @@
                         animate-easing="ease-in-out"
                         :press-scale="0.9">
                         <native:icon class="text-white text-base"
-                             :material="\App\Icons\Material::PlusOne"
-                                     :sf="\App\Icons\SF::Plus "/>
+                             :android="\App\Icons\Android::PlusOne"
+                                     :ios="\App\Icons\Ios::Plus "/>
                     </native:column>
                 </native:stack>
             </native:row>

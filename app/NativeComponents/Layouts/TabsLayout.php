@@ -2,8 +2,8 @@
 
 namespace App\NativeComponents\Layouts;
 
-use App\Icons\Material;
-use App\Icons\SF;
+use App\Icons\Android;
+use App\Icons\Ios;
 use Native\Mobile\Edge\Layouts\Builders\NavBar;
 use Native\Mobile\Edge\Layouts\Builders\Tab;
 use Native\Mobile\Edge\Layouts\Builders\TabBar;
@@ -26,8 +26,8 @@ class TabsLayout extends NativeLayout
     public function tabBar(NativeComponent $screen): ?TabBar
     {
         return TabBar::make()
-            ->add(Tab::link('Home',    '/tabs',         sf: SF::House,           material: Material::Home))
-            ->add(Tab::link('Browse',  '/tabs/browse',  sf: SF::Magnifyingglass, material: Material::Search))
-            ->add(Tab::link('Profile', '/tabs/profile', sf: SF::Person,          material: Material::Person));
+            ->add(Tab::link('Home',    '/tabs',         ios: Ios::House,           android: Android::Home))
+            ->add(Tab::link('Browse',  '/tabs/browse',  ios: Ios::Magnifyingglass, android: Android::Search))
+            ->add(Tab::link('Profile', '/tabs/profile', ios: Ios::Person,          android: Android::Person));
     }
 }

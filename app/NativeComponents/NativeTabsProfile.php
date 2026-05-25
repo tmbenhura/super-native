@@ -13,6 +13,6 @@ class NativeTabsProfile extends NativeComponent
 
     public function render(): \Illuminate\View\View
     {
-        return view('native-tabs-profile');
+        return view('native.native-tabs-profile');
     }
 }

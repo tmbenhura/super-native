@@ -8,7 +8,7 @@ use Native\Mobile\Edge\NativeComponent;
  * Showcase for tap-to-open dropdown menus attached via `:menu` (on
  * Pressable / Button) and `:trailing-menu` (on ListItem). Reuses the
  * `NavAction` builder that NavBar / TopBar actions already use, so the
- * vocabulary (`->divider()`, `->destructive()`, `->icon(sf:, material:)`)
+ * vocabulary (`->divider()`, `->destructive()`, `->icon(ios:, android:)`)
  * is the same across nav-chrome menus and in-content menus.
  *
  * Each handler logs the selection into `$lastAction`, echoed at the
@@ -45,6 +45,6 @@ class ExploreMenus extends NativeComponent
 
     public function render(): \Illuminate\View\View
     {
-        return view('explore.menus');
+        return view('native.explore.menus');
     }
 }

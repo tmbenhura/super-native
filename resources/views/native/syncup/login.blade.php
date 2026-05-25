@@ -6,8 +6,8 @@
             <native:column class="w-[80] h-[80] rounded-2xl bg-theme-surface items-center justify-center mb-2 border border-theme-outline">
                 <native:icon name="arrow.triangle.2.circlepath" :size="36" color="#0891b2" />
             </native:column>
-            <native:text class="text-[24] font-bold text-[#0891b2] tracking-tight">SyncUp</native:text>
-            <native:text class="text-[14] text-theme-on-surface-variant text-center">Connect with your world effortlessly and stay in sync with those who matter most.</native:text>
+            <native:text class="text-2xl font-bold text-cyan-600 ">SyncUp</native:text>
+            <native:text class="text-base text-theme-on-surface-variant text-center">Connect with your world effortlessly and stay in sync with those who matter most.</native:text>
         </native:column>
 
         {{-- Form card --}}
@@ -15,8 +15,8 @@
 
             {{-- Email field --}}
             <native:column class="w-full gap-1">
-                <native:text class="text-[12] font-semibold text-theme-on-surface ml-1">Email Address</native:text>
-                <native:row class="w-full bg-theme-surface-variant rounded-xl px-3 py-1 items-center gap-2">
+                <native:text class="text-base font-semibold text-theme-on-surface ">Email Address</native:text>
+                <native:row class="w-full items-center gap-2 mt-2">
                     <native:icon name="mail" :size="20" color="#6d797e" dark-color="#94a3b8" />
                     <native:outlined-text-input
                         value="{{ $email }}"
@@ -30,11 +30,11 @@
 
             {{-- Password field --}}
             <native:column class="w-full gap-1">
-                <native:row class="w-full justify-between items-center px-1">
-                    <native:text class="text-[12] font-semibold text-theme-on-surface">Password</native:text>
-                    <native:text @press="forgotPassword" class="text-[11] font-medium text-[#00677d] dark:text-[#67e8f9]">Forgot?</native:text>
+                <native:row class="w-full justify-between items-center ">
+                    <native:text class="text-base font-semibold text-theme-on-surface">Password</native:text>
+                    <native:text @press="forgotPassword" class="text-xs font-medium text-cyan-600">Forgot?</native:text>
                 </native:row>
-                <native:row class="w-full bg-theme-surface-variant rounded-xl px-3 py-1 items-center gap-2">
+                <native:row class="w-full items-center gap-2 mt-1">
                     <native:icon name="lock" :size="20" color="#6d797e" dark-color="#94a3b8" />
                     <native:outlined-text-input
                         value="{{ $password }}"

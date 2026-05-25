@@ -2,7 +2,7 @@
 
 namespace App\NativeComponents\SyncUpNative;
 
-use App\Icons\MaterialOutlined;
+use App\Icons\AndroidOutlined;
 use App\NativeComponents\Concerns\HasSyncUpData;
 use Illuminate\View\View;
 use Livewire\Attributes\Layout;
@@ -12,8 +12,8 @@ use Native\Mobile\Edge\Layouts\Builders\NavAction;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Facades\Dialog;
-use App\Icons\Material;
-use App\Icons\SF;
+use App\Icons\Android;
+use App\Icons\Ios;
 use Nativephp\NativeUi\Elements\Button;
 
 class SyncUpNativeChat extends NativeComponent
@@ -45,7 +45,7 @@ class SyncUpNativeChat extends NativeComponent
 
     public function navTitle(): string
     {
-        return "Hello ";
+        return $this->friend()['name'];
     }
 
     public function navigationOptions(): ?NavBarOptions
@@ -53,33 +53,33 @@ class SyncUpNativeChat extends NativeComponent
         return NavBarOptions::make()
             ->action(
                 NavAction::make('video')
-                    ->icon(sf: SF::Camera, material: MaterialOutlined::Camera)
+                    ->icon(ios: Ios::Camera, android: AndroidOutlined::Camera)
                     ->press('startVideo')
             )
             ->action(
                 NavAction::make('call')
-                    ->icon(sf: SF::Phone, material: MaterialOutlined::Phone)
+                    ->icon(ios: Ios::Phone, android: AndroidOutlined::Phone)
                     ->press('startCall')
             )
             ->action(
                 NavAction::make('more')
-                    ->icon(sf: SF::Ellipsis, material: Material::MoreVert)
+                    ->icon(ios: Ios::Ellipsis, android: Android::MoreVert)
                     ->items([
                         NavAction::make('mark_read')
-                            ->icon(sf: SF::CheckmarkCircle, material: Material::CheckCircle)
+                            ->icon(ios: Ios::CheckmarkCircle, android: Android::CheckCircle)
                             ->label('Mark all read')
                             ->press('markAllRead'),
                         NavAction::make('mute')
-                            ->icon(sf: SF::BellSlash, material: Material::NotificationsOff)
+                            ->icon(ios: Ios::BellSlash, android: Android::NotificationsOff)
                             ->label('Mute notifications')
                             ->press('mute'),
                         NavAction::make('archive')
-                            ->icon(sf: SF::Archivebox, material: Material::Archive)
+                            ->icon(ios: Ios::Archivebox, android: Android::Archive)
                             ->label('Archive')
                             ->press('archive'),
                         NavAction::divider(),
                         NavAction::make('delete')
-                            ->icon(sf: SF::Trash, material: Material::Delete)
+                            ->icon(ios: Ios::Trash, android: Android::Delete)
                             ->label('Delete')
                             ->destructive()
                             ->press('deleteIt'),
@@ -117,7 +117,7 @@ class SyncUpNativeChat extends NativeComponent
         Dialog::toast('Starting Call');
     }
     public function startVideo(): void  {
-        Dialog::toast('Starting Video');
+        Dialog::alert('よろしく お願いします', 'ありがとう', ['わかりました']);
     }
 
     public function openMenu(): void
@@ -170,7 +170,7 @@ class SyncUpNativeChat extends NativeComponent
 
     public function render(): View
     {
-        return view('syncup-native.chat', [
+        return view('native.syncup-native.chat', [
             'friend' => $this->friend(),
         ]);
     }
