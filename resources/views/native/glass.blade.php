@@ -6,7 +6,7 @@
         </scroll-view>
 
         <column class="w-full h-full px-10">
-            <text class="px-4 text-center py-2 my-64 font-bold rounded-full text-2xl ">Liquid Glass Baby</text>
+            <text class="glass:clear:interactive px-4 text-center py-2 my-64 font-bold rounded-full text-2xl ">Liquid Glass Baby</text>
         </column>
     </stack>
 </column>

@@ -3,10 +3,11 @@
     use App\Icons\Android;
 @endphp
 
-<native:list @refresh="refresh" :separator="true" class="w-full h-full ">
 
+<native:list @refresh="refresh" :separator="true" class="w-full h-full ">
     @foreach ($emails as $email)
         <native:list-item
+            :native:key="$email['id']"
             @press="open('{{ $email['id'] }}')"
             :leadingMonogram="strtoupper(substr($email['from'], 0, 1))"
             :leadingMonogramColor="$email['unread'] ? '#3B82F6' : '#94A3B8'"

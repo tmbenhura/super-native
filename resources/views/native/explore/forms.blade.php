@@ -1,7 +1,5 @@
-<scroll-view class="w-full bg-theme-background">
     <column class="w-full p-5 gap-5">
 
-        {{-- SLIDER --}}
         <text class="text-lg font-semibold text-theme-on-background">Slider</text>
 
         <column class="gap-1">
@@ -19,8 +17,16 @@
         <column class="gap-1">
             <text class="text-sm text-theme-on-surface-variant">Live (every drag tick)</text>
             <slider native:model.live="slideValue" :min="0" :max="100" class="w-full"/>
-            <text class="text-[20] text-theme-on-background">Value 1: {{ $slideValue }}</text>
+            <text class="text-[20] text-theme-on-background">Value 1: {{ number_format($slideValue, 2) }}</text>
         </column>
+
+
+
+
+
+
+
+
 
 
         {{-- TEXT INPUT --}}
@@ -130,4 +136,3 @@
 {{--        <text class="text-sm text-theme-on-surface-variant">Chosen: {{ $pricingPlan }}</text>--}}
 
     </column>
-</scroll-view>

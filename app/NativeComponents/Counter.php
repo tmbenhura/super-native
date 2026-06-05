@@ -2,10 +2,7 @@
 
 namespace App\NativeComponents;
 
-use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Edge\NativeComponent;
-use Native\Mobile\Events\Alert\ButtonPressed;
-use Native\Mobile\Facades\Dialog;
 
 class Counter extends NativeComponent
 {

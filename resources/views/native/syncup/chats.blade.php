@@ -37,7 +37,12 @@
                     @foreach ($rows as $i => $row)
                         @php $isLast = $i === count($rows) - 1; @endphp
 
-                        <native:row @press="openChat({{ $row['id'] }})" class="w-full px-4 py-3 items-center gap-4">
+                        {{-- Phase 1 — :native:key gives each chat row a stable id derived
+                             from the chat id. Pinning, marking-read, deleting and reordering
+                             keep per-row state (any pending swipe, animations, focus)
+                             attached to the right chat instead of bleeding to whatever
+                             chat happens to occupy the same screen position next frame. --}}
+                        <native:row :native:key="$row['id']" @press="openChat({{ $row['id'] }})" class="w-full px-4 py-3 items-center gap-4">
                             {{-- Avatar (or group icon) with status dot --}}
                             <native:stack class="w-[56] h-[56]">
                                 @if ($row['isGroup'])

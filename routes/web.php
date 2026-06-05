@@ -5,6 +5,11 @@ use App\NativeComponents\Browse;
 use App\NativeComponents\Glass;
 use App\NativeComponents\MailDemo;
 use App\NativeComponents\PerfDemo;
+use App\NativeComponents\Phase1KeyTest;
+use App\NativeComponents\Phase2MemoTest;
+use App\NativeComponents\Phase4VirtualListTest;
+use App\NativeComponents\PerfShowdown;
+use App\NativeComponents\ReactivityDemo;
 use App\NativeComponents\RefreshableDemo;
 use App\NativeComponents\ButtonsForm;
 use App\NativeComponents\ComposeTweet;
@@ -91,11 +96,16 @@ Route::native('/item/{id}', ItemDetail::class)
 Route::nativeGroup(StackLayout::class, function () {
     // Component showcases (broken out from explore)
     Route::native('/counter', Counter::class)->name('counter');
+    Route::native('/reactivity', ReactivityDemo::class)->name('reactivity.demo');
     Route::native('/animate', Animate::class)->name('animate');
     Route::native('/mail-demo', MailDemo::class)->name('mail.demo');
     Route::native('/refreshable-demo', RefreshableDemo::class)->name('refreshable.demo');
     Route::native('/perf', PerfDemo::class)->name('perf.demo');
     Route::native('/benchmark', BenchmarkComponent::class)->name('benchmark');
+    Route::native('/phase1-key-test', Phase1KeyTest::class)->name('phase1.key.test');
+    Route::native('/phase2-memo-test', Phase2MemoTest::class)->name('phase2.memo.test');
+    Route::native('/phase4-virtual-list-test', Phase4VirtualListTest::class)->name('phase4.virtuallist.test');
+    Route::native('/perf-showdown', PerfShowdown::class)->name('perf.showdown');
     Route::native('/explore/buttons', ExploreButtons::class)->name('explore.buttons');
     Route::native('/explore/forms', ExploreForms::class)->name('explore.forms');
     Route::native('/explore/typography', ExploreTypography::class)->name('explore.typography');
@@ -160,17 +170,28 @@ Route::native('/syncup/chat/{id}', SyncUpChat::class)
     ->name('syncup.chat');
 Route::native('/syncup/login', SyncUpLogin::class)->name('syncup.login');
 
-// SyncUp messaging (native chrome variant) — same demo running through
-// SwiftUI's TabView + per-tab NavigationStack instead of the custom
-// HStack chrome. Chat detail is in the same `nativeGroup` so the bottom
-// tab bar persists when pushing into a chat (per-tab path tracking lets
-// the push happen INSIDE the Chats tab's NavigationStack).
+
+
+
+
+
+
 Route::nativeGroup(SyncUpNativeTabsLayout::class, function () {
     Route::native('/syncup-native', SyncUpNativeChats::class)->name('syncup-native.chats');
     Route::native('/syncup-native/friends', SyncUpNativeFriends::class)->name('syncup-native.friends');
     Route::native('/syncup-native/profile', SyncUpNativeProfile::class)->name('syncup-native.profile');
     Route::native('/syncup-native/chat/{id}', SyncUpNativeChat::class)->name('syncup-native.chat');
 });
+
+
+
+
+
+
+
+
+
+
 
 Route::native('/syncup-native/login', SyncUpNativeLogin::class)->name('syncup-native.login');
 

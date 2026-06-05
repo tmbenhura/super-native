@@ -53,7 +53,7 @@ class SyncUpNativeChat extends NativeComponent
         return NavBarOptions::make()
             ->action(
                 NavAction::make('video')
-                    ->icon(ios: Ios::Camera, android: AndroidOutlined::Camera)
+                    ->icon(ios: Ios::PhoneDown, android: AndroidOutlined::Camera)
                     ->press('startVideo')
             )
             ->action(
