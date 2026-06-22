@@ -10,7 +10,7 @@ class Counter extends NativeComponent
 
     public function navTitle(): string
     {
-        return 'Hey @LaravelLive UK';
+        return 'Counter';
     }
 
     public function increment()
