@@ -8,10 +8,6 @@
         "framework"
     ],
     "repositories": {
-        "mobile": {
-            "type": "vcs",
-            "url": "https://github.com/nativephp/mobile-air"
-        },
         "ui": {
             "type": "vcs",
             "url": "https://github.com/nativephp/native-ui"

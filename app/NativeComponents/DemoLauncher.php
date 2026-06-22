@@ -20,7 +20,9 @@ class DemoLauncher extends NativeComponent
      * @var array<int, array<string, string>>
      */
     private array $allDemos = [
+
         ['id' => 'counter', 'title' => 'Counter', 'subtitle' => 'Minimal Livewire-style counter', 'icon' => 'add', 'color' => '#10B981', 'url' => '/counter'],
+        ['id' => 'gestures', 'title' => 'Gestures', 'subtitle' => 'Double-tap (@doubleTap) + device shake (#[On(ShakeDetected)])', 'icon' => 'hand.tap.fill', 'color' => '#6366F1', 'url' => '/gestures'],
         ['id' => 'reactivity', 'title' => 'Reactivity', 'subtitle' => '#[Computed], #[Poll] and #[Lazy] placeholder in one screen', 'icon' => 'bolt.fill', 'color' => '#8B5CF6', 'url' => '/reactivity'],
         ['id' => 'forms', 'title' => 'Slider', 'subtitle' => 'Text input, slider, toggle, checkbox, select, radio', 'icon' => 'square.text.square', 'color' => '#10B981', 'url' => '/explore/forms'],
         ['id' => 'mail', 'title' => 'Mail Inbox', 'subtitle' => 'Pull-to-refresh + leading/trailing swipe actions', 'icon' => 'envelope.fill', 'color' => '#0EA5E9', 'url' => '/mail-demo'],
@@ -28,9 +30,9 @@ class DemoLauncher extends NativeComponent
         ['id' => 'menus', 'title' => 'Menus', 'subtitle' => 'Tap-to-open dropdowns on Pressable, Button, ListItem.trailing', 'icon' => 'list.dash', 'color' => '#0891B2', 'url' => '/explore/menus'],
         ['id' => 'glass', 'title' => 'Glass', 'subtitle' => 'Liquid Glass Demo', 'icon' => 'list.bullet.rectangle', 'color' => '#0EA5E9', 'url' => '/glass'],
         ['id' => 'nativetabs', 'title' => 'Native Tabs', 'subtitle' => 'TabView-rendered bottom bar; Liquid Glass on iOS 26+', 'icon' => 'rectangle.bottomthird.inset.filled', 'color' => '#A855F7', 'url' => '/native-tabs'],
+        ['id' => 'animate', 'title' => 'Animations', 'subtitle' => 'Awesome native animations', 'icon' => 'sparkles', 'color' => '#F59E0B', 'url' => '/animate'],
         ['id' => 'syncupnative', 'title' => 'SyncUp Messaging', 'subtitle' => 'Login, chat threads, friends, profile (5 screens) — custom chrome', 'icon' => 'chat_bubble', 'color' => '#0891b2', 'url' => '/syncup-native/login'],
 
-        ['id' => 'animate', 'title' => 'Animations', 'subtitle' => 'Awesome native animations', 'icon' => 'sparkles', 'color' => '#F59E0B', 'url' => '/animate'],
         ['id' => 'refresh', 'title' => 'Pull to refresh', 'subtitle' => 'Native pull-to-refresh on custom card content', 'icon' => 'arrow.clockwise', 'color' => '#10B981', 'url' => '/refreshable-demo'],
         ['id' => 'buttons', 'title' => 'Buttons', 'subtitle' => 'Variants, sizes, icons, states, pressable', 'icon' => 'square.and.pencil', 'color' => '#0EA5E9', 'url' => '/explore/buttons'],
         ['id' => 'typography', 'title' => 'Typography & Colors', 'subtitle' => 'Sizes, theme tokens, tailwind palette', 'icon' => 'textformat.alt', 'color' => '#A855F7', 'url' => '/explore/typography'],
@@ -100,13 +102,11 @@ class DemoLauncher extends NativeComponent
 
         if ($needle === '') {
             $this->demos = $this->allDemos;
-
-            return;
+        } else {
+            $this->demos = collect($this->allDemos)->filter(function ($demo) use ($needle) {
+                return str($demo['title'])->lower()->contains(str($needle)->lower());
+            })->values()->toArray();
         }
-
-        $this->demos = collect($this->allDemos)->filter(function ($demo) use ($needle) {
-            return str($demo['title'])->lower()->contains(str($needle)->lower());
-        })->values()->toArray();
     }
 
     public function render(): View

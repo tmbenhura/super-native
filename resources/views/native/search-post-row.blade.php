@@ -1,6 +1,6 @@
 <row class="items-start gap-3 px-4 py-3" @press="openPost({{ $post['id'] }})">
-    <column class="w-10 h-10 rounded-full bg-red-100 items-center justify-center">
-        <text class="text-green-700 font-semibold">P</text>
+    <column class="w-10 h-10 rounded-full bg-blue-600 items-center justify-center">
+        <text class="text-red-700 font-semibold">P</text>
     </column>
     <column class="flex-1 gap-1">
         <text class="font-semibold">{{ str($post['title'])->title()->limit(20) }}</text>

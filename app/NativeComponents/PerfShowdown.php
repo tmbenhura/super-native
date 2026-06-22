@@ -22,19 +22,13 @@ class PerfShowdown extends NativeComponent
 
     public function navTitle(): string
     {
-        return 'Live Perf HUD';
+        return 'Memo Performance';
     }
 
     public function navigationOptions(): ?NavBarOptions
     {
         return NavBarOptions::make()
-            ->displayMode('large')
             ->subtitle('Real numbers from the C extension');
-    }
-
-    public function backToLauncher(): void
-    {
-        $this->back();
     }
 
     public function tap(): void

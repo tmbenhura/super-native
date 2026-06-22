@@ -53,7 +53,7 @@ class SyncUpNativeChat extends NativeComponent
         return NavBarOptions::make()
             ->action(
                 NavAction::make('video')
-                    ->icon(ios: Ios::PhoneDown, android: AndroidOutlined::Camera)
+                    ->icon(ios: Ios::Camera, android: AndroidOutlined::Camera)
                     ->press('startVideo')
             )
             ->action(
@@ -82,7 +82,7 @@ class SyncUpNativeChat extends NativeComponent
                             ->icon(ios: Ios::Trash, android: Android::Delete)
                             ->label('Delete')
                             ->destructive()
-                            ->press('deleteIt'),
+                            ->press('startVideo'),
                     ])
             );
     }
@@ -117,7 +117,7 @@ class SyncUpNativeChat extends NativeComponent
         Dialog::toast('Starting Call');
     }
     public function startVideo(): void  {
-        Dialog::alert('よろしく お願いします', 'ありがとう', ['わかりました']);
+        Dialog::alert('Hello UK!', 'Thanks for having me!', ['Close']);
     }
 
     public function openMenu(): void

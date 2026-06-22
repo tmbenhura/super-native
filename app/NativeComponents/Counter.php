@@ -6,12 +6,12 @@ use Native\Mobile\Edge\NativeComponent;
 
 class Counter extends NativeComponent
 {
+    public $count = 0;
+
     public function navTitle(): string
     {
-        return 'Counter';
+        return 'Hey @LaravelLive UK';
     }
-
-    public $count = 0;
 
     public function increment()
     {

@@ -1,16 +1,7 @@
 <scroll-view class="w-full h-full bg-slate-900">
     <column class="w-full px-4 py-4 gap-3">
 
-        {{-- Back chevron --}}
-        <row @press="backToLauncher" class="items-center gap-2 py-1">
-            <text class="text-xl font-bold text-slate-400">&lt;</text>
-            <text class="text-base text-slate-400">Back</text>
-        </row>
-
         <text class="text-2xl font-bold text-slate-50">Live Perf HUD</text>
-        <text class="text-sm text-slate-400">
-            Tap "+1" or toggle Memo. Numbers come straight from the C extension.
-        </text>
 
         {{-- Stats card --}}
         <column class="w-full p-4 gap-2 bg-slate-800 rounded-xl" key="stats-card">

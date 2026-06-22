@@ -2,15 +2,6 @@
 
 use App\NativeComponents\Animate;
 use App\NativeComponents\Browse;
-use App\NativeComponents\Glass;
-use App\NativeComponents\MailDemo;
-use App\NativeComponents\PerfDemo;
-use App\NativeComponents\Phase1KeyTest;
-use App\NativeComponents\Phase2MemoTest;
-use App\NativeComponents\Phase4VirtualListTest;
-use App\NativeComponents\PerfShowdown;
-use App\NativeComponents\ReactivityDemo;
-use App\NativeComponents\RefreshableDemo;
 use App\NativeComponents\ButtonsForm;
 use App\NativeComponents\ComposeTweet;
 use App\NativeComponents\Counter;
@@ -27,6 +18,8 @@ use App\NativeComponents\FacebookCreate;
 use App\NativeComponents\FacebookFeed;
 use App\NativeComponents\FacebookPost;
 use App\NativeComponents\FacebookProfile;
+use App\NativeComponents\GestureDemo;
+use App\NativeComponents\Glass;
 use App\NativeComponents\Home;
 use App\NativeComponents\IkeaCart;
 use App\NativeComponents\IkeaHome;
@@ -42,11 +35,19 @@ use App\NativeComponents\Layouts\NativeTabsLayout;
 use App\NativeComponents\Layouts\StackLayout;
 use App\NativeComponents\Layouts\SyncUpTabsLayout;
 use App\NativeComponents\Layouts\TabsLayout;
+use App\NativeComponents\MailDemo;
 use App\NativeComponents\NativeChromeDemo;
 use App\NativeComponents\NativeChromeDetail;
 use App\NativeComponents\NativeTabsHome;
 use App\NativeComponents\NativeTabsProfile;
+use App\NativeComponents\PerfDemo;
+use App\NativeComponents\PerfShowdown;
+use App\NativeComponents\Phase1KeyTest;
+use App\NativeComponents\Phase2MemoTest;
+use App\NativeComponents\Phase4VirtualListTest;
 use App\NativeComponents\Profile;
+use App\NativeComponents\ReactivityDemo;
+use App\NativeComponents\RefreshableDemo;
 use App\NativeComponents\SpotifyArtist;
 use App\NativeComponents\SpotifyHome;
 use App\NativeComponents\SpotifyPlaylist;
@@ -98,6 +99,7 @@ Route::nativeGroup(StackLayout::class, function () {
     Route::native('/counter', Counter::class)->name('counter');
     Route::native('/reactivity', ReactivityDemo::class)->name('reactivity.demo');
     Route::native('/animate', Animate::class)->name('animate');
+    Route::native('/gestures', GestureDemo::class)->name('gestures');
     Route::native('/mail-demo', MailDemo::class)->name('mail.demo');
     Route::native('/refreshable-demo', RefreshableDemo::class)->name('refreshable.demo');
     Route::native('/perf', PerfDemo::class)->name('perf.demo');
@@ -170,12 +172,6 @@ Route::native('/syncup/chat/{id}', SyncUpChat::class)
     ->name('syncup.chat');
 Route::native('/syncup/login', SyncUpLogin::class)->name('syncup.login');
 
-
-
-
-
-
-
 Route::nativeGroup(SyncUpNativeTabsLayout::class, function () {
     Route::native('/syncup-native', SyncUpNativeChats::class)->name('syncup-native.chats');
     Route::native('/syncup-native/friends', SyncUpNativeFriends::class)->name('syncup-native.friends');
@@ -183,27 +179,15 @@ Route::nativeGroup(SyncUpNativeTabsLayout::class, function () {
     Route::native('/syncup-native/chat/{id}', SyncUpNativeChat::class)->name('syncup-native.chat');
 });
 
-
-
-
-
-
-
-
-
-
-
 Route::native('/syncup-native/login', SyncUpNativeLogin::class)->name('syncup-native.login');
 
 // ── NavigationStack + Form/Section demo (SwiftUI grouped-form replica) ──
-
 
 // ── Native chrome — NavigationStack-rendered top bar ──
 Route::nativeGroup(NativeStackLayout::class, function () {
     Route::native('/native-chrome', NativeChromeDemo::class)->name('native.chrome');
     Route::native('/native-chrome/detail', NativeChromeDetail::class)->name('native.chrome.detail');
 });
-
 
 // ── Native chrome — TabView-rendered bottom bar ──
 Route::nativeGroup(NativeTabsLayout::class, function () {
