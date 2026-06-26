@@ -1,150 +1,150 @@
 {{-- @include('native.partials.demo-nav', ['title' => 'Facebook']) --}}
 
-<native:scroll-view class="w-full h-full bg-[#F0F2F5] safe-area">
-    <native:column class="w-full gap-0 ">
+<scroll-view class="w-full h-full bg-[#F0F2F5] safe-area">
+    <column class="w-full gap-0 ">
 
         {{-- Top Bar --}}
-        <native:row class="w-full bg-white px-4 py-3 items-center justify-between">
-            <native:text class="text-[24] font-bold text-[#1877F2]">facebook</native:text>
-            <native:row class="items-center gap-3">
-                <native:column class="w-[36] h-[36] rounded-full bg-[#E4E6EB] items-center justify-center">
-                    <native:icon name="search" :size="20" color="#050505" />
-                </native:column>
-                <native:column class="w-[36] h-[36] rounded-full bg-[#E4E6EB] items-center justify-center">
-                    <native:icon name="chat" :size="20" color="#050505" />
-                </native:column>
-            </native:row>
-        </native:row>
+        <row class="w-full bg-white px-4 py-3 items-center justify-between">
+            <text class="text-[24] font-bold text-[#1877F2]">facebook</text>
+            <row class="items-center gap-3">
+                <column class="w-[36] h-[36] rounded-full bg-[#E4E6EB] items-center justify-center">
+                    <icon name="search" :size="20" color="#050505" />
+                </column>
+                <column class="w-[36] h-[36] rounded-full bg-[#E4E6EB] items-center justify-center">
+                    <icon name="chat" :size="20" color="#050505" />
+                </column>
+            </row>
+        </row>
 
         {{-- Create Post Bar --}}
-        <native:column class="w-full bg-white mt-2 px-4 py-3">
-            <native:row @press="createPost" class="w-full items-center gap-3">
-                <native:image
+        <column class="w-full bg-white mt-2 px-4 py-3">
+            <row @press="createPost" class="w-full items-center gap-3">
+                <image
                     src="https://i.pravatar.cc/150?u=fbcurrent"
                     class="w-[40] h-[40] rounded-full"
                     :fit="2"
                 />
-                <native:column class="flex-1 bg-[#F0F2F5] rounded-full px-4 py-2">
-                    <native:text class="text-[14] text-[#65676B]">What's on your mind?</native:text>
-                </native:column>
-            </native:row>
-            <native:divider class="w-full mt-3" />
-            <native:row class="w-full pt-2 justify-between">
-                <native:row class="items-center gap-1">
-                    <native:icon name="videocam" :size="18" color="#F3425F" />
-                    <native:text class="text-[12] text-[#65676B]">Live</native:text>
-                </native:row>
-                <native:row class="items-center gap-1">
-                    <native:icon name="photo_library" :size="18" color="#45BD62" />
-                    <native:text class="text-[12] text-[#65676B]">Photo</native:text>
-                </native:row>
-                <native:row class="items-center gap-1">
-                    <native:icon name="mood" :size="18" color="#F7B928" />
-                    <native:text class="text-[12] text-[#65676B]">Feeling</native:text>
-                </native:row>
-            </native:row>
-        </native:column>
+                <column class="flex-1 bg-[#F0F2F5] rounded-full px-4 py-2">
+                    <text class="text-[14] text-[#65676B]">What's on your mind?</text>
+                </column>
+            </row>
+            <divider class="w-full mt-3" />
+            <row class="w-full pt-2 justify-between">
+                <row class="items-center gap-1">
+                    <icon name="videocam" :size="18" color="#F3425F" />
+                    <text class="text-[12] text-[#65676B]">Live</text>
+                </row>
+                <row class="items-center gap-1">
+                    <icon name="photo_library" :size="18" color="#45BD62" />
+                    <text class="text-[12] text-[#65676B]">Photo</text>
+                </row>
+                <row class="items-center gap-1">
+                    <icon name="mood" :size="18" color="#F7B928" />
+                    <text class="text-[12] text-[#65676B]">Feeling</text>
+                </row>
+            </row>
+        </column>
 
         {{-- Stories --}}
-        <native:column class="w-full bg-white mt-2 px-4 py-3">
-            <native:text class="text-[16] font-bold text-[#050505] pb-2">Stories</native:text>
-            <native:scroll-view horizontal>
-                <native:row class="gap-3">
+        <column class="w-full bg-white mt-2 px-4 py-3">
+            <text class="text-[16] font-bold text-[#050505] pb-2">Stories</text>
+            <scroll-view horizontal>
+                <row class="gap-3">
                     {{-- Create Story --}}
-                    <native:column class="items-center gap-1 w-[72]">
-                        <native:column class="w-[60] h-[60] rounded-full bg-[#E4E6EB] items-center justify-center">
-                            <native:icon name="add" :size="28" color="#1877F2" />
-                        </native:column>
-                        <native:text class="text-sm text-[#050505]">Create</native:text>
-                    </native:column>
+                    <column class="items-center gap-1 w-[72]">
+                        <column class="w-[60] h-[60] rounded-full bg-[#E4E6EB] items-center justify-center">
+                            <icon name="add" :size="28" color="#1877F2" />
+                        </column>
+                        <text class="text-sm text-[#050505]">Create</text>
+                    </column>
                     {{-- User Stories --}}
                     @foreach ($stories as $story)
-                        <native:column class="items-center gap-1 w-[72]">
-                            <native:column class="w-[60] h-[60] rounded-full bg-[#1877F2] items-center justify-center p-[3]">
-                                <native:image
+                        <column class="items-center gap-1 w-[72]">
+                            <column class="w-[60] h-[60] rounded-full bg-[#1877F2] items-center justify-center p-[3]">
+                                <image
                                     src="{{ $story['avatarUrl'] }}"
                                     class="w-[54] h-[54] rounded-full"
                                     :fit="2"
                                 />
-                            </native:column>
-                            <native:text class="text-sm text-gray-800" :maxLines="1">{{ explode(' ', $story['name'])[0] }}</native:text>
-                        </native:column>
+                            </column>
+                            <text class="text-sm text-gray-800" :maxLines="1">{{ explode(' ', $story['name'])[0] }}</text>
+                        </column>
                     @endforeach
-                </native:row>
-            </native:scroll-view>
-        </native:column>
+                </row>
+            </scroll-view>
+        </column>
 
         {{-- Posts --}}
         @foreach ($posts as $index => $post)
-            <native:column class="w-full bg-white mt-2">
+            <column class="w-full bg-white mt-2">
                 {{-- Post Header --}}
-                <native:row class="w-full px-4 pt-3 items-center gap-3">
-                    <native:image
+                <row class="w-full px-4 pt-3 items-center gap-3">
+                    <image
                         @press="viewProfile({{ $post['userId'] }})"
                         src="{{ $post['user']['avatarUrl'] }}"
                         class="w-[40] h-[40] rounded-full"
                         :fit="2"
                     />
-                    <native:column @press="viewProfile({{ $post['userId'] }})" class="flex-1">
-                        <native:text class="text-[14] font-bold text-[#050505]" :maxLines="1">{{ $post['user']['name'] }}</native:text>
-                        <native:text class="text-[12] text-[#65676B]" :maxLines="1">{{ $post['time'] }} ago · 🌐</native:text>
-                    </native:column>
-                    <native:icon name="more_horiz" :size="22" color="#65676B" />
-                </native:row>
+                    <column @press="viewProfile({{ $post['userId'] }})" class="flex-1">
+                        <text class="text-[14] font-bold text-[#050505]" :maxLines="1">{{ $post['user']['name'] }}</text>
+                        <text class="text-[12] text-[#65676B]" :maxLines="1">{{ $post['time'] }} ago · 🌐</text>
+                    </column>
+                    <icon name="more_horiz" :size="22" color="#65676B" />
+                </row>
 
                 {{-- Post Text --}}
-                <native:column @press="viewPost({{ $index }})" class="w-full px-4 pt-2">
-                    <native:text class="text-[15] text-[#050505]">{{ $post['text'] }}</native:text>
-                </native:column>
+                <column @press="viewPost({{ $index }})" class="w-full px-4 pt-2">
+                    <text class="text-[15] text-[#050505]">{{ $post['text'] }}</text>
+                </column>
 
                 {{-- Post Image --}}
                 @if ($post['imageUrl'])
-                    <native:column @press="viewPost({{ $index }})" class="w-full pt-3">
-                        <native:image
+                    <column @press="viewPost({{ $index }})" class="w-full pt-3">
+                        <image
                             src="{{ $post['imageUrl'] }}"
                             class="w-full h-[250]"
                             :fit="2"
                         />
-                    </native:column>
+                    </column>
                 @endif
 
                 {{-- Reaction Counts --}}
-                <native:row class="w-full px-4 pt-2 pb-2 items-center justify-between">
-                    <native:row class="items-center gap-1">
-                        <native:icon name="thumb_up" :size="14" color="#1877F2" />
-                        <native:text class="text-[13] text-[#65676B]">{{ $post['reactionsFormatted'] }}</native:text>
-                    </native:row>
-                    <native:row class="items-center gap-3">
-                        <native:text class="text-[13] text-[#65676B]">{{ $post['comments'] }} comments</native:text>
-                        <native:text class="text-[13] text-[#65676B]">{{ $post['shares'] }} shares</native:text>
-                    </native:row>
-                </native:row>
+                <row class="w-full px-4 pt-2 pb-2 items-center justify-between">
+                    <row class="items-center gap-1">
+                        <icon name="thumb_up" :size="14" color="#1877F2" />
+                        <text class="text-[13] text-[#65676B]">{{ $post['reactionsFormatted'] }}</text>
+                    </row>
+                    <row class="items-center gap-3">
+                        <text class="text-[13] text-[#65676B]">{{ $post['comments'] }} comments</text>
+                        <text class="text-[13] text-[#65676B]">{{ $post['shares'] }} shares</text>
+                    </row>
+                </row>
 
-                <native:divider class="w-full mx-4" />
+                <divider class="w-full mx-4" />
 
                 {{-- Action Bar --}}
-                <native:row class="w-full px-2 py-1 justify-between">
-                    <native:row @press="toggleLike({{ $index }})" class="items-center gap-1 px-4 py-2">
-                        <native:icon
+                <row class="w-full px-2 py-1 justify-between">
+                    <row @press="toggleLike({{ $index }})" class="items-center gap-1 px-4 py-2">
+                        <icon
                             name="{{ $post['isLiked'] ? 'thumb_up' : 'thumb_up_off_alt' }}"
                             :size="20"
                             color="{{ $post['isLiked'] ? '#1877F2' : '#65676B' }}"
                         />
-                        <native:text class="text-[13] font-semibold text-{{ $post['isLiked'] ? '[#1877F2]' : '[#65676B]' }}">Like</native:text>
-                    </native:row>
-                    <native:row @press="viewPost({{ $index }})" class="items-center gap-1 px-4 py-2">
-                        <native:icon name="chat_bubble_outline" :size="20" color="#65676B" />
-                        <native:text class="text-[13] font-semibold text-[#65676B]">Comment</native:text>
-                    </native:row>
-                    <native:row class="items-center gap-1 px-4 py-2">
-                        <native:icon name="share" :size="20" color="#65676B" />
-                        <native:text class="text-[13] font-semibold text-[#65676B]">Share</native:text>
-                    </native:row>
-                </native:row>
-            </native:column>
+                        <text class="text-[13] font-semibold text-{{ $post['isLiked'] ? '[#1877F2]' : '[#65676B]' }}">Like</text>
+                    </row>
+                    <row @press="viewPost({{ $index }})" class="items-center gap-1 px-4 py-2">
+                        <icon name="chat_bubble_outline" :size="20" color="#65676B" />
+                        <text class="text-[13] font-semibold text-[#65676B]">Comment</text>
+                    </row>
+                    <row class="items-center gap-1 px-4 py-2">
+                        <icon name="share" :size="20" color="#65676B" />
+                        <text class="text-[13] font-semibold text-[#65676B]">Share</text>
+                    </row>
+                </row>
+            </column>
         @endforeach
 
-        <native:spacer class="h-[20]" />
+        <spacer class="h-[20]" />
 
-    </native:column>
-</native:scroll-view>
+    </column>
+</scroll-view>

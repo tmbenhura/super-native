@@ -4,9 +4,9 @@
 @endphp
 
 
-<native:list @refresh="refresh" :separator="true" class="w-full h-full ">
+<list @refresh="refresh" :separator="true" class="w-full h-full ">
     @foreach ($emails as $email)
-        <native:list-item
+        <list-item
             :native:key="$email['id']"
             @press="open('{{ $email['id'] }}')"
             :leadingMonogram="strtoupper(substr($email['from'], 0, 1))"
@@ -61,10 +61,10 @@
     @endforeach
 
     @if (empty($emails))
-        <native:column class="w-full items-center justify-center py-20 gap-2">
-            <native:text class="text-base font-semibold text-theme-on-surface">All clean</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">Pull down to refresh.</native:text>
-        </native:column>
+        <column class="w-full items-center justify-center py-20 gap-2">
+            <text class="text-base font-semibold text-theme-on-surface">All clean</text>
+            <text class="text-sm text-theme-on-surface-variant">Pull down to refresh.</text>
+        </column>
     @endif
 
-</native:list>
+</list>

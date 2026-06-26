@@ -17,14 +17,9 @@ class ReactivityDemo extends NativeComponent
         return 'Reactivity';
     }
 
-    /**
-     * Simulate slow setup (a remote fetch, heavy query, etc.). Because the
-     * class is #[Lazy], placeholder() is published before this runs, so the
-     * screen feels instant instead of blocking on the 2s delay.
-     */
     public function mount(): void
     {
-        sleep(3);
+        sleep(1);
     }
 
     protected function placeholder(): View

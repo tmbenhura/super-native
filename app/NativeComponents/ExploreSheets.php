@@ -5,7 +5,7 @@ namespace App\NativeComponents;
 use Native\Mobile\Edge\NativeComponent;
 
 /**
- * Showcase for `<native:bottom-sheet>` and `<native:modal>` — every detent
+ * Showcase for `<bottom-sheet>` and `<modal>` — every detent
  * variant + dismissible vs blocking modal, all driven by simple booleans
  * on this component. The user taps a button to open one, then either taps
  * inside it to perform an action or swipes / taps the backdrop to dismiss.

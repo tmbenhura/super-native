@@ -1,206 +1,206 @@
 
-<native:scroll-view class="w-full h-full bg-theme-background">
-    <native:column class="w-full px-4 pt-6 pb-8 gap-6">
+<scroll-view class="w-full h-full bg-theme-background">
+    <column class="w-full px-4 pt-6 pb-8 gap-6">
 
-        <native:column class="w-full gap-2">
-            <native:text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Variants</native:text>
-            <native:column class="w-full bg-theme-surface rounded-xl">
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Primary</native:text>
-                    <native:spacer />
-                    <native:button variant="primary" size="sm" :disabled="$disabled" @press="tap('primary')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Secondary</native:text>
-                    <native:spacer />
-                    <native:button variant="secondary" size="sm" :disabled="$disabled" @press="tap('secondary')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Destructive</native:text>
-                    <native:spacer />
-                    <native:button variant="destructive" size="sm" :disabled="$disabled" @press="tap('destructive')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Accent</native:text>
-                    <native:spacer />
-                    <native:button variant="accent" size="sm" :disabled="$disabled" @press="tap('accent')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Ghost</native:text>
-                    <native:spacer />
-                    <native:button variant="ghost" size="sm" :disabled="$disabled" @press="tap('ghost')">Label</native:button>
-                </native:row>
-            </native:column>
-        </native:column>
+        <column class="w-full gap-2">
+            <text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Variants</text>
+            <column class="w-full bg-theme-surface rounded-xl">
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Primary</text>
+                    <spacer />
+                    <button variant="primary" size="sm" :disabled="$disabled" @press="tap('primary')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Secondary</text>
+                    <spacer />
+                    <button variant="secondary" size="sm" :disabled="$disabled" @press="tap('secondary')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Destructive</text>
+                    <spacer />
+                    <button variant="destructive" size="sm" :disabled="$disabled" @press="tap('destructive')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Accent</text>
+                    <spacer />
+                    <button variant="accent" size="sm" :disabled="$disabled" @press="tap('accent')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Ghost</text>
+                    <spacer />
+                    <button variant="ghost" size="sm" :disabled="$disabled" @press="tap('ghost')">Label</button>
+                </row>
+            </column>
+        </column>
 
-        <native:column class="w-full gap-2">
-            <native:text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Sizes</native:text>
-            <native:column class="w-full bg-theme-surface rounded-xl">
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Small</native:text>
-                    <native:spacer />
-                    <native:button variant="primary" size="sm" :disabled="$disabled" @press="tap('sm')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Medium</native:text>
-                    <native:spacer />
-                    <native:button variant="primary" size="md" :disabled="$disabled" @press="tap('md')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Large</native:text>
-                    <native:spacer />
-                    <native:button variant="primary" size="lg" :disabled="$disabled" @press="tap('lg')">Label</native:button>
-                </native:row>
-            </native:column>
-        </native:column>
+        <column class="w-full gap-2">
+            <text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Sizes</text>
+            <column class="w-full bg-theme-surface rounded-xl">
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Small</text>
+                    <spacer />
+                    <button variant="primary" size="sm" :disabled="$disabled" @press="tap('sm')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Medium</text>
+                    <spacer />
+                    <button variant="primary" size="md" :disabled="$disabled" @press="tap('md')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Large</text>
+                    <spacer />
+                    <button variant="primary" size="lg" :disabled="$disabled" @press="tap('lg')">Label</button>
+                </row>
+            </column>
+        </column>
 
-        <native:column class="w-full gap-2">
-            <native:text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Extras</native:text>
-            <native:column class="w-full bg-theme-surface rounded-xl">
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">With leading icon</native:text>
-                    <native:spacer />
-                    <native:button variant="primary" size="sm" icon="add" :disabled="$disabled" @press="tap('with_icon')">Add</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">With trailing icon</native:text>
-                    <native:spacer />
-                    <native:button variant="secondary" size="sm" icon-trailing="arrow.right" :disabled="$disabled" @press="tap('with_trailing')">Next</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Loading</native:text>
-                    <native:spacer />
-                    <native:button variant="primary" size="sm" loading :disabled="$disabled" @press="tap('loading')">Saving</native:button>
-                </native:row>
-            </native:column>
-        </native:column>
+        <column class="w-full gap-2">
+            <text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Extras</text>
+            <column class="w-full bg-theme-surface rounded-xl">
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">With leading icon</text>
+                    <spacer />
+                    <button variant="primary" size="sm" icon="add" :disabled="$disabled" @press="tap('with_icon')">Add</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">With trailing icon</text>
+                    <spacer />
+                    <button variant="secondary" size="sm" icon-trailing="arrow.right" :disabled="$disabled" @press="tap('with_trailing')">Next</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Loading</text>
+                    <spacer />
+                    <button variant="primary" size="sm" loading :disabled="$disabled" @press="tap('loading')">Saving</button>
+                </row>
+            </column>
+        </column>
 
         @ios
-        <native:column class="w-full gap-2">
-            <native:text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Glass · buttons (iOS 26+)</native:text>
-            <native:column class="w-full bg-theme-surface rounded-xl">
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">glass</native:text>
-                    <native:spacer />
-                    <native:button class="glass" size="sm" :disabled="$disabled" @press="tap('glass')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">glass:prominent</native:text>
-                    <native:spacer />
-                    <native:button class="glass:prominent" variant="primary" size="sm" :disabled="$disabled" @press="tap('glass_prominent')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">glass:prominent + destructive</native:text>
-                    <native:spacer />
-                    <native:button class="glass:prominent" variant="destructive" size="sm" :disabled="$disabled" @press="tap('glass_destr')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">glass:prominent + accent</native:text>
-                    <native:spacer />
-                    <native:button class="glass:prominent" variant="accent" size="sm" :disabled="$disabled" @press="tap('glass_accent')">Label</native:button>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">glass:prominent:interactive</native:text>
-                    <native:spacer />
-                    <native:button class="glass:prominent:interactive" variant="primary" size="sm" :disabled="$disabled" @press="tap('glass_prominent_int')">Label</native:button>
-                </native:row>
-            </native:column>
-        </native:column>
+        <column class="w-full gap-2">
+            <text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Glass · buttons (iOS 26+)</text>
+            <column class="w-full bg-theme-surface rounded-xl">
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">glass</text>
+                    <spacer />
+                    <button class="glass" size="sm" :disabled="$disabled" @press="tap('glass')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">glass:prominent</text>
+                    <spacer />
+                    <button class="glass:prominent" variant="primary" size="sm" :disabled="$disabled" @press="tap('glass_prominent')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">glass:prominent + destructive</text>
+                    <spacer />
+                    <button class="glass:prominent" variant="destructive" size="sm" :disabled="$disabled" @press="tap('glass_destr')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">glass:prominent + accent</text>
+                    <spacer />
+                    <button class="glass:prominent" variant="accent" size="sm" :disabled="$disabled" @press="tap('glass_accent')">Label</button>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">glass:prominent:interactive</text>
+                    <spacer />
+                    <button class="glass:prominent:interactive" variant="primary" size="sm" :disabled="$disabled" @press="tap('glass_prominent_int')">Label</button>
+                </row>
+            </column>
+        </column>
 
-        <native:column class="w-full gap-2">
-            <native:text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Glass · containers + text</native:text>
-            <native:column class="w-full bg-theme-surface rounded-xl">
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Glass text (padded)</native:text>
-                    <native:spacer />
-                    <native:text class="px-3 py-2 rounded-full text-sm text-theme-on-surface glass">Action</native:text>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Pressable + interactive</native:text>
-                    <native:spacer />
-                    <native:pressable class="px-3 py-2 rounded-full glass:interactive" @press="tap('pressable_glass')">
-                        <native:text class="text-sm text-theme-on-surface">Tap me</native:text>
-                    </native:pressable>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Glass · clear (text)</native:text>
-                    <native:spacer />
-                    <native:text class="px-3 py-2 rounded-full text-sm text-theme-on-surface glass:clear">Action</native:text>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Glass · clear:interactive (pressable)</native:text>
-                    <native:spacer />
-                    <native:pressable class="px-3 py-2 rounded-full glass:clear:interactive" @press="tap('pressable_clear')">
-                        <native:text class="text-sm text-theme-on-surface">Tap</native:text>
-                    </native:pressable>
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Chip · glass</native:text>
-                    <native:spacer />
-                    <native:chip class="glass" label="Filter" :value="false" />
-                </native:row>
-                <native:divider class="mx-4" />
-                <native:row class="w-full px-4 py-3 items-center">
-                    <native:text class="text-base text-theme-on-surface">Chip · glass:clear</native:text>
-                    <native:spacer />
-                    <native:chip class="glass:clear" label="Filter" :value="false" />
-                </native:row>
-            </native:column>
-        </native:column>
+        <column class="w-full gap-2">
+            <text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Glass · containers + text</text>
+            <column class="w-full bg-theme-surface rounded-xl">
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Glass text (padded)</text>
+                    <spacer />
+                    <text class="px-3 py-2 rounded-full text-sm text-theme-on-surface glass">Action</text>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Pressable + interactive</text>
+                    <spacer />
+                    <pressable class="px-3 py-2 rounded-full glass:interactive" @press="tap('pressable_glass')">
+                        <text class="text-sm text-theme-on-surface">Tap me</text>
+                    </pressable>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Glass · clear (text)</text>
+                    <spacer />
+                    <text class="px-3 py-2 rounded-full text-sm text-theme-on-surface glass:clear">Action</text>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Glass · clear:interactive (pressable)</text>
+                    <spacer />
+                    <pressable class="px-3 py-2 rounded-full glass:clear:interactive" @press="tap('pressable_clear')">
+                        <text class="text-sm text-theme-on-surface">Tap</text>
+                    </pressable>
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Chip · glass</text>
+                    <spacer />
+                    <chip class="glass" label="Filter" :value="false" />
+                </row>
+                <divider class="mx-4" />
+                <row class="w-full px-4 py-3 items-center">
+                    <text class="text-base text-theme-on-surface">Chip · glass:clear</text>
+                    <spacer />
+                    <chip class="glass:clear" label="Filter" :value="false" />
+                </row>
+            </column>
+        </column>
 
-        <native:stack class="w-full h-full items-center justify-center">
-            <native:scroll-view axis="both" class="w-full h-full rounded-lg shadow-lg">
-                <native:image src="https://images.nationalgeographic.org/image/upload/v1638892520/EducationHub/photos/stream-in-colorado.jpg"
+        <stack class="w-full h-full items-center justify-center">
+            <scroll-view axis="both" class="w-full h-full rounded-lg shadow-lg">
+                <image src="https://images.nationalgeographic.org/image/upload/v1638892520/EducationHub/photos/stream-in-colorado.jpg"
                               class="w-[2400] h-[1600]"/>
-            </native:scroll-view>
+            </scroll-view>
 
-            <native:column class="w-full h-full px-10">
-                <native:text class="glass:clear:interactive px-4 text-center py-2 my-64 font-bold rounded-full text-2xl ">Liquid Glass Baby</native:text>
-            </native:column>
-        </native:stack>
-        <native:column class="w-full gap-2">
-            <native:text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Glass · cards</native:text>
-            <native:column class="w-full p-5 gap-2 rounded-2xl glass:interactive">
-                <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · regular</native:text>
-                <native:text class="text-sm text-theme-on-surface-variant">
+            <column class="w-full h-full px-10">
+                <text class="glass:clear:interactive px-4 text-center py-2 my-64 font-bold rounded-full text-2xl ">Liquid Glass Baby</text>
+            </column>
+        </stack>
+        <column class="w-full gap-2">
+            <text class="text-xs uppercase font-semibold text-theme-on-surface-variant px-4">Glass · cards</text>
+            <column class="w-full p-5 gap-2 rounded-2xl glass:interactive">
+                <text class="text-lg font-semibold text-theme-on-surface">Glass card · regular</text>
+                <text class="text-sm text-theme-on-surface-variant">
                     Liquid Glass surface (iOS 26+) / `.regularMaterial` (older).
                     Built from a column — style your own surface with theme
                     tokens + the `glass:*` modifier classes.
-                </native:text>
-            </native:column>
-            <native:column class="w-full p-5 gap-2 rounded-2xl glass:clear:interactive">
-                <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · clear</native:text>
-                <native:text class="text-sm text-theme-on-surface-variant">
+                </text>
+            </column>
+            <column class="w-full p-5 gap-2 rounded-2xl glass:clear:interactive">
+                <text class="text-lg font-semibold text-theme-on-surface">Glass card · clear</text>
+                <text class="text-sm text-theme-on-surface-variant">
                     `.glassEffect(.clear)` (iOS 26+) / `.ultraThinMaterial` (older).
                     Reads transparent — best over a colorful or photographic backdrop.
-                </native:text>
-            </native:column>
-            <native:column class="w-full p-5 gap-2 rounded-2xl glass:clear:interactive bg-red-300/50">
-                <native:text class="text-lg font-semibold text-theme-on-surface">Glass card · tinted</native:text>
-                <native:text class="text-sm text-theme-on-surface-variant">
+                </text>
+            </column>
+            <column class="w-full p-5 gap-2 rounded-2xl glass:clear:interactive bg-red-300/50">
+                <text class="text-lg font-semibold text-theme-on-surface">Glass card · tinted</text>
+                <text class="text-sm text-theme-on-surface-variant">
                     `class="glass:clear bg-red-300/30"` — clear glass over a 30%
                     opacity red wash. Tailwind v3+ slash-opacity syntax. Backdrop
                     is still partially visible through the tint.
-                </native:text>
-            </native:column>
-        </native:column>
+                </text>
+            </column>
+        </column>
         @endios
 
-    </native:column>
-</native:scroll-view>
+    </column>
+</scroll-view>

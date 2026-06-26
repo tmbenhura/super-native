@@ -1,91 +1,91 @@
-<native:scroll-view class="w-full bg-theme-background">
-    <native:column class="w-full p-5 gap-5">
+<scroll-view class="w-full bg-theme-background">
+    <column class="w-full p-5 gap-5">
 
         {{-- Variants --}}
-        <native:text class="text-lg font-semibold text-theme-on-background">Variants</native:text>
-        <native:row class="w-full gap-2 flex-wrap items-center">
-            <native:button variant="primary" @press="increment">Primary</native:button>
-            <native:button variant="secondary" @press="increment">Secondary</native:button>
-            <native:button variant="destructive" @press="decrement">Destructive</native:button>
-            <native:button variant="ghost" @press="increment">Ghost</native:button>
-        </native:row>
+        <text class="text-lg font-semibold text-theme-on-background">Variants</text>
+        <row class="w-full gap-2 flex-wrap items-center">
+            <button variant="primary" @press="increment">Primary</button>
+            <button variant="secondary" @press="increment">Secondary</button>
+            <button variant="destructive" @press="decrement">Destructive</button>
+            <button variant="ghost" @press="increment">Ghost</button>
+        </row>
 
         {{-- Sizes --}}
-        <native:text class="text-lg font-semibold text-theme-on-background">Sizes</native:text>
-        <native:row class="w-full gap-2 items-center flex-wrap">
-            <native:button variant="primary" size="sm" @press="increment">Small</native:button>
-            <native:button variant="primary" size="md" @press="increment">Medium</native:button>
-            <native:button variant="primary" size="lg" @press="increment">Large</native:button>
-        </native:row>
+        <text class="text-lg font-semibold text-theme-on-background">Sizes</text>
+        <row class="w-full gap-2 items-center flex-wrap">
+            <button variant="primary" size="sm" @press="increment">Small</button>
+            <button variant="primary" size="md" @press="increment">Medium</button>
+            <button variant="primary" size="lg" @press="increment">Large</button>
+        </row>
 
         {{-- With icons --}}
-        <native:text class="text-lg font-semibold text-theme-on-background">With icons</native:text>
-        <native:row class="w-full gap-2 items-center flex-wrap">
-            <native:button variant="primary" icon="add" @press="increment">Add item</native:button>
-            <native:button variant="secondary" icon-trailing="arrow.right" @press="increment">Next</native:button>
-            <native:button variant="destructive" icon="delete" @press="decrement">Delete</native:button>
-        </native:row>
+        <text class="text-lg font-semibold text-theme-on-background">With icons</text>
+        <row class="w-full gap-2 items-center flex-wrap">
+            <button variant="primary" icon="add" @press="increment">Add item</button>
+            <button variant="secondary" icon-trailing="arrow.right" @press="increment">Next</button>
+            <button variant="destructive" icon="delete" @press="decrement">Delete</button>
+        </row>
 
         {{-- States --}}
-        <native:text class="text-lg font-semibold text-theme-on-background">States</native:text>
-        <native:row class="w-full gap-2 items-center flex-wrap">
-            <native:button variant="primary" @press="increment">Enabled</native:button>
-            <native:button variant="primary" disabled @press="increment">Disabled</native:button>
-            <native:button variant="primary" loading @press="increment">Loading</native:button>
-        </native:row>
+        <text class="text-lg font-semibold text-theme-on-background">States</text>
+        <row class="w-full gap-2 items-center flex-wrap">
+            <button variant="primary" @press="increment">Enabled</button>
+            <button variant="primary" disabled @press="increment">Disabled</button>
+            <button variant="primary" loading @press="increment">Loading</button>
+        </row>
 
-        <native:divider class="my-2"/>
+        <divider class="my-2"/>
 
         {{-- Pressable escape hatch — bright accent pills stay vivid in both modes --}}
-        <native:text class="text-lg font-semibold text-theme-on-background">Pressable (custom)</native:text>
-        <native:row class="w-full gap-2 flex-wrap">
-            <native:pressable @press="increment" class="bg-pink-500 rounded-full px-6 py-2 items-center justify-center">
-                <native:text class="text-white font-semibold">Pink Pill</native:text>
-            </native:pressable>
-            <native:pressable @press="increment" class="bg-teal-500 rounded-full px-6 py-2 items-center justify-center">
-                <native:text class="text-white font-semibold">Teal Pill</native:text>
-            </native:pressable>
-            <native:pressable @press="increment"
+        <text class="text-lg font-semibold text-theme-on-background">Pressable (custom)</text>
+        <row class="w-full gap-2 flex-wrap">
+            <pressable @press="increment" class="bg-pink-500 rounded-full px-6 py-2 items-center justify-center">
+                <text class="text-white font-semibold">Pink Pill</text>
+            </pressable>
+            <pressable @press="increment" class="bg-teal-500 rounded-full px-6 py-2 items-center justify-center">
+                <text class="text-white font-semibold">Teal Pill</text>
+            </pressable>
+            <pressable @press="increment"
                               class="border-2 border-blue-500 rounded-lg px-5 py-2 items-center justify-center">
-                <native:text class="text-blue-500 font-semibold">Outlined</native:text>
-            </native:pressable>
-        </native:row>
+                <text class="text-blue-500 font-semibold">Outlined</text>
+            </pressable>
+        </row>
 
-        <native:row class="w-full gap-3 items-center">
-            <native:pressable @press="increment"
+        <row class="w-full gap-3 items-center">
+            <pressable @press="increment"
                               class="w-[48] h-[48] rounded-full bg-blue-500 items-center justify-center">
-                <native:icon name="add" :size="24" color="#FFFFFF"/>
-            </native:pressable>
-            <native:pressable @press="decrement"
+                <icon name="add" :size="24" color="#FFFFFF"/>
+            </pressable>
+            <pressable @press="decrement"
                               class="w-[48] h-[48] rounded-full bg-red-500 items-center justify-center">
-                <native:icon name="minus.circle.fill" :size="24" color="#FFFFFF"/>
-            </native:pressable>
-            <native:pressable @press="increment"
+                <icon name="minus.circle.fill" :size="24" color="#FFFFFF"/>
+            </pressable>
+            <pressable @press="increment"
                               class="w-[48] h-[48] rounded-full bg-green-500 items-center justify-center">
-                <native:icon name="check" :size="24" color="#FFFFFF"/>
-            </native:pressable>
-            <native:pressable @press="increment"
+                <icon name="check" :size="24" color="#FFFFFF"/>
+            </pressable>
+            <pressable @press="increment"
                               class="w-[48] h-[48] rounded-full bg-purple-500 items-center justify-center">
-                <native:icon name="star" :size="24" color="#FFFFFF"/>
-            </native:pressable>
-            <native:pressable @press="increment"
+                <icon name="star" :size="24" color="#FFFFFF"/>
+            </pressable>
+            <pressable @press="increment"
                               class="w-[48] h-[48] rounded-full bg-amber-500 items-center justify-center">
-                <native:icon name="favorite" :size="24" color="#FFFFFF"/>
-            </native:pressable>
-        </native:row>
+                <icon name="favorite" :size="24" color="#FFFFFF"/>
+            </pressable>
+        </row>
 
-        <native:divider class="my-2"/>
+        <divider class="my-2"/>
 
         {{-- Counter --}}
-        <native:text class="text-lg font-semibold text-theme-on-background">Interactive Counter</native:text>
-        <native:row class="w-full gap-4 items-center justify-center">
-            <native:button variant="destructive" size="lg" icon="minus.circle.fill" a11y-label="Decrement"
+        <text class="text-lg font-semibold text-theme-on-background">Interactive Counter</text>
+        <row class="w-full gap-4 items-center justify-center">
+            <button variant="destructive" size="lg" icon="minus.circle.fill" a11y-label="Decrement"
                            @press="decrement"/>
-            <native:column class="w-[80] h-[80] rounded-2xl bg-indigo-600 items-center justify-center">
-                <native:text class="text-white font-extrabold text-3xl">{{ $count }}</native:text>
-            </native:column>
-            <native:button variant="primary" size="lg" icon="add" a11y-label="Increment" @press="increment"/>
-        </native:row>
+            <column class="w-[80] h-[80] rounded-2xl bg-indigo-600 items-center justify-center">
+                <text class="text-white font-extrabold text-3xl">{{ $count }}</text>
+            </column>
+            <button variant="primary" size="lg" icon="add" a11y-label="Increment" @press="increment"/>
+        </row>
 
-    </native:column>
-</native:scroll-view>
+    </column>
+</scroll-view>

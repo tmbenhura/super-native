@@ -87,7 +87,7 @@ class PerfDemo extends NativeComponent
         // Hardcoding the chrome (8 elements) keeps the count honest;
         // it's the rowCount that dominates anyway.
         // Element count is now bounded by the visible window — that's the
-        // whole point of <native:virtual-list>. The full `rowCount` is a
+        // whole point of <virtual-list>. The full `rowCount` is a
         // logical total ridden by the native LazyColumn, not a tree size.
         $chromeElementCount = 8;
         $buttonElementCount = 6;

@@ -55,7 +55,7 @@ php artisan native:run android -W --no-vite
 
 ```
 app/NativeComponents/Explore.php    # The kitchen sink component
-resources/views/native/explore.blade.php  # Blade template with <native:*> elements
+resources/views/native/explore.blade.php  # Blade template with <*> elements
 routes/web.php                      # Single route: / → Explore
 ```
 

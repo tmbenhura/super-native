@@ -24,57 +24,57 @@
      keyboard avoidance pushes the whole column up when the keyboard
      appears so the input stays visible above it. No layout-level
      bottomBar slot needed — the bar is part of the screen content. --}}
-<native:stack class="w-full h-full bg-theme-background">
+<stack class="w-full h-full bg-theme-background">
 
     {{-- Messages — flex-1 so they fill the space between the navbar and
          the input bar. --}}
-    <native:scroll-view class="w-full h-full">
-        <native:column class="w-full px-5 py-4 gap-3 pb-[80]">
+    <scroll-view class="w-full h-full">
+        <column class="w-full px-5 py-4 gap-3 pb-[80]">
 
             {{-- Date divider --}}
-            <native:row class="w-full justify-center my-2">
-                <native:column class="px-3 py-1 rounded-full bg-theme-surface-variant">
-                    <native:text class="text-[12] font-semibold text-theme-on-surface-variant">TODAY</native:text>
-                </native:column>
-            </native:row>
+            <row class="w-full justify-center my-2">
+                <column class="px-3 py-1 rounded-full bg-theme-surface-variant">
+                    <text class="text-[12] font-semibold text-theme-on-surface-variant">TODAY</text>
+                </column>
+            </row>
 
             {{-- Messages --}}
             @foreach ($messages as $m)
                 @if ($m['fromMe'])
                     {{-- Outgoing — primary bubble, right-aligned --}}
-                    <native:row class="w-full justify-end">
-                        <native:column class="w-[280] bg-[#00677d] rounded-2xl px-4 py-3 gap-1">
-                            <native:text class="text-[14] text-white">{{ $m['text'] }}</native:text>
-                            <native:row class="items-center justify-end gap-1">
-                                <native:text class="text-[10] text-[#a5f3fc]">{{ $m['time'] }}</native:text>
+                    <row class="w-full justify-end">
+                        <column class="w-[280] bg-[#00677d] rounded-2xl px-4 py-3 gap-1">
+                            <text class="text-[14] text-white">{{ $m['text'] }}</text>
+                            <row class="items-center justify-end gap-1">
+                                <text class="text-[10] text-[#a5f3fc]">{{ $m['time'] }}</text>
                                 @if (($m['status'] ?? null) === 'read')
-                                    <native:icon name="checkmark" :size="14" color="#a5f3fc"/>
+                                    <icon name="checkmark" :size="14" color="#a5f3fc"/>
                                 @elseif (($m['status'] ?? null) === 'sent')
-                                    <native:icon name="checkmark" :size="14" color="#7dd3fc"/>
+                                    <icon name="checkmark" :size="14" color="#7dd3fc"/>
                                 @endif
-                            </native:row>
-                        </native:column>
-                    </native:row>
+                            </row>
+                        </column>
+                    </row>
                 @else
                     {{-- Incoming — light gray bubble, left-aligned --}}
-                    <native:row class="w-full">
-                        <native:column
+                    <row class="w-full">
+                        <column
                             class="w-[280] bg-theme-surface-variant rounded-2xl px-4 py-3 gap-1 border border-theme-outline">
                             @if (! empty($m['imageUrl']))
-                                <native:image src="{{ $m['imageUrl'] }}" class="w-full h-[180] rounded-xl" :fit="2"/>
+                                <image src="{{ $m['imageUrl'] }}" class="w-full h-[180] rounded-xl" :fit="2"/>
                             @endif
-                            <native:text class="text-[14] text-theme-on-surface">{{ $m['text'] }}</native:text>
-                            <native:row class="justify-end">
-                                <native:text
-                                    class="text-[10] text-theme-on-surface-variant">{{ $m['time'] }}</native:text>
-                            </native:row>
-                        </native:column>
-                    </native:row>
+                            <text class="text-[14] text-theme-on-surface">{{ $m['text'] }}</text>
+                            <row class="justify-end">
+                                <text
+                                    class="text-[10] text-theme-on-surface-variant">{{ $m['time'] }}</text>
+                            </row>
+                        </column>
+                    </row>
                 @endif
             @endforeach
 
-        </native:column>
-    </native:scroll-view>
+        </column>
+    </scroll-view>
 
     {{-- Input bar — fully transparent so the column's bg-theme-background
          extends edge-to-edge through it (iMessage / WhatsApp / Telegram
@@ -85,21 +85,21 @@
          `justify-end`, pushing the row to the bottom edge. The column is
          transparent so scroll content shows through everywhere except
          where the row's glass pills sit. --}}
-    <native:column class="w-full h-full justify-end">
-        <native:row class="w-full px-3 pb-4 gap-2 items-center">
+    <column class="w-full h-full justify-end">
+        <row class="w-full px-3 pb-4 gap-2 items-center">
 
-            <native:pressable
+            <pressable
                 :menu="$pressableMenu"
                 class="glass:interactive android:dark:bg-white text-slate-700 rounded-full p-1 items-center justify-center">
-                <native:icon name="plus.circle" class="text-gray-700"/>
-            </native:pressable>
+                <icon name="plus.circle" class="text-gray-700"/>
+            </pressable>
 
-            {{-- Message field: chromeless `<native:bare-text-input>` wrapped in
+            {{-- Message field: chromeless `<bare-text-input>` wrapped in
                  a glass pill row. The bare input has no outline / label / fill
                  of its own — the surrounding row owns the visible chrome
                  (rounded-full + glass material), which is the iMessage /
                  WhatsApp / Telegram pattern exactly. --}}
-            <native:bare-text-input
+            <bare-text-input
                 native:model="draft"
                 placeholder="Message"
                 class="flex-1 glass android:dark:bg-white rounded-full px-4 py-2 items-center text-slate-700"
@@ -109,75 +109,75 @@
             {{-- Mic when field is empty; primary-tinted send when there's text.
                  Mirrors iMessage's mic↔send swap. --}}
             @if (trim($draft) === '')
-                <native:pressable
+                <pressable
                     :menu="$pressableMenu"
                     class="glass:interactive android:dark:bg-white text-slate-700 rounded-full p-1 items-center justify-center">
-                    <native:icon name="mic" class="text-gray-700"/>
-                </native:pressable>
+                    <icon name="mic" class="text-gray-700"/>
+                </pressable>
             @else
-                <native:pressable @press="send"
+                <pressable @press="send"
                                   class="glass:interactive android:dark:bg-white text-slate-700   rounded-full p-1  items-center justify-center">
-                    <native:icon name="paperplane.fill" class="text-gray-700"/>
-                </native:pressable>
+                    <icon name="paperplane.fill" class="text-gray-700"/>
+                </pressable>
             @endif
 
-        </native:row>
-    </native:column>
+        </row>
+    </column>
 
     {{-- More-actions modal — opened by the NavBar ellipsis. Dismissible. --}}
-    <native:modal :visible="$showMoreActions" :dismissible="true" @dismiss="closeMoreActions">
-        <native:column class="w-full p-2 bg-theme-surface rounded-3xl">
-            <native:column @press="toggleMute" class="w-full px-5 py-4">
-                <native:row class="items-center gap-3">
-                    <native:icon name="{{ $isMuted ? 'speaker.slash.fill' : 'bell.fill' }}" :size="20" color="#0F172A"
+    <modal :visible="$showMoreActions" :dismissible="true" @dismiss="closeMoreActions">
+        <column class="w-full p-2 bg-theme-surface rounded-3xl">
+            <column @press="toggleMute" class="w-full px-5 py-4">
+                <row class="items-center gap-3">
+                    <icon name="{{ $isMuted ? 'speaker.slash.fill' : 'bell.fill' }}" :size="20" color="#0F172A"
                                  dark-color="#F1F5F9"/>
-                    <native:column class="flex-1 gap-1">
-                        <native:text
-                            class="text-base font-semibold text-theme-on-surface">{{ $isMuted ? 'Unmute notifications' : 'Mute notifications' }}</native:text>
-                        <native:text
-                            class="text-[12] text-theme-on-surface-variant">{{ $isMuted ? 'You will hear notifications again.' : 'No banners or sounds for this chat.' }}</native:text>
-                    </native:column>
-                </native:row>
-            </native:column>
-            <native:divider/>
-            <native:column @press="askClearHistory" class="w-full px-5 py-4">
-                <native:row class="items-center gap-3">
-                    <native:icon name="trash.fill" :size="20" color="#EF4444"/>
-                    <native:column class="flex-1 gap-1">
-                        <native:text class="text-base font-semibold text-[#EF4444]">Clear history</native:text>
-                        <native:text class="text-[12] text-theme-on-surface-variant">Removes every message in this chat.
+                    <column class="flex-1 gap-1">
+                        <text
+                            class="text-base font-semibold text-theme-on-surface">{{ $isMuted ? 'Unmute notifications' : 'Mute notifications' }}</text>
+                        <text
+                            class="text-[12] text-theme-on-surface-variant">{{ $isMuted ? 'You will hear notifications again.' : 'No banners or sounds for this chat.' }}</text>
+                    </column>
+                </row>
+            </column>
+            <divider/>
+            <column @press="askClearHistory" class="w-full px-5 py-4">
+                <row class="items-center gap-3">
+                    <icon name="trash.fill" :size="20" color="#EF4444"/>
+                    <column class="flex-1 gap-1">
+                        <text class="text-base font-semibold text-[#EF4444]">Clear history</text>
+                        <text class="text-[12] text-theme-on-surface-variant">Removes every message in this chat.
                             Cannot be undone.
-                        </native:text>
-                    </native:column>
-                </native:row>
-            </native:column>
-            <native:divider/>
-            <native:column @press="closeMoreActions" class="w-full px-5 py-4">
-                <native:row class="items-center justify-center gap-2">
-                    <native:text class="text-base font-medium text-theme-on-surface-variant">Cancel</native:text>
-                </native:row>
-            </native:column>
-        </native:column>
-    </native:modal>
+                        </text>
+                    </column>
+                </row>
+            </column>
+            <divider/>
+            <column @press="closeMoreActions" class="w-full px-5 py-4">
+                <row class="items-center justify-center gap-2">
+                    <text class="text-base font-medium text-theme-on-surface-variant">Cancel</text>
+                </row>
+            </column>
+        </column>
+    </modal>
 
     {{-- Blocking clear-history confirmation. dismissible=false. --}}
-    <native:modal :visible="$showClearConfirm" :dismissible="false">
-        <native:column class="w-full p-6 gap-4 bg-theme-surface rounded-3xl">
-            <native:text class="text-xl font-bold text-theme-on-surface">Clear chat history?</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">This permanently deletes the message thread.
+    <modal :visible="$showClearConfirm" :dismissible="false">
+        <column class="w-full p-6 gap-4 bg-theme-surface rounded-3xl">
+            <text class="text-xl font-bold text-theme-on-surface">Clear chat history?</text>
+            <text class="text-sm text-theme-on-surface-variant">This permanently deletes the message thread.
                 There's no undo.
-            </native:text>
-            <native:row class="w-full gap-2 mt-2">
-                <native:column @press="cancelClearHistory"
+            </text>
+            <row class="w-full gap-2 mt-2">
+                <column @press="cancelClearHistory"
                                class="flex-1 px-4 py-3 rounded-xl bg-theme-surface-variant items-center">
-                    <native:text class="font-semibold text-theme-on-surface">Cancel</native:text>
-                </native:column>
-                <native:column @press="confirmClearHistory"
+                    <text class="font-semibold text-theme-on-surface">Cancel</text>
+                </column>
+                <column @press="confirmClearHistory"
                                class="flex-1 px-4 py-3 rounded-xl bg-[#EF4444] items-center">
-                    <native:text class="text-white font-semibold">Delete</native:text>
-                </native:column>
-            </native:row>
-        </native:column>
-    </native:modal>
+                    <text class="text-white font-semibold">Delete</text>
+                </column>
+            </row>
+        </column>
+    </modal>
 
-</native:stack>
+</stack>

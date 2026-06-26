@@ -5,16 +5,12 @@ namespace App\NativeComponents\SyncUpNative;
 use App\Icons\AndroidOutlined;
 use App\NativeComponents\Concerns\HasSyncUpData;
 use Illuminate\View\View;
-use Livewire\Attributes\Layout;
-use Native\Mobile\Edge\Element;
-use Native\Mobile\Edge\Elements\Divider;
 use Native\Mobile\Edge\Layouts\Builders\NavAction;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Facades\Dialog;
 use App\Icons\Android;
 use App\Icons\Ios;
-use Nativephp\NativeUi\Elements\Button;
 
 class SyncUpNativeChat extends NativeComponent
 {

@@ -109,7 +109,7 @@ class SyncUpChats extends NativeComponent
         // Friends for the "new message" bottom-sheet (skip "You" at id 0).
         $friends = array_values(array_filter($users, fn ($u) => $u['id'] !== 0));
 
-        return view('syncup.chats', [
+        return view('native.syncup.chats', [
             'rows' => $rows,
             'filters' => self::suFilters(),
             'suggestions' => self::suSuggestions(),

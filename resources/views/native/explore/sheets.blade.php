@@ -1,152 +1,152 @@
-<native:scroll-view class="w-full h-full bg-theme-background">
-    <native:column class="w-full p-5 gap-5">
+<scroll-view class="w-full h-full bg-theme-background">
+    <column class="w-full p-5 gap-5">
 
         {{-- Header --}}
-        <native:column class="w-full gap-1">
-            <native:text class="text-lg font-semibold text-theme-on-background">Bottom Sheets</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">Tap to open. Swipe down or tap the backdrop to dismiss — `@press="closeFoo"` keeps `$visible` in sync.</native:text>
-        </native:column>
+        <column class="w-full gap-1">
+            <text class="text-lg font-semibold text-theme-on-background">Bottom Sheets</text>
+            <text class="text-sm text-theme-on-surface-variant">Tap to open. Swipe down or tap the backdrop to dismiss — `@press="closeFoo"` keeps `$visible` in sync.</text>
+        </column>
 
         {{-- Bottom-sheet trigger row --}}
-        <native:row class="w-full gap-2">
-            <native:column @press="openSmallSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-                <native:text class="text-white font-semibold">Small</native:text>
-            </native:column>
-            <native:column @press="openMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-                <native:text class="text-white font-semibold">Medium</native:text>
-            </native:column>
-            <native:column @press="openCustomSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-                <native:text class="text-white font-semibold">40%</native:text>
-            </native:column>
-        </native:row>
+        <row class="w-full gap-2">
+            <column @press="openSmallSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
+                <text class="text-white font-semibold">Small</text>
+            </column>
+            <column @press="openMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
+                <text class="text-white font-semibold">Medium</text>
+            </column>
+            <column @press="openCustomSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
+                <text class="text-white font-semibold">40%</text>
+            </column>
+        </row>
 
-        <native:column @press="openActionSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-            <native:text class="text-white font-semibold">Action sheet (edit / share / delete)</native:text>
-        </native:column>
+        <column @press="openActionSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
+            <text class="text-white font-semibold">Action sheet (edit / share / delete)</text>
+        </column>
 
-        <native:divider class="my-2" />
+        <divider class="my-2" />
 
         {{-- Modals --}}
-        <native:column class="w-full gap-1">
-            <native:text class="text-lg font-semibold text-theme-on-background">Modals</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">Full-screen overlay. `dismissible` controls whether tapping the backdrop fires `@dismiss`.</native:text>
-        </native:column>
+        <column class="w-full gap-1">
+            <text class="text-lg font-semibold text-theme-on-background">Modals</text>
+            <text class="text-sm text-theme-on-surface-variant">Full-screen overlay. `dismissible` controls whether tapping the backdrop fires `@dismiss`.</text>
+        </column>
 
-        <native:row class="w-full gap-2">
-            <native:column @press="openDismissibleModal" class="flex-1 px-4 py-3 rounded-xl bg-[#A855F7] items-center">
-                <native:text class="text-white font-semibold">Dismissible</native:text>
-            </native:column>
-            <native:column @press="openBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-[#EF4444] items-center">
-                <native:text class="text-white font-semibold">Blocking</native:text>
-            </native:column>
-        </native:row>
+        <row class="w-full gap-2">
+            <column @press="openDismissibleModal" class="flex-1 px-4 py-3 rounded-xl bg-[#A855F7] items-center">
+                <text class="text-white font-semibold">Dismissible</text>
+            </column>
+            <column @press="openBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-[#EF4444] items-center">
+                <text class="text-white font-semibold">Blocking</text>
+            </column>
+        </row>
 
-        <native:divider class="my-2" />
+        <divider class="my-2" />
 
         {{-- Last-action echo --}}
-        <native:column class="w-full p-4 rounded-xl bg-theme-surface-variant gap-1">
-            <native:text class="text-[11] font-semibold text-theme-on-surface-variant">LAST ACTION</native:text>
-            <native:text class="text-base text-theme-on-surface">{{ $lastAction !== '' ? $lastAction : '—' }}</native:text>
-        </native:column>
+        <column class="w-full p-4 rounded-xl bg-theme-surface-variant gap-1">
+            <text class="text-[11] font-semibold text-theme-on-surface-variant">LAST ACTION</text>
+            <text class="text-base text-theme-on-surface">{{ $lastAction !== '' ? $lastAction : '—' }}</text>
+        </column>
 
-    </native:column>
+    </column>
 
     {{-- ── Bottom sheets ───────────────────────────────────────── --}}
 
     {{-- Small (≈25% of screen) --}}
-    <native:bottom-sheet :visible="$showSmallSheet" @dismiss="closeSmallSheet" detents="small">
-        <native:column class="w-full p-5 gap-3">
-            <native:text class="text-xl font-bold text-theme-on-surface">Small sheet</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">A short ~25%-tall sheet. Good for confirmations and single-prompt input.</native:text>
-            <native:column @press="closeSmallSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center mt-2">
-                <native:text class="text-white font-semibold">Close</native:text>
-            </native:column>
-        </native:column>
-    </native:bottom-sheet>
+    <bottom-sheet :visible="$showSmallSheet" @dismiss="closeSmallSheet" detents="small">
+        <column class="w-full p-5 gap-3">
+            <text class="text-xl font-bold text-theme-on-surface">Small sheet</text>
+            <text class="text-sm text-theme-on-surface-variant">A short ~25%-tall sheet. Good for confirmations and single-prompt input.</text>
+            <column @press="closeSmallSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center mt-2">
+                <text class="text-white font-semibold">Close</text>
+            </column>
+        </column>
+    </bottom-sheet>
 
     {{-- Medium / large (the default) --}}
-    <native:bottom-sheet :visible="$showMediumSheet" @dismiss="closeMediumSheet" detents="medium,large">
-        <native:column class="w-full p-5 gap-4">
-            <native:text class="text-xl font-bold text-theme-on-surface">Medium sheet</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">Drag the grabber up to expand to large. The default detents.</native:text>
+    <bottom-sheet :visible="$showMediumSheet" @dismiss="closeMediumSheet" detents="medium,large">
+        <column class="w-full p-5 gap-4">
+            <text class="text-xl font-bold text-theme-on-surface">Medium sheet</text>
+            <text class="text-sm text-theme-on-surface-variant">Drag the grabber up to expand to large. The default detents.</text>
 
-            <native:outlined-text-input placeholder="Enter something" />
+            <outlined-text-input placeholder="Enter something" />
 
-            <native:row class="w-full gap-2 mt-2">
-                <native:column @press="closeMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-theme-surface-variant items-center">
-                    <native:text class="font-semibold text-theme-on-surface">Cancel</native:text>
-                </native:column>
-                <native:column @press="closeMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-                    <native:text class="text-white font-semibold">Save</native:text>
-                </native:column>
-            </native:row>
-        </native:column>
-    </native:bottom-sheet>
+            <row class="w-full gap-2 mt-2">
+                <column @press="closeMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-theme-surface-variant items-center">
+                    <text class="font-semibold text-theme-on-surface">Cancel</text>
+                </column>
+                <column @press="closeMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
+                    <text class="text-white font-semibold">Save</text>
+                </column>
+            </row>
+        </column>
+    </bottom-sheet>
 
     {{-- Custom 40% height --}}
-    <native:bottom-sheet :visible="$showCustomSheet" @dismiss="closeCustomSheet" detents="0.4">
-        <native:column class="w-full p-5 gap-3">
-            <native:text class="text-xl font-bold text-theme-on-surface">Custom (40%)</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">Numeric detent: `detents="0.4"` for a sheet that occupies 40% of the screen. Fixed (not draggable to other heights).</native:text>
-            <native:column @press="closeCustomSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center mt-2">
-                <native:text class="text-white font-semibold">Close</native:text>
-            </native:column>
-        </native:column>
-    </native:bottom-sheet>
+    <bottom-sheet :visible="$showCustomSheet" @dismiss="closeCustomSheet" detents="0.4">
+        <column class="w-full p-5 gap-3">
+            <text class="text-xl font-bold text-theme-on-surface">Custom (40%)</text>
+            <text class="text-sm text-theme-on-surface-variant">Numeric detent: `detents="0.4"` for a sheet that occupies 40% of the screen. Fixed (not draggable to other heights).</text>
+            <column @press="closeCustomSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center mt-2">
+                <text class="text-white font-semibold">Close</text>
+            </column>
+        </column>
+    </bottom-sheet>
 
     {{-- Action sheet (small detent + a stacked list of pressables) --}}
-    <native:bottom-sheet :visible="$showActionSheet" @dismiss="closeActionSheet" detents="small">
-        <native:column class="w-full pb-4">
-            <native:column @press="actionEdit" class="w-full px-5 py-4">
-                <native:row class="items-center gap-3">
-                    <native:icon name="edit" :size="22" color="#475569" dark-color="#CBD5E1" />
-                    <native:text class="text-base text-theme-on-surface">Edit</native:text>
-                </native:row>
-            </native:column>
-            <native:divider />
-            <native:column @press="actionShare" class="w-full px-5 py-4">
-                <native:row class="items-center gap-3">
-                    <native:icon name="share" :size="22" color="#475569" dark-color="#CBD5E1" />
-                    <native:text class="text-base text-theme-on-surface">Share</native:text>
-                </native:row>
-            </native:column>
-            <native:divider />
-            <native:column @press="actionDelete" class="w-full px-5 py-4">
-                <native:row class="items-center gap-3">
-                    <native:icon name="delete" :size="22" color="#EF4444" />
-                    <native:text class="text-base text-[#EF4444]">Delete</native:text>
-                </native:row>
-            </native:column>
-        </native:column>
-    </native:bottom-sheet>
+    <bottom-sheet :visible="$showActionSheet" @dismiss="closeActionSheet" detents="small">
+        <column class="w-full pb-4">
+            <column @press="actionEdit" class="w-full px-5 py-4">
+                <row class="items-center gap-3">
+                    <icon name="edit" :size="22" color="#475569" dark-color="#CBD5E1" />
+                    <text class="text-base text-theme-on-surface">Edit</text>
+                </row>
+            </column>
+            <divider />
+            <column @press="actionShare" class="w-full px-5 py-4">
+                <row class="items-center gap-3">
+                    <icon name="share" :size="22" color="#475569" dark-color="#CBD5E1" />
+                    <text class="text-base text-theme-on-surface">Share</text>
+                </row>
+            </column>
+            <divider />
+            <column @press="actionDelete" class="w-full px-5 py-4">
+                <row class="items-center gap-3">
+                    <icon name="delete" :size="22" color="#EF4444" />
+                    <text class="text-base text-[#EF4444]">Delete</text>
+                </row>
+            </column>
+        </column>
+    </bottom-sheet>
 
     {{-- ── Modals ──────────────────────────────────────────────── --}}
 
     {{-- Dismissible: tap-backdrop / swipe fires @dismiss --}}
-    <native:modal :visible="$showDismissibleModal" :dismissible="true" @dismiss="closeDismissibleModal">
-        <native:column class="w-full p-6 gap-4 bg-theme-surface rounded-3xl">
-            <native:text class="text-xl font-bold text-theme-on-surface">Dismissible modal</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">Tap the backdrop or swipe to close. The framework fires `@dismiss` for you to flip `visible` back to false.</native:text>
-            <native:column @press="closeDismissibleModal" class="w-full px-4 py-3 rounded-xl bg-[#A855F7] items-center mt-2">
-                <native:text class="text-white font-semibold">OK</native:text>
-            </native:column>
-        </native:column>
-    </native:modal>
+    <modal :visible="$showDismissibleModal" :dismissible="true" @dismiss="closeDismissibleModal">
+        <column class="w-full p-6 gap-4 bg-theme-surface rounded-3xl">
+            <text class="text-xl font-bold text-theme-on-surface">Dismissible modal</text>
+            <text class="text-sm text-theme-on-surface-variant">Tap the backdrop or swipe to close. The framework fires `@dismiss` for you to flip `visible` back to false.</text>
+            <column @press="closeDismissibleModal" class="w-full px-4 py-3 rounded-xl bg-[#A855F7] items-center mt-2">
+                <text class="text-white font-semibold">OK</text>
+            </column>
+        </column>
+    </modal>
 
     {{-- Blocking: dismissible=false; user must hit confirm or cancel --}}
-    <native:modal :visible="$showBlockingModal" :dismissible="false">
-        <native:column class="w-full p-6 gap-4 bg-theme-surface rounded-3xl">
-            <native:text class="text-xl font-bold text-theme-on-surface">Confirm action?</native:text>
-            <native:text class="text-sm text-theme-on-surface-variant">This is a blocking modal — `dismissible="false"`. The backdrop is inert; you have to choose Confirm or Cancel.</native:text>
-            <native:row class="w-full gap-2 mt-2">
-                <native:column @press="cancelBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-theme-surface-variant items-center">
-                    <native:text class="font-semibold text-theme-on-surface">Cancel</native:text>
-                </native:column>
-                <native:column @press="confirmBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-[#EF4444] items-center">
-                    <native:text class="text-white font-semibold">Confirm</native:text>
-                </native:column>
-            </native:row>
-        </native:column>
-    </native:modal>
+    <modal :visible="$showBlockingModal" :dismissible="false">
+        <column class="w-full p-6 gap-4 bg-theme-surface rounded-3xl">
+            <text class="text-xl font-bold text-theme-on-surface">Confirm action?</text>
+            <text class="text-sm text-theme-on-surface-variant">This is a blocking modal — `dismissible="false"`. The backdrop is inert; you have to choose Confirm or Cancel.</text>
+            <row class="w-full gap-2 mt-2">
+                <column @press="cancelBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-theme-surface-variant items-center">
+                    <text class="font-semibold text-theme-on-surface">Cancel</text>
+                </column>
+                <column @press="confirmBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-[#EF4444] items-center">
+                    <text class="text-white font-semibold">Confirm</text>
+                </column>
+            </row>
+        </column>
+    </modal>
 
-</native:scroll-view>
+</scroll-view>

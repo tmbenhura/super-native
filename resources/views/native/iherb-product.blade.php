@@ -1,142 +1,142 @@
-<native:scroll-view class="w-full h-full bg-white">
-    <native:column class="w-full gap-0 ">
+<scroll-view class="w-full h-full bg-white">
+    <column class="w-full gap-0 ">
 
         {{-- Top Bar --}}
-        <native:column class="w-full bg-[#507D2A]">
-            <native:row class="w-full px-4 py-3 items-center justify-between">
-                <native:column @press="back" class="w-[32] h-[32] rounded-full bg-white/20 items-center justify-center">
-                    <native:icon name="arrow_back" :size="20" color="#FFFFFF" />
-                </native:column>
-                <native:row class="items-center gap-3">
-                    <native:column @press="toggleWishlist">
-                        <native:icon
+        <column class="w-full bg-[#507D2A]">
+            <row class="w-full px-4 py-3 items-center justify-between">
+                <column @press="back" class="w-[32] h-[32] rounded-full bg-white/20 items-center justify-center">
+                    <icon name="arrow_back" :size="20" color="#FFFFFF" />
+                </column>
+                <row class="items-center gap-3">
+                    <column @press="toggleWishlist">
+                        <icon
                             name="{{ $isWishlisted ? 'favorite' : 'favorite_border' }}"
                             :size="22"
                             color="#FFFFFF"
                         />
-                    </native:column>
-                    <native:icon name="share" :size="22" color="#FFFFFF" />
-                </native:row>
-            </native:row>
-        </native:column>
+                    </column>
+                    <icon name="share" :size="22" color="#FFFFFF" />
+                </row>
+            </row>
+        </column>
 
         {{-- Product Image --}}
-        <native:column class="w-full items-center bg-gray-50 py-6">
-            <native:image
+        <column class="w-full items-center bg-gray-50 py-6">
+            <image
                 src="{{ $product['imageUrl'] }}"
                 class="w-[250] h-[250]"
                 :fit="1"
             />
-        </native:column>
+        </column>
 
         {{-- Product Info --}}
-        <native:column class="w-full px-4 pt-4 gap-2">
+        <column class="w-full px-4 pt-4 gap-2">
             {{-- Brand --}}
-            <native:text class="text-[13] text-[#507D2A] font-semibold">{{ $product['brand'] }}</native:text>
+            <text class="text-[13] text-[#507D2A] font-semibold">{{ $product['brand'] }}</text>
 
             {{-- Name --}}
-            <native:text class="text-[18] font-bold text-[#333333]">{{ $product['name'] }}</native:text>
+            <text class="text-[18] font-bold text-[#333333]">{{ $product['name'] }}</text>
 
             {{-- Rating --}}
-            <native:row class="items-center gap-2">
-                <native:row class="items-center gap-0">
-                    <native:icon name="star" :size="16" color="#DAA520" />
-                    <native:icon name="star" :size="16" color="#DAA520" />
-                    <native:icon name="star" :size="16" color="#DAA520" />
-                    <native:icon name="star" :size="16" color="#DAA520" />
-                    <native:icon name="star_half" :size="16" color="#DAA520" />
-                </native:row>
-                <native:text class="text-[13] text-[#507D2A]">{{ $reviewFormatted }}</native:text>
-            </native:row>
+            <row class="items-center gap-2">
+                <row class="items-center gap-0">
+                    <icon name="star" :size="16" color="#DAA520" />
+                    <icon name="star" :size="16" color="#DAA520" />
+                    <icon name="star" :size="16" color="#DAA520" />
+                    <icon name="star" :size="16" color="#DAA520" />
+                    <icon name="star_half" :size="16" color="#DAA520" />
+                </row>
+                <text class="text-[13] text-[#507D2A]">{{ $reviewFormatted }}</text>
+            </row>
 
             {{-- Stock & Popularity --}}
-            <native:row class="items-center justify-between">
+            <row class="items-center justify-between">
                 @if ($product['inStock'])
-                    <native:text class="text-[13] text-[#507D2A] font-semibold">In stock</native:text>
+                    <text class="text-[13] text-[#507D2A] font-semibold">In stock</text>
                 @else
-                    <native:text class="text-[13] text-[#CC0000] font-semibold">Out of stock</native:text>
+                    <text class="text-[13] text-[#CC0000] font-semibold">Out of stock</text>
                 @endif
-                <native:row class="items-center gap-1">
-                    <native:icon name="trending_up" :size="14" color="#CC0000" />
-                    <native:text class="text-[12] text-[#CC0000]">{{ $product['soldIn30Days'] }} sold in 30 days</native:text>
-                </native:row>
-            </native:row>
-        </native:column>
+                <row class="items-center gap-1">
+                    <icon name="trending_up" :size="14" color="#CC0000" />
+                    <text class="text-[12] text-[#CC0000]">{{ $product['soldIn30Days'] }} sold in 30 days</text>
+                </row>
+            </row>
+        </column>
 
-        <native:divider class="w-full mx-4 my-3" />
+        <divider class="w-full mx-4 my-3" />
 
         {{-- Details --}}
-        <native:column class="w-full px-4 gap-2">
-            <native:row class="items-center gap-2">
-                <native:icon name="verified" :size="16" color="#507D2A" />
-                <native:text class="text-[13] text-[#333333]">100% authentic</native:text>
-            </native:row>
+        <column class="w-full px-4 gap-2">
+            <row class="items-center gap-2">
+                <icon name="verified" :size="16" color="#507D2A" />
+                <text class="text-[13] text-[#333333]">100% authentic</text>
+            </row>
             @if ($product['bestBy'])
-                <native:row class="items-center gap-2">
-                    <native:icon name="event" :size="16" color="#666666" />
-                    <native:text class="text-[13] text-[#333333]">Best by: {{ $product['bestBy'] }}</native:text>
-                </native:row>
+                <row class="items-center gap-2">
+                    <icon name="event" :size="16" color="#666666" />
+                    <text class="text-[13] text-[#333333]">Best by: {{ $product['bestBy'] }}</text>
+                </row>
             @endif
-            <native:row class="items-center gap-2">
-                <native:icon name="local_shipping" :size="16" color="#666666" />
-                <native:text class="text-[13] text-[#333333]">Shipping weight: {{ $product['shippingWeight'] }}</native:text>
-            </native:row>
-        </native:column>
+            <row class="items-center gap-2">
+                <icon name="local_shipping" :size="16" color="#666666" />
+                <text class="text-[13] text-[#333333]">Shipping weight: {{ $product['shippingWeight'] }}</text>
+            </row>
+        </column>
 
-        <native:divider class="w-full mx-4 my-3" />
+        <divider class="w-full mx-4 my-3" />
 
         {{-- Product Rankings --}}
-        <native:column class="w-full px-4 gap-1">
-            <native:text class="text-[14] font-semibold text-[#E8860C]">Product rankings</native:text>
+        <column class="w-full px-4 gap-1">
+            <text class="text-[14] font-semibold text-[#E8860C]">Product rankings</text>
             @foreach ($product['rankings'] as $ranking)
-                <native:text class="text-[13] text-[#507D2A]">{{ $ranking }}</native:text>
+                <text class="text-[13] text-[#507D2A]">{{ $ranking }}</text>
             @endforeach
-        </native:column>
+        </column>
 
-        <native:divider class="w-full mx-4 my-3" />
+        <divider class="w-full mx-4 my-3" />
 
         {{-- Description --}}
-        <native:column class="w-full px-4 gap-2">
-            <native:text class="text-[15] font-semibold text-[#333333]">Description</native:text>
-            <native:text class="text-[14] text-[#666666]">{{ $product['description'] }}</native:text>
-        </native:column>
+        <column class="w-full px-4 gap-2">
+            <text class="text-[15] font-semibold text-[#333333]">Description</text>
+            <text class="text-[14] text-[#666666]">{{ $product['description'] }}</text>
+        </column>
 
-        <native:divider class="w-full mx-4 my-4" />
+        <divider class="w-full mx-4 my-4" />
 
         {{-- Price & Add to Cart --}}
-        <native:column class="w-full px-4 pb-4 gap-3">
+        <column class="w-full px-4 pb-4 gap-3">
             {{-- Price --}}
-            <native:row class="items-center gap-2">
-                <native:text class="text-[24] font-bold text-[#333333]">{{ $priceFormatted }}</native:text>
+            <row class="items-center gap-2">
+                <text class="text-[24] font-bold text-[#333333]">{{ $priceFormatted }}</text>
                 @if ($originalPriceFormatted)
-                    <native:text class="text-[15] text-[#999999] line-through">{{ $originalPriceFormatted }}</native:text>
+                    <text class="text-[15] text-[#999999] line-through">{{ $originalPriceFormatted }}</text>
                 @endif
-            </native:row>
+            </row>
             @if ($product['servingInfo'])
-                <native:text class="text-[12] text-[#666666] mt-[-4]">{{ $product['servingInfo'] }}</native:text>
+                <text class="text-[12] text-[#666666] mt-[-4]">{{ $product['servingInfo'] }}</text>
             @endif
 
             {{-- Free Shipping --}}
-            <native:row class="items-center gap-1">
-                <native:icon name="local_shipping" :size="14" color="#507D2A" />
-                <native:text class="text-[12] text-[#507D2A]">FREE shipping over $30</native:text>
-            </native:row>
+            <row class="items-center gap-1">
+                <icon name="local_shipping" :size="14" color="#507D2A" />
+                <text class="text-[12] text-[#507D2A]">FREE shipping over $30</text>
+            </row>
 
             {{-- Quantity Selector --}}
-            <native:row class="items-center gap-4">
-                <native:column @press="decrementQty" class="w-[36] h-[36] rounded-full bg-gray-200 items-center justify-center">
-                    <native:icon name="remove" :size="20" color="#333333" />
-                </native:column>
-                <native:text class="text-[18] font-bold text-[#333333]">{{ $quantity }}</native:text>
-                <native:column @press="incrementQty" class="w-[36] h-[36] rounded-full bg-gray-200 items-center justify-center">
-                    <native:icon name="add" :size="20" color="#333333" />
-                </native:column>
-                <native:spacer class="w-[20]" />
-                <native:text class="text-[14] text-[#666666]">Total: {{ $totalFormatted }}</native:text>
-            </native:row>
+            <row class="items-center gap-4">
+                <column @press="decrementQty" class="w-[36] h-[36] rounded-full bg-gray-200 items-center justify-center">
+                    <icon name="remove" :size="20" color="#333333" />
+                </column>
+                <text class="text-[18] font-bold text-[#333333]">{{ $quantity }}</text>
+                <column @press="incrementQty" class="w-[36] h-[36] rounded-full bg-gray-200 items-center justify-center">
+                    <icon name="add" :size="20" color="#333333" />
+                </column>
+                <spacer class="w-[20]" />
+                <text class="text-[14] text-[#666666]">Total: {{ $totalFormatted }}</text>
+            </row>
 
             {{-- Add to Cart Button --}}
-            <native:button
+            <button
                 label="Add to Cart"
                 @press="addToCart"
                 color="#E8860C"
@@ -145,17 +145,17 @@
             />
 
             {{-- Wishlist Button --}}
-            <native:row @press="toggleWishlist" class="w-full py-3 rounded-lg items-center justify-center gap-2 bg-gray-100">
-                <native:icon
+            <row @press="toggleWishlist" class="w-full py-3 rounded-lg items-center justify-center gap-2 bg-gray-100">
+                <icon
                     name="{{ $isWishlisted ? 'favorite' : 'favorite_border' }}"
                     :size="20"
                     color="{{ $isWishlisted ? '#CC0000' : '#666666' }}"
                 />
-                <native:text class="text-[14] text-[#333333]">{{ $isWishlisted ? 'Saved to List' : 'Add to Lists' }}</native:text>
-            </native:row>
-        </native:column>
+                <text class="text-[14] text-[#333333]">{{ $isWishlisted ? 'Saved to List' : 'Add to Lists' }}</text>
+            </row>
+        </column>
 
-        <native:spacer class="h-[20]" />
+        <spacer class="h-[20]" />
 
-    </native:column>
-</native:scroll-view>
+    </column>
+</scroll-view>

@@ -1,97 +1,97 @@
-<native:scroll-view class="w-full h-full bg-theme-surface safe-area">
-    <native:column class="w-full gap-0 ">
+<scroll-view class="w-full h-full bg-theme-surface safe-area">
+    <column class="w-full gap-0 ">
 
         {{-- Top Bar --}}
-        <native:row class="w-full px-4 py-3 items-center gap-3">
-            <native:column @press="back" class="w-[32] h-[32] rounded-full items-center justify-center">
-                <native:icon name="arrow_back" :size="22" color="#0F1419" />
-            </native:column>
-            <native:text class="text-[18] font-bold text-theme-on-surface">Post</native:text>
-        </native:row>
+        <row class="w-full px-4 py-3 items-center gap-3">
+            <column @press="back" class="w-[32] h-[32] rounded-full items-center justify-center">
+                <icon name="arrow_back" :size="22" color="#0F1419" />
+            </column>
+            <text class="text-[18] font-bold text-theme-on-surface">Post</text>
+        </row>
 
-        <native:divider class="w-full" />
+        <divider class="w-full" />
 
         {{-- Author Info --}}
-        <native:row class="w-full px-4 pt-3 gap-3 items-center">
-            <native:image
+        <row class="w-full px-4 pt-3 gap-3 items-center">
+            <image
                 @press="viewProfile({{ $tweet['userId'] }})"
                 src="{{ $tweet['user']['avatarUrl'] }}"
                 class="w-[44] h-[44] rounded-full"
                 :fit="2"
             />
-            <native:column @press="viewProfile({{ $tweet['userId'] }})">
-                <native:row class="items-center gap-1">
-                    <native:text class="text-[16] font-bold text-theme-on-surface">{{ $tweet['user']['name'] }}</native:text>
+            <column @press="viewProfile({{ $tweet['userId'] }})">
+                <row class="items-center gap-1">
+                    <text class="text-[16] font-bold text-theme-on-surface">{{ $tweet['user']['name'] }}</text>
                     @if ($tweet['user']['isVerified'])
-                        <native:icon name="verified" :size="16" color="#1D9BF0" />
+                        <icon name="verified" :size="16" color="#1D9BF0" />
                     @endif
-                </native:row>
-                <native:text class="text-[14] text-[#536471]">{{ $tweet['user']['handle'] }}</native:text>
-            </native:column>
-        </native:row>
+                </row>
+                <text class="text-[14] text-[#536471]">{{ $tweet['user']['handle'] }}</text>
+            </column>
+        </row>
 
         {{-- Tweet Text --}}
-        <native:column class="w-full px-4 pt-3">
-            <native:text class="text-[17] text-theme-on-surface">{{ $tweet['text'] }}</native:text>
-        </native:column>
+        <column class="w-full px-4 pt-3">
+            <text class="text-[17] text-theme-on-surface">{{ $tweet['text'] }}</text>
+        </column>
 
         {{-- Optional Image --}}
         @if ($tweet['imageUrl'])
-            <native:column class="w-full px-4 pt-3">
-                <native:image
+            <column class="w-full px-4 pt-3">
+                <image
                     src="{{ $tweet['imageUrl'] }}"
                     class="w-full h-[220] rounded-xl"
                     :fit="2"
                 />
-            </native:column>
+            </column>
         @endif
 
         {{-- Timestamp --}}
-        <native:column class="w-full px-4 pt-3 pb-3">
-            <native:text class="text-[14] text-[#536471]">{{ $tweet['time'] }} ago</native:text>
-        </native:column>
+        <column class="w-full px-4 pt-3 pb-3">
+            <text class="text-[14] text-[#536471]">{{ $tweet['time'] }} ago</text>
+        </column>
 
-        <native:divider class="w-full" />
+        <divider class="w-full" />
 
         {{-- Engagement Stats --}}
-        <native:row class="w-full px-4 py-3 gap-4">
-            <native:row class="items-center gap-1">
-                <native:text class="text-[14] font-bold text-theme-on-surface">{{ $retweetFormatted }}</native:text>
-                <native:text class="text-[14] text-[#536471]">Reposts</native:text>
-            </native:row>
-            <native:row class="items-center gap-1">
-                <native:text class="text-[14] font-bold text-theme-on-surface">{{ $likeFormatted }}</native:text>
-                <native:text class="text-[14] text-[#536471]">Likes</native:text>
-            </native:row>
-        </native:row>
+        <row class="w-full px-4 py-3 gap-4">
+            <row class="items-center gap-1">
+                <text class="text-[14] font-bold text-theme-on-surface">{{ $retweetFormatted }}</text>
+                <text class="text-[14] text-[#536471]">Reposts</text>
+            </row>
+            <row class="items-center gap-1">
+                <text class="text-[14] font-bold text-theme-on-surface">{{ $likeFormatted }}</text>
+                <text class="text-[14] text-[#536471]">Likes</text>
+            </row>
+        </row>
 
-        <native:divider class="w-full" />
+        <divider class="w-full" />
 
         {{-- Action Bar --}}
-        <native:row class="w-full px-8 py-3 justify-between items-center">
-            <native:icon name="chat_bubble_outline" :size="22" color="#536471" />
-            <native:column @press="toggleRetweet">
-                <native:icon name="repeat" :size="22" color="{{ $isRetweeted ? '#00BA7C' : '#536471' }}" />
-            </native:column>
-            <native:column @press="toggleLike">
-                <native:icon
+        <row class="w-full px-8 py-3 justify-between items-center">
+            <icon name="chat_bubble_outline" :size="22" color="#536471" />
+            <column @press="toggleRetweet">
+                <icon name="repeat" :size="22" color="{{ $isRetweeted ? '#00BA7C' : '#536471' }}" />
+            </column>
+            <column @press="toggleLike">
+                <icon
                     name="{{ $isLiked ? 'favorite' : 'favorite_border' }}"
                     :size="22"
                     color="{{ $isLiked ? '#F91880' : '#536471' }}"
                 />
-            </native:column>
-            <native:icon name="bookmark_border" :size="22" color="#536471" />
-            <native:icon name="share" :size="22" color="#536471" />
-        </native:row>
+            </column>
+            <icon name="bookmark_border" :size="22" color="#536471" />
+            <icon name="share" :size="22" color="#536471" />
+        </row>
 
-        <native:divider class="w-full" />
+        <divider class="w-full" />
 
         {{-- Replies --}}
         @foreach ($replies as $reply)
-            <native:column class="w-full">
-                <native:row class="w-full px-4 pt-3 pb-3 gap-3">
+            <column class="w-full">
+                <row class="w-full px-4 pt-3 pb-3 gap-3">
                     {{-- Reply Avatar --}}
-                    <native:image
+                    <image
                         @press="viewProfile({{ $reply['userId'] }})"
                         src="{{ $reply['user']['avatarUrl'] }}"
                         class="w-[36] h-[36] rounded-full"
@@ -99,35 +99,35 @@
                     />
 
                     {{-- Reply Content --}}
-                    <native:column class="flex-1 gap-1">
-                        <native:row class="items-center gap-1">
-                            <native:text class="text-[14] font-bold text-theme-on-surface">{{ $reply['user']['name'] }}</native:text>
+                    <column class="flex-1 gap-1">
+                        <row class="items-center gap-1">
+                            <text class="text-[14] font-bold text-theme-on-surface">{{ $reply['user']['name'] }}</text>
                             @if ($reply['user']['isVerified'])
-                                <native:icon name="verified" :size="14" color="#1D9BF0" />
+                                <icon name="verified" :size="14" color="#1D9BF0" />
                             @endif
-                            <native:text class="text-[13] text-[#536471]">{{ $reply['user']['handle'] }}</native:text>
-                            <native:text class="text-[13] text-[#536471]">· {{ $reply['time'] }}</native:text>
-                        </native:row>
+                            <text class="text-[13] text-[#536471]">{{ $reply['user']['handle'] }}</text>
+                            <text class="text-[13] text-[#536471]">· {{ $reply['time'] }}</text>
+                        </row>
 
-                        <native:text class="text-[14] text-theme-on-surface">{{ $reply['text'] }}</native:text>
+                        <text class="text-[14] text-theme-on-surface">{{ $reply['text'] }}</text>
 
                         {{-- Reply Actions --}}
-                        <native:row class="items-center gap-4 pt-1">
-                            <native:icon name="chat_bubble_outline" :size="16" color="#536471" />
-                            <native:icon name="repeat" :size="16" color="#536471" />
-                            <native:row class="items-center gap-1">
-                                <native:icon name="favorite_border" :size="16" color="#536471" />
-                                <native:text class="text-[12] text-[#536471]">{{ $reply['likeFormatted'] }}</native:text>
-                            </native:row>
-                            <native:icon name="share" :size="16" color="#536471" />
-                        </native:row>
-                    </native:column>
-                </native:row>
-                <native:divider class="w-full" />
-            </native:column>
+                        <row class="items-center gap-4 pt-1">
+                            <icon name="chat_bubble_outline" :size="16" color="#536471" />
+                            <icon name="repeat" :size="16" color="#536471" />
+                            <row class="items-center gap-1">
+                                <icon name="favorite_border" :size="16" color="#536471" />
+                                <text class="text-[12] text-[#536471]">{{ $reply['likeFormatted'] }}</text>
+                            </row>
+                            <icon name="share" :size="16" color="#536471" />
+                        </row>
+                    </column>
+                </row>
+                <divider class="w-full" />
+            </column>
         @endforeach
 
-        <native:spacer class="h-[20]" />
+        <spacer class="h-[20]" />
 
-    </native:column>
-</native:scroll-view>
+    </column>
+</scroll-view>

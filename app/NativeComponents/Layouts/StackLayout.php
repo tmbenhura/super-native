@@ -12,6 +12,10 @@ use Native\Mobile\Edge\NativeComponent;
  */
 class StackLayout extends NativeLayout
 {
+    public function usesNativeChrome(): bool
+    {
+        return true;
+    }
     public function navBar(NativeComponent $screen): ?NavBar
     {
         return NavBar::make()

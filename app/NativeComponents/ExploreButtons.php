@@ -18,6 +18,6 @@ class ExploreButtons extends NativeComponent
 
     public function render(): \Illuminate\View\View
     {
-        return view('explore.buttons');
+        return view('native.explore.buttons');
     }
 }

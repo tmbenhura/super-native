@@ -5,14 +5,14 @@ namespace App\NativeComponents;
 use Native\Mobile\Edge\NativeComponent;
 
 /**
- * Standalone demo of `<native:refreshable>` — pull-to-refresh on
+ * Standalone demo of `<refreshable>` — pull-to-refresh on
  * **non-list** scrollable content. Use this when you have custom
  * card layouts, settings sections, grids, etc., and want native
  * pull-to-refresh. For list-shaped content, prefer
- * `<native:list @refresh>` which already wraps `.refreshable`.
+ * `<list @refresh>` which already wraps `.refreshable`.
  *
  * Section 20 of the /animate page tried to host this inside an
- * outer `<native:scroll-view>` — SwiftUI's `.refreshable` only fires
+ * outer `<scroll-view>` — SwiftUI's `.refreshable` only fires
  * on the top-most ScrollView, so the inner one never saw the gesture.
  * Hence this dedicated page.
  */

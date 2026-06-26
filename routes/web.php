@@ -6,6 +6,8 @@ use App\NativeComponents\ButtonsForm;
 use App\NativeComponents\ComposeTweet;
 use App\NativeComponents\Counter;
 use App\NativeComponents\DemoLauncher;
+use App\NativeComponents\DrawerHome;
+use App\NativeComponents\DrawerReveal;
 use App\NativeComponents\ExploreButtons;
 use App\NativeComponents\ExploreCards;
 use App\NativeComponents\ExploreForms;
@@ -30,6 +32,9 @@ use App\NativeComponents\InstagramPost;
 use App\NativeComponents\InstagramProfile;
 use App\NativeComponents\InstagramSearch;
 use App\NativeComponents\ItemDetail;
+use App\NativeComponents\TransitionsDemo;
+use App\NativeComponents\TransitionDetail;
+use App\NativeComponents\Layouts\DrawerLayout;
 use App\NativeComponents\Layouts\NativeStackLayout;
 use App\NativeComponents\Layouts\NativeTabsLayout;
 use App\NativeComponents\Layouts\StackLayout;
@@ -92,6 +97,18 @@ Route::nativeGroup(TabsLayout::class, function () {
 Route::native('/item/{id}', ItemDetail::class)
     ->layout(StackLayout::class)
     ->name('item.detail');
+
+// ── Page-transition showcase ──
+// The index gets native chrome (TopBar back chevron + title) via StackLayout.
+// The DETAIL stays chrome-less, so navigating index → detail is a full
+// tree replace (chrome → no-chrome) that rides the router-level path — which
+// is where @navigate.<transition> animations actually play. (Native-chrome
+// push/pop uses its own built-in animation, so a chrome detail would hide
+// the transitions this demo exists to show.)
+Route::native('/transitions', TransitionsDemo::class)
+    ->layout(StackLayout::class)
+    ->name('transitions');
+Route::native('/transitions/detail', TransitionDetail::class)->name('transitions.detail');
 
 // ── Demo HOME routes — get a back-arrow TopBar via StackLayout ──
 Route::nativeGroup(StackLayout::class, function () {
@@ -193,6 +210,13 @@ Route::nativeGroup(NativeStackLayout::class, function () {
 Route::nativeGroup(NativeTabsLayout::class, function () {
     Route::native('/native-tabs', NativeTabsHome::class)->name('native.tabs.home');
     Route::native('/native-tabs/profile', NativeTabsProfile::class)->name('native.tabs.profile');
+});
+
+// ── Side drawer (X-style) — one Drawer declared on DrawerLayout, shown on
+// every screen routed under it. The two screens differ only by mode. ──
+Route::nativeGroup(DrawerLayout::class, function () {
+    Route::native('/drawer', DrawerHome::class)->name('drawer.home');
+    Route::native('/drawer/reveal', DrawerReveal::class)->name('drawer.reveal');
 });
 
 // ── Extras ──

@@ -48,7 +48,7 @@ return [
 
             // Surface variant = filled text fields, muted tonal surfaces.
             // on-surface-variant = muted label/hint text on those surfaces.
-            'surface-variant' => '#F1F5F9',
+            'surface-variant' => '#E5E7EB',
             'on-surface-variant' => '#475569',
 
             // Outline = neutral borders (text fields, dividers, cards).

@@ -12,7 +12,7 @@
         <divider />
 
         <column class="w-full p-4 rounded-xl bg-[#F1F5F9] items-center gap-2">
-            <native:icon :ios="\App\Icons\Ios::Person" :android="\App\Icons\Android::Person" class="text-2xl"></native:icon>
+            <icon :ios="\App\Icons\Ios::Person" :android="\App\Icons\Android::Person" class="text-2xl"></icon>
             <text class="text-base font-semibold text-[#0F172A]">Demo User</text>
             <text class="text-sm text-gray-500">demo@nativephp.com</text>
         </column>

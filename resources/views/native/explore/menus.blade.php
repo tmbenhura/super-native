@@ -58,62 +58,62 @@
     ];
 @endphp
 
-<native:scroll-view class="w-full h-full bg-theme-background">
-    <native:column class="w-full p-5 gap-6">
+<scroll-view class="w-full h-full bg-theme-background">
+    <column class="w-full p-5 gap-6">
 
         {{-- ── Pressable menu ── --}}
-        <native:column class="w-full gap-2">
-            <native:text class="text-lg font-semibold text-theme-on-background">Pressable + `:menu`</native:text>
+        <column class="w-full gap-2">
+            <text class="text-lg font-semibold text-theme-on-background">Pressable + `:menu`</text>
 
-            <native:row class="w-full gap-3 items-center justify-between">
-                <native:text class="text-sm text-theme-on-surface-variant">Tap the mic →</native:text>
-                <native:pressable
+            <row class="w-full gap-3 items-center justify-between">
+                <text class="text-sm text-theme-on-surface-variant">Tap the mic →</text>
+                <pressable
                     class="glass:interactive android:dark:bg-theme-surface-variant rounded-full p-3 items-center justify-center"
                     :menu="$pressableMenu">
-                    <native:icon name="mic" :size="22" />
-                </native:pressable>
-            </native:row>
-        </native:column>
+                    <icon name="mic" :size="22" />
+                </pressable>
+            </row>
+        </column>
 
-        <native:divider class="my-2"/>
+        <divider class="my-2"/>
 
         {{-- ── Button menu ── --}}
-        <native:column class="w-full gap-2">
-            <native:text class="text-lg font-semibold text-theme-on-background">Button + `:menu`</native:text>
-            <native:row class="w-full gap-2">
-                <native:button label="Export" :menu="$buttonMenu"/>
-            </native:row>
-        </native:column>
+        <column class="w-full gap-2">
+            <text class="text-lg font-semibold text-theme-on-background">Button + `:menu`</text>
+            <row class="w-full gap-2">
+                <button label="Export" :menu="$buttonMenu"/>
+            </row>
+        </column>
 
-        <native:divider class="my-2"/>
+        <divider class="my-2"/>
 
         {{-- ── ListItem trailing-menu ── --}}
-        <native:column class="w-full gap-2">
-            <native:text class="text-lg font-semibold text-theme-on-background">ListItem + `:trailing-menu`</native:text>
+        <column class="w-full gap-2">
+            <text class="text-lg font-semibold text-theme-on-background">ListItem + `:trailing-menu`</text>
 
-            <native:column class="w-full bg-theme-surface rounded-xl">
-                <native:list-item
+            <column class="w-full bg-theme-surface rounded-xl">
+                <list-item
                     headline="Sarah Miller"
                     supporting="Did you see the new design specs?"
                     leadingMonogram="SM"
                     leadingMonogramColor="#0EA5E9"
                     :trailing-menu="$listItemMenu"/>
-                <native:divider/>
-                <native:list-item
+                <divider/>
+                <list-item
                     headline="Design Team"
                     supporting="Alex: Looks good to me!"
                     leadingMonogram="DT"
                     leadingMonogramColor="#A855F7"
                     :trailing-menu="$listItemMenu"/>
-                <native:divider/>
-                <native:list-item
+                <divider/>
+                <list-item
                     headline="Marcus James"
                     supporting="Thanks for the heads up!"
                     leadingMonogram="MJ"
                     leadingMonogramColor="#10B981"
                     :trailing-menu="$listItemMenu"/>
-            </native:column>
-        </native:column>
+            </column>
+        </column>
 
-    </native:column>
-</native:scroll-view>
+    </column>
+</scroll-view>
