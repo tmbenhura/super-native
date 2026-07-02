@@ -2,11 +2,15 @@
 
 namespace App\NativeComponents;
 
+use Illuminate\View\View;
 use Native\Mobile\Edge\NativeComponent;
+use Native\Mobile\Facades\Camera;
 
 class Counter extends NativeComponent
 {
     public $count = 0;
+
+    public $photo = '';
 
     public function navTitle(): string
     {
@@ -23,7 +27,15 @@ class Counter extends NativeComponent
         $this->count--;
     }
 
-    public function render(): \Illuminate\View\View
+    public function testCamera()
+    {
+        Camera::getPhoto()->photoTaken(function ($event) {
+            $this->photo = $event->path;
+        });
+
+    }
+
+    public function render(): View
     {
         return view('native.counter');
     }

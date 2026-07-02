@@ -2,15 +2,15 @@
 
 namespace App\NativeComponents\SyncUpNative;
 
+use App\Icons\Android;
 use App\Icons\AndroidOutlined;
+use App\Icons\Ios;
 use App\NativeComponents\Concerns\HasSyncUpData;
 use Illuminate\View\View;
 use Native\Mobile\Edge\Layouts\Builders\NavAction;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Facades\Dialog;
-use App\Icons\Android;
-use App\Icons\Ios;
 
 class SyncUpNativeChat extends NativeComponent
 {
@@ -105,15 +105,30 @@ class SyncUpNativeChat extends NativeComponent
         $this->draft = '';
     }
 
-    public function attachFile(): void  { /* stub */ }
-    public function attachPhoto(): void { /* stub */ }
-    public function openEmoji(): void   { /* stub */ }
-    public function openMore(): void    { /* stub */ }
-    public function startCall(): void   {
+    public function attachFile(): void
+    { /* stub */
+    }
+
+    public function attachPhoto(): void
+    { /* stub */
+    }
+
+    public function openEmoji(): void
+    { /* stub */
+    }
+
+    public function openMore(): void
+    { /* stub */
+    }
+
+    public function startCall(): void
+    {
         Dialog::toast('Starting Call');
     }
-    public function startVideo(): void  {
-        Dialog::alert('Hello UK!', 'Thanks for having me!', ['Close']);
+
+    public function startVideo(): void
+    {
+        Dialog::alert('Hello My Friend Hello!', 'Thanks for having me!', ['Close']);
     }
 
     public function openMenu(): void
@@ -156,6 +171,7 @@ class SyncUpNativeChat extends NativeComponent
         if ($conv && ! $conv['isGroup']) {
             return self::suUser($conv['userId']);
         }
+
         return self::suUser(5);
     }
 

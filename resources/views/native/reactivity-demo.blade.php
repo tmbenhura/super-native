@@ -14,9 +14,9 @@
             </row>
 
             <row class="gap-3 mt-2">
-                <button @press="decrement" class="w-full text-xl">-1</button>
+                <button @press="decrement" >-1</button>
                 <spacer />
-                <button @press="increment" class="w-full text-xl">+1</button>
+                <button @press="increment" >+1</button>
             </row>
         </column>
 
@@ -25,7 +25,7 @@
             <text class="text-2xl font-bold uppercase text-theme-on-surface-variant">Native Polling</text>
 
             <column class="items-center justify-center py-4">
-                <text  native:poll.200ms class="text-xl font-bold text-violet-500">{{ now()->timezone('Europe/London')->format('D F j, Y H:i:s T') }}</text>
+                <text native:poll.200ms class="text-xl font-bold text-violet-500">{{ now()->timezone('America/New_York')->format('D F j, Y H:i:s T') }}</text>
             </column>
         </column>
     </column>

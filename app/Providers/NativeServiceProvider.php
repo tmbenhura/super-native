@@ -3,9 +3,13 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Native\Mobile\Providers\CameraServiceProvider;
 use Native\Mobile\Providers\DeviceServiceProvider;
 use Native\Mobile\Providers\DialogServiceProvider;
+use Native\Mobile\Providers\GeolocationServiceProvider;
+use Native\Mobile\Providers\SecureStorageServiceProvider;
 use Nativephp\NativeUi\NativeUIServiceProvider;
+use Nativephp\Vibe\VibeServiceProvider;
 
 class NativeServiceProvider extends ServiceProvider
 {
@@ -45,6 +49,11 @@ class NativeServiceProvider extends ServiceProvider
             //            \Native\Mobile\Providers\TimerServiceProvider::class,
             //            \Native\Mobile\Providers\DebugLogServiceProvider::class,
             //            \NativePhp\SkiaCanvas\SkiaCanvasServiceProvider::class,
+            CameraServiceProvider::class,
+            VibeServiceProvider::class,
+            SecureStorageServiceProvider::class,
+            GeolocationServiceProvider::class,
+
         ];
     }
 }

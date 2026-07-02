@@ -8,9 +8,20 @@
         "framework"
     ],
     "repositories": {
+        "geolocation": {
+            "type": "path",
+            "url": "../Plugins/nativephp/geolocation",
+            "options": {
+                "symlink": true
+            }
+        },
+        "mobile": {
+            "type": "path",
+            "url": "../mobile-air"
+        },
         "ui": {
-            "type": "vcs",
-            "url": "https://github.com/nativephp/native-ui"
+            "type": "path",
+            "url": "../plugins/nativephp/native-ui"
         },
         "plugins": {
             "type": "composer",
@@ -20,16 +31,16 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
-        "laravel/fortify": "^1.30",
         "laravel/framework": "^13.0",
         "laravel/tinker": "^3.0",
-        "livewire/livewire": "^4.0",
-        "nativephp/native-ui": "*",
-        "nativephp/mobile": "dev-element",
+        "nativephp/mobile": "*",
+        "nativephp/mobile-camera": "*",
         "nativephp/mobile-device": "^1.0",
-        "nativephp/mobile-dialog": "^1.0"
+        "nativephp/mobile-dialog": "^1.0",
+        "nativephp/mobile-secure-storage": "^1.0",
+        "nativephp/native-ui": "*",
+        "nativephp/mobile-geolocation": "dev-main"
     },
-
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel/boost": "^2.0",

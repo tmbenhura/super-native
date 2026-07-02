@@ -16,6 +16,43 @@
 
         <divider class="my-2" />
 
+        {{-- TEXT STYLES --}}
+        <text class="text-lg font-semibold text-theme-on-background">Text styles</text>
+        <column class="w-full gap-2">
+            <text class="text-theme-on-surface-variant italic">italic — The quick brown fox</text>
+            <text class="text-theme-on-surface-variant underline">underline — The quick brown fox</text>
+            <text class="text-theme-on-surface-variant line-through">line-through — The quick brown fox</text>
+            <text class="text-theme-on-surface-variant underline line-through">underline line-through (combined)</text>
+            <text class="text-theme-on-background italic underline font-semibold">italic + underline + semibold</text>
+        </column>
+
+        {{-- FONT FAMILY --}}
+        <text class="text-base font-semibold text-theme-on-background mt-2">Font family</text>
+        <column class="w-full gap-2">
+            <text class="text-theme-on-surface-variant font-sans">font-sans — The quick brown fox 0123</text>
+            <text class="text-theme-on-surface-variant font-serif">font-serif — The quick brown fox 0123</text>
+            <text class="text-theme-on-surface-variant font-mono">font-mono — The quick brown fox 0123</text>
+        </column>
+
+        {{-- TEXT TRANSFORM --}}
+        <text class="text-base font-semibold text-theme-on-background mt-2">Text transform</text>
+        <column class="w-full gap-2">
+            <text class="text-theme-on-surface-variant uppercase">uppercase — the quick brown fox</text>
+            <text class="text-theme-on-surface-variant lowercase">LOWERCASE — The Quick Brown Fox</text>
+            <text class="text-theme-on-surface-variant capitalize">capitalize — the quick brown fox</text>
+        </column>
+
+        {{-- LETTER SPACING --}}
+        <text class="text-base font-semibold text-theme-on-background mt-2">Letter spacing (tracking)</text>
+        <column class="w-full gap-2">
+            <text class="text-theme-on-surface-variant tracking-tighter">tracking-tighter — The quick brown fox</text>
+            <text class="text-theme-on-surface-variant tracking-normal">tracking-normal — The quick brown fox</text>
+            <text class="text-theme-on-surface-variant tracking-wide">tracking-wide — The quick brown fox</text>
+            <text class="text-theme-on-surface-variant tracking-widest">tracking-widest — The quick brown fox</text>
+        </column>
+
+        <divider class="my-2" />
+
         {{-- THEME TOKENS --}}
         <text class="text-lg font-semibold text-theme-on-background">Theme tokens</text>
         <text class="text-sm text-theme-on-surface-variant">All colors below come from the active theme. Toggle system dark mode to see them flip.</text>

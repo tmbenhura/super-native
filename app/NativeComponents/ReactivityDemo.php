@@ -19,7 +19,7 @@ class ReactivityDemo extends NativeComponent
 
     public function mount(): void
     {
-        sleep(1);
+        sleep(2);
     }
 
     protected function placeholder(): View
