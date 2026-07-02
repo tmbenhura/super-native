@@ -16,12 +16,12 @@
             }
         },
         "mobile": {
-            "type": "path",
-            "url": "../mobile-air"
+            "type": "vcs",
+            "url": "https://github.com/nativephp/mobile-air"
         },
         "ui": {
-            "type": "path",
-            "url": "../plugins/nativephp/native-ui"
+            "type": "vcs",
+            "url": "https://github.com/nativephp/native-ui"
         },
         "plugins": {
             "type": "composer",
@@ -33,7 +33,7 @@
         "php": "^8.4",
         "laravel/framework": "^13.0",
         "laravel/tinker": "^3.0",
-        "nativephp/mobile": "*",
+        "nativephp/mobile": "dev-element",
         "nativephp/mobile-camera": "*",
         "nativephp/mobile-device": "^1.0",
         "nativephp/mobile-dialog": "^1.0",

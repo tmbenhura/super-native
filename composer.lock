@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b96d81d2da5c4c863093850927a9aadc",
+    "content-hash": "65e5b8ec8d1e6618d6c00d91243a0bda",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2359,10 +2359,16 @@
         {
             "name": "nativephp/mobile",
             "version": "dev-element",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NativePHP/mobile-air.git",
+                "reference": "50bd876fd6820a1b3303fe833b887b22b8791b06"
+            },
             "dist": {
-                "type": "path",
-                "url": "../mobile-air",
-                "reference": "e7bcb59bea4f50b8654af7e843059956ce4a741c"
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/mobile-air/zipball/50bd876fd6820a1b3303fe833b887b22b8791b06",
+                "reference": "50bd876fd6820a1b3303fe833b887b22b8791b06",
+                "shasum": ""
             },
             "require": {
                 "endroid/qr-code": "^6.1.3",
@@ -2453,9 +2459,11 @@
                 "laravel",
                 "nativephp"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/NativePHP/mobile-air/tree/element",
+                "issues": "https://github.com/NativePHP/mobile-air/issues"
+            },
+            "time": "2026-07-02T22:59:31+00:00"
         },
         {
             "name": "nativephp/mobile-camera",
@@ -2702,10 +2710,16 @@
         {
             "name": "nativephp/native-ui",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NativePHP/native-ui.git",
+                "reference": "f4202eed83d024a8fda8a8cbdc4d0853dac83328"
+            },
             "dist": {
-                "type": "path",
-                "url": "../plugins/nativephp/native-ui",
-                "reference": "2ac3c572bfa3bd38cf0975b474aab1b2c24e89d4"
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/native-ui/zipball/f4202eed83d024a8fda8a8cbdc4d0853dac83328",
+                "reference": "f4202eed83d024a8fda8a8cbdc4d0853dac83328",
+                "shasum": ""
             },
             "require": {
                 "nativephp/mobile": "*",
@@ -2714,6 +2728,7 @@
             "require-dev": {
                 "pestphp/pest": "^3.0"
             },
+            "default-branch": true,
             "type": "nativephp-ui-plugin",
             "extra": {
                 "laravel": {
@@ -2745,9 +2760,11 @@
                 }
             ],
             "description": "A NativePHP Mobile plugin",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/NativePHP/native-ui/tree/main",
+                "issues": "https://github.com/NativePHP/native-ui/issues"
+            },
+            "time": "2026-07-02T23:00:16+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -10810,6 +10827,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "nativephp/mobile": 20,
         "nativephp/mobile-geolocation": 20
     },
     "prefer-stable": true,
