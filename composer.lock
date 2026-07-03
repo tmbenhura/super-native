@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d43a833786f9118dff15cac79e1d676",
+    "content-hash": "5bcadcd6df9e47161cfcaa9c80b2edf2",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2611,108 +2611,6 @@
                 "source": "https://github.com/NativePHP/mobile-dialog/tree/1.0.0"
             },
             "time": "2026-01-19T23:53:05+00:00"
-        },
-        {
-            "name": "nativephp/mobile-geolocation",
-            "version": "dev-streaming",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:NativePHP/mobile-geolocation.git",
-                "reference": "bc3822b2dce21552d935c424c1f88bbfa6ae7bbf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile-geolocation/zipball/bc3822b2dce21552d935c424c1f88bbfa6ae7bbf",
-                "reference": "bc3822b2dce21552d935c424c1f88bbfa6ae7bbf",
-                "shasum": ""
-            },
-            "require": {
-                "nativephp/mobile": "*",
-                "php": "^8.3"
-            },
-            "require-dev": {
-                "pestphp/pest": "^3.0"
-            },
-            "type": "nativephp-plugin",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Native\\Mobile\\Providers\\GeolocationServiceProvider"
-                    ]
-                },
-                "nativephp": {
-                    "manifest": "nativephp.json"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Native\\Mobile\\Providers\\": "src/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "NativePHP",
-                    "email": "support@nativephp.com"
-                }
-            ],
-            "description": "Geolocation plugin for NativePHP Mobile - GPS location and permission handling",
-            "support": {
-                "source": "https://github.com/NativePHP/mobile-geolocation/tree/streaming",
-                "issues": "https://github.com/NativePHP/mobile-geolocation/issues"
-            },
-            "time": "2026-07-03T03:54:04+00:00"
-        },
-        {
-            "name": "nativephp/mobile-secure-storage",
-            "version": "1.0.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://plugins.nativephp.com/dist/nativephp/mobile-secure-storage/nativephp-mobile-secure-storage-0a19ca89dddabc0c9b0d4c07d5bd27fe0d8a72b2-zip-ce8125.zip",
-                "reference": "0a19ca89dddabc0c9b0d4c07d5bd27fe0d8a72b2",
-                "shasum": "14dea1e7c477dfc1c59fff67ca664f197e3a63b6"
-            },
-            "require": {
-                "nativephp/mobile": "*",
-                "php": "^8.2"
-            },
-            "type": "nativephp-plugin",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Native\\Mobile\\Providers\\SecureStorageServiceProvider"
-                    ]
-                },
-                "nativephp": {
-                    "manifest": "nativephp.json"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Native\\Mobile\\Providers\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "NativePHP",
-                    "email": "support@nativephp.com"
-                }
-            ],
-            "description": "Secure storage plugin for NativePHP Mobile (Keychain/EncryptedSharedPreferences)",
-            "support": {
-                "issues": "https://github.com/NativePHP/mobile-secure-storage/issues"
-            },
-            "time": "2026-01-19T23:52:49+00:00"
         },
         {
             "name": "nativephp/native-ui",
@@ -10834,8 +10732,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "nativephp/mobile": 20,
-        "nativephp/mobile-geolocation": 20
+        "nativephp/mobile": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
