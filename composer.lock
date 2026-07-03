@@ -2362,12 +2362,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/mobile-air.git",
-                "reference": "bfcb038b2600a08e49360b68fa7677aa107f073f"
+                "reference": "fd61339340a51a2266bee49a4179663826697882"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile-air/zipball/bfcb038b2600a08e49360b68fa7677aa107f073f",
-                "reference": "bfcb038b2600a08e49360b68fa7677aa107f073f",
+                "url": "https://api.github.com/repos/NativePHP/mobile-air/zipball/fd61339340a51a2266bee49a4179663826697882",
+                "reference": "fd61339340a51a2266bee49a4179663826697882",
                 "shasum": ""
             },
             "require": {
@@ -2463,7 +2463,7 @@
                 "source": "https://github.com/NativePHP/mobile-air/tree/element",
                 "issues": "https://github.com/NativePHP/mobile-air/issues"
             },
-            "time": "2026-07-03T03:43:56+00:00"
+            "time": "2026-07-03T03:57:01+00:00"
         },
         {
             "name": "nativephp/mobile-camera",
@@ -2720,12 +2720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/native-ui.git",
-                "reference": "f4202eed83d024a8fda8a8cbdc4d0853dac83328"
+                "reference": "2913a0c0f4b72f583339845d719a34f8181e2570"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/native-ui/zipball/f4202eed83d024a8fda8a8cbdc4d0853dac83328",
-                "reference": "f4202eed83d024a8fda8a8cbdc4d0853dac83328",
+                "url": "https://api.github.com/repos/NativePHP/native-ui/zipball/2913a0c0f4b72f583339845d719a34f8181e2570",
+                "reference": "2913a0c0f4b72f583339845d719a34f8181e2570",
                 "shasum": ""
             },
             "require": {
@@ -2771,7 +2771,7 @@
                 "source": "https://github.com/NativePHP/native-ui/tree/main",
                 "issues": "https://github.com/NativePHP/native-ui/issues"
             },
-            "time": "2026-07-02T23:00:16+00:00"
+            "time": "2026-07-03T03:57:39+00:00"
         },
         {
             "name": "nesbot/carbon",
