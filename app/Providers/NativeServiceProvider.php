@@ -9,7 +9,6 @@ use Native\Mobile\Providers\DialogServiceProvider;
 use Native\Mobile\Providers\GeolocationServiceProvider;
 use Native\Mobile\Providers\SecureStorageServiceProvider;
 use Nativephp\NativeUi\NativeUIServiceProvider;
-use Nativephp\Vibe\VibeServiceProvider;
 
 class NativeServiceProvider extends ServiceProvider
 {
@@ -50,7 +49,7 @@ class NativeServiceProvider extends ServiceProvider
             //            \Native\Mobile\Providers\DebugLogServiceProvider::class,
             //            \NativePhp\SkiaCanvas\SkiaCanvasServiceProvider::class,
             CameraServiceProvider::class,
-            VibeServiceProvider::class,
+            //            \NativePHP\Vibe\VibeServiceProvider::class, // parked — vibe package currently uninstalled
             SecureStorageServiceProvider::class,
             GeolocationServiceProvider::class,
 

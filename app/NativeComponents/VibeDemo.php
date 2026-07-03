@@ -4,8 +4,8 @@ namespace App\NativeComponents;
 
 use Illuminate\View\View;
 use Native\Mobile\Edge\NativeComponent;
-use Nativephp\Vibe\Attributes\OnEcho;
-use Nativephp\Vibe\Facades\Vibe;
+use NativePHP\Vibe\Attributes\OnEcho;
+use NativePHP\Vibe\Facades\Vibe;
 
 /**
  * Vibe POC — receive live broadcast events over the websocket.

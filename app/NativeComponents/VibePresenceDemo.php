@@ -6,8 +6,8 @@ use App\NativeComponents\Concerns\AuthenticatesWithVibe;
 use Illuminate\View\View;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Facades\Dialog;
-use Nativephp\Vibe\Facades\Vibe;
-use Nativephp\Vibe\PendingSubscription;
+use NativePHP\Vibe\Facades\Vibe;
+use NativePHP\Vibe\PendingSubscription;
 
 /**
  * Vibe POC — PRESENCE channel: who's online + live join/leave + peer chat.

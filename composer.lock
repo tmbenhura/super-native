@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65e5b8ec8d1e6618d6c00d91243a0bda",
+    "content-hash": "0d43a833786f9118dff15cac79e1d676",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2362,12 +2362,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/mobile-air.git",
-                "reference": "50bd876fd6820a1b3303fe833b887b22b8791b06"
+                "reference": "bfcb038b2600a08e49360b68fa7677aa107f073f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile-air/zipball/50bd876fd6820a1b3303fe833b887b22b8791b06",
-                "reference": "50bd876fd6820a1b3303fe833b887b22b8791b06",
+                "url": "https://api.github.com/repos/NativePHP/mobile-air/zipball/bfcb038b2600a08e49360b68fa7677aa107f073f",
+                "reference": "bfcb038b2600a08e49360b68fa7677aa107f073f",
                 "shasum": ""
             },
             "require": {
@@ -2463,7 +2463,7 @@
                 "source": "https://github.com/NativePHP/mobile-air/tree/element",
                 "issues": "https://github.com/NativePHP/mobile-air/issues"
             },
-            "time": "2026-07-02T22:59:31+00:00"
+            "time": "2026-07-03T03:43:56+00:00"
         },
         {
             "name": "nativephp/mobile-camera",
@@ -2614,11 +2614,17 @@
         },
         {
             "name": "nativephp/mobile-geolocation",
-            "version": "dev-main",
+            "version": "dev-streaming",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:NativePHP/mobile-geolocation.git",
+                "reference": "bc3822b2dce21552d935c424c1f88bbfa6ae7bbf"
+            },
             "dist": {
-                "type": "path",
-                "url": "../Plugins/nativephp/geolocation",
-                "reference": "3fe651d9a84eff9b6df15a3b3e9ee0fcd48a82b5"
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/mobile-geolocation/zipball/bc3822b2dce21552d935c424c1f88bbfa6ae7bbf",
+                "reference": "bc3822b2dce21552d935c424c1f88bbfa6ae7bbf",
+                "shasum": ""
             },
             "require": {
                 "nativephp/mobile": "*",
@@ -2658,10 +2664,11 @@
                 }
             ],
             "description": "Geolocation plugin for NativePHP Mobile - GPS location and permission handling",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/NativePHP/mobile-geolocation/tree/streaming",
+                "issues": "https://github.com/NativePHP/mobile-geolocation/issues"
+            },
+            "time": "2026-07-03T03:54:04+00:00"
         },
         {
             "name": "nativephp/mobile-secure-storage",

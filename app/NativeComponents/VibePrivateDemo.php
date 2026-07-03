@@ -5,7 +5,7 @@ namespace App\NativeComponents;
 use App\NativeComponents\Concerns\AuthenticatesWithVibe;
 use Illuminate\View\View;
 use Native\Mobile\Edge\NativeComponent;
-use Nativephp\Vibe\Facades\Vibe;
+use NativePHP\Vibe\Facades\Vibe;
 
 /**
  * Vibe POC — receive events on a PRIVATE channel (auth required).

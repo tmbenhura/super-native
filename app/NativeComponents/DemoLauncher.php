@@ -48,7 +48,7 @@ class DemoLauncher extends NativeComponent
                 //                ['id' => 'vibe', 'title' => 'Vibe — Live Events', 'subtitle' => 'Websocket broadcast events (Vask/Reverb) into a component', 'icon' => 'antenna.radiowaves.left.and.right', 'color' => '#22C55E', 'url' => '/vibe'],
                 //                ['id' => 'vibe-private', 'title' => 'Vibe — Private Channel', 'subtitle' => 'Authenticated private-channel subscription (bearer + /broadcasting/auth)', 'icon' => 'lock.fill', 'color' => '#16A34A', 'url' => '/vibe-private'],
                 //                ['id' => 'vibe-presence', 'title' => 'Vibe — Presence', 'subtitle' => 'Who\'s online + live join/leave (here/joining/leaving)', 'icon' => 'person.2.fill', 'color' => '#15803D', 'url' => '/vibe-presence'],
-                //                ['id' => 'geo-watch', 'title' => 'Geo — Watch Position', 'subtitle' => 'Streaming GPS fixes (watchPosition/clearWatch)', 'icon' => 'location.fill', 'color' => '#F97316', 'url' => '/geo-watch'],
+                                ['id' => 'geo-watch', 'title' => 'Geo — Watch Position', 'subtitle' => 'Streaming GPS fixes (watchPosition/clearWatch)', 'icon' => 'location.fill', 'color' => '#F97316', 'url' => '/geo-watch'],
             ],
         ],
         [
