@@ -3,7 +3,7 @@
         {{ $count }}
     </text>
     @if($photo)
-        <image :src="photo" class="w-full h-full" />
+        <image :src="$photo" class="w-full h-full" />
     @endif
     <row class="gap-8 ">
         <pressable @press="decrement" class="text-center px-8 py-4 shadow rounded bg-theme-secondary">
