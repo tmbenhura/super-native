@@ -1,4 +1,4 @@
-<scroll-view class="w-full h-full bg-white ">
+<scroll-view class="w-full h-full bg-theme-background ">
     <column class="w-full gap-0">
 
         {{-- Hero Image with Navigation --}}
@@ -49,17 +49,17 @@
 
         {{-- Title --}}
         <column class="w-full px-5 pt-5 gap-1">
-            <text class="text-[24] font-bold text-[#222222]">{{ $listing['title'] }}</text>
+            <text class="text-[24] font-bold text-theme-on-background">{{ $listing['title'] }}</text>
         </column>
 
         {{-- Rating + Reviews Row --}}
         <row class="w-full px-5 pt-2 items-center gap-1">
             <icon name="star" :size="14" color="#222222" />
-            <text class="text-[14] font-semibold text-[#222222]">{{ $listing['rating'] }}</text>
-            <text class="text-[14] text-[#222222]"> · </text>
-            <text class="text-[14] font-semibold text-[#222222]">{{ $listing['reviewCount'] }} reviews</text>
-            <text class="text-[14] text-[#222222]"> · </text>
-            <text class="text-[14] font-semibold text-[#222222]">{{ $listing['location'] }}</text>
+            <text class="text-[14] font-semibold text-theme-on-background">{{ $listing['rating'] }}</text>
+            <text class="text-[14] text-theme-on-background"> · </text>
+            <text class="text-[14] font-semibold text-theme-on-background">{{ $listing['reviewCount'] }} reviews</text>
+            <text class="text-[14] text-theme-on-background"> · </text>
+            <text class="text-[14] font-semibold text-theme-on-background">{{ $listing['location'] }}</text>
         </row>
 
         <divider class="w-full mx-5 mt-5 mb-0" color="#EBEBEB" />
@@ -67,9 +67,9 @@
         {{-- Property Type + Host --}}
         <row class="w-full px-5 py-5 items-center justify-between">
             <column class="w-[260] gap-1">
-                <text class="text-[20] font-semibold text-[#222222]">{{ $listing['type'] }} hosted by {{ $listing['host'] }}</text>
+                <text class="text-[20] font-semibold text-theme-on-background">{{ $listing['type'] }} hosted by {{ $listing['host'] }}</text>
                 <row class="items-center gap-0">
-                    <text class="text-[14] text-[#717171]">{{ $listing['guests'] }} guests · {{ $listing['bedrooms'] }} {{ $listing['bedrooms'] === 1 ? 'bedroom' : 'bedrooms' }} · {{ $listing['beds'] }} {{ $listing['beds'] === 1 ? 'bed' : 'beds' }} · {{ $bathroomsFormatted }} {{ $listing['bathrooms'] == 1 ? 'bath' : 'baths' }}</text>
+                    <text class="text-[14] text-theme-on-surface-variant">{{ $listing['guests'] }} guests · {{ $listing['bedrooms'] }} {{ $listing['bedrooms'] === 1 ? 'bedroom' : 'bedrooms' }} · {{ $listing['beds'] }} {{ $listing['beds'] === 1 ? 'bed' : 'beds' }} · {{ $bathroomsFormatted }} {{ $listing['bathrooms'] == 1 ? 'bath' : 'baths' }}</text>
                 </row>
             </column>
             <stack class="w-[56] h-[56]">
@@ -80,7 +80,7 @@
                 />
                 @if ($listing['hostIsSuperhost'])
                     <column class="w-[56] h-[56] items-end justify-end">
-                        <column class="w-[20] h-[20] rounded-full bg-[#FF385C] items-center justify-center">
+                        <column class="w-[20] h-[20] rounded-full bg-theme-secondary items-center justify-center">
                             <icon name="verified" :size="14" color="#FFFFFF" />
                         </column>
                     </column>
@@ -96,9 +96,9 @@
                 <row class="w-full items-start gap-4">
                     <icon name="{{ $highlight['icon'] }}" :size="26" color="#222222" />
                     <column class="w-[280] gap-1">
-                        <text class="text-[14] font-semibold text-[#222222]">{{ $highlight['title'] }}</text>
+                        <text class="text-[14] font-semibold text-theme-on-background">{{ $highlight['title'] }}</text>
                         @if ($highlight['subtitle'] !== '')
-                            <text class="text-[13] text-[#717171]">{{ $highlight['subtitle'] }}</text>
+                            <text class="text-[13] text-theme-on-surface-variant">{{ $highlight['subtitle'] }}</text>
                         @endif
                     </column>
                 </row>
@@ -109,10 +109,10 @@
 
         {{-- Description --}}
         <column class="w-full px-5 py-5 gap-3">
-            <text class="text-[14] text-[#222222]" :maxLines="$showFullDescription ? 50 : 4">{{ $listing['description'] }}</text>
+            <text class="text-[14] text-theme-on-background" :maxLines="$showFullDescription ? 50 : 4">{{ $listing['description'] }}</text>
             <column @press="toggleDescription">
                 <row class="items-center gap-1">
-                    <text class="text-[14] font-semibold text-[#222222]">{{ $showFullDescription ? 'Show less' : 'Show more' }}</text>
+                    <text class="text-[14] font-semibold text-theme-on-background">{{ $showFullDescription ? 'Show less' : 'Show more' }}</text>
                     <icon name="{{ $showFullDescription ? 'expand_less' : 'chevron_right' }}" :size="16" color="#222222" />
                 </row>
             </column>
@@ -122,16 +122,16 @@
 
         {{-- Amenities --}}
         <column class="w-full px-5 py-5 gap-4">
-            <text class="text-[20] font-semibold text-[#222222]">What this place offers</text>
+            <text class="text-[20] font-semibold text-theme-on-background">What this place offers</text>
             @foreach (array_slice($listing['amenities'], 0, 6) as $amenity)
                 <row class="w-full items-center gap-4 py-1">
                     <icon name="{{ $amenity['icon'] }}" :size="24" color="#222222" />
-                    <text class="text-[15] text-[#222222]">{{ $amenity['label'] }}</text>
+                    <text class="text-[15] text-theme-on-background">{{ $amenity['label'] }}</text>
                 </row>
             @endforeach
             @if (count($listing['amenities']) > 6)
-                <column class="w-full py-3 rounded-lg items-center border border-[#222222]">
-                    <text class="text-[14] font-semibold text-[#222222]">Show all {{ count($listing['amenities']) }} amenities</text>
+                <column class="w-full py-3 rounded-lg items-center border border-theme-outline">
+                    <text class="text-[14] font-semibold text-theme-on-background">Show all {{ count($listing['amenities']) }} amenities</text>
                 </column>
             @endif
         </column>
@@ -142,15 +142,15 @@
         <column class="w-full px-5 pt-5 pb-2 gap-2">
             <row class="items-center gap-2">
                 <icon name="star" :size="18" color="#222222" />
-                <text class="text-[20] font-semibold text-[#222222]">{{ $listing['rating'] }} · {{ $listing['reviewCount'] }} reviews</text>
+                <text class="text-[20] font-semibold text-theme-on-background">{{ $listing['rating'] }} · {{ $listing['reviewCount'] }} reviews</text>
             </row>
         </column>
 
         <scroll-view horizontal>
             <row class="gap-3 px-5 pt-2 pb-5">
                 @foreach ($listingReviews as $review)
-                    <column class="w-[280] p-4 rounded-xl gap-3 border border-[#EBEBEB]">
-                        <text class="text-[14] text-[#222222]" :maxLines="4">{{ $review['text'] }}</text>
+                    <column class="w-[280] p-4 rounded-xl gap-3 border border-theme-outline">
+                        <text class="text-[14] text-theme-on-background" :maxLines="4">{{ $review['text'] }}</text>
                         <spacer />
                         <row class="items-center gap-3">
                             <image
@@ -159,8 +159,8 @@
                                 :fit="2"
                             />
                             <column>
-                                <text class="text-[14] font-semibold text-[#222222]">{{ $review['username'] }}</text>
-                                <text class="text-[12] text-[#717171]">{{ $review['date'] }}</text>
+                                <text class="text-[14] font-semibold text-theme-on-background">{{ $review['username'] }}</text>
+                                <text class="text-[12] text-theme-on-surface-variant">{{ $review['date'] }}</text>
                             </column>
                         </row>
                     </column>
@@ -172,10 +172,10 @@
 
         {{-- Where You'll Be --}}
         <column class="w-full px-5 py-5 gap-3">
-            <text class="text-[20] font-semibold text-[#222222]">Where you'll be</text>
-            <column class="w-full h-[180] bg-[#F7F7F7] rounded-xl items-center justify-center">
+            <text class="text-[20] font-semibold text-theme-on-background">Where you'll be</text>
+            <column class="w-full h-[180] bg-theme-surface-variant rounded-xl items-center justify-center">
                 <icon name="map" :size="48" color="#B0B0B0" />
-                <text class="text-[13] text-[#717171] pt-2">{{ $listing['location'] }}</text>
+                <text class="text-[13] text-theme-on-surface-variant pt-2">{{ $listing['location'] }}</text>
             </column>
         </column>
 
@@ -192,21 +192,21 @@
                     />
                     @if ($listing['hostIsSuperhost'])
                         <column class="w-[56] h-[56] items-end justify-end">
-                            <column class="w-[20] h-[20] rounded-full bg-[#FF385C] items-center justify-center">
+                            <column class="w-[20] h-[20] rounded-full bg-theme-secondary items-center justify-center">
                                 <icon name="verified" :size="14" color="#FFFFFF" />
                             </column>
                         </column>
                     @endif
                 </stack>
                 <column>
-                    <text class="text-[18] font-semibold text-[#222222]">Hosted by {{ $listing['host'] }}</text>
-                    <text class="text-[13] text-[#717171]">{{ $listing['hostYears'] }} years hosting</text>
+                    <text class="text-[18] font-semibold text-theme-on-background">Hosted by {{ $listing['host'] }}</text>
+                    <text class="text-[13] text-theme-on-surface-variant">{{ $listing['hostYears'] }} years hosting</text>
                 </column>
             </row>
             @if ($listing['hostIsSuperhost'])
                 <row class="items-center gap-2">
                     <icon name="verified_user" :size="18" color="#222222" />
-                    <text class="text-[14] text-[#222222]">Superhost</text>
+                    <text class="text-[14] text-theme-on-background">Superhost</text>
                 </row>
             @endif
         </column>
@@ -215,16 +215,16 @@
 
         {{-- Reserve Bar --}}
         <divider class="w-full" color="#EBEBEB" />
-        <row class="w-full bg-white px-5 pt-3 pb-6 items-center justify-between">
+        <row class="w-full bg-theme-background px-5 pt-3 pb-6 items-center justify-between">
             <column class="gap-0">
                 <row class="items-center gap-1">
-                    <text class="text-[17] font-bold text-[#222222]">${{ $listing['price'] }}</text>
-                    <text class="text-[15] text-[#222222]">night</text>
+                    <text class="text-[17] font-bold text-theme-on-background">${{ $listing['price'] }}</text>
+                    <text class="text-[15] text-theme-on-background">night</text>
                 </row>
-                <text class="text-[12] text-[#222222]">{{ $listing['dates'] }}</text>
+                <text class="text-[12] text-theme-on-background">{{ $listing['dates'] }}</text>
             </column>
-            <column @press="reserve" class="bg-[#FF385C] rounded-lg px-6 py-3">
-                <text class="text-[16] font-bold text-white">Reserve</text>
+            <column @press="reserve" class="bg-theme-primary rounded-lg px-6 py-3">
+                <text class="text-[16] font-bold text-theme-on-primary">Reserve</text>
             </column>
         </row>
 

@@ -3,7 +3,7 @@
 <column class="w-full h-full bg-theme-surface">
     {{-- Header --}}
     <column class="w-full px-5 pt-16 pb-5 gap-2 bg-theme-surface-variant">
-        <column class="w-[56] h-[56] rounded-full items-center justify-center bg-[#6366F1]">
+        <column class="w-[56] h-[56] rounded-full items-center justify-center bg-theme-primary">
             <icon name="star.fill" :size="26" color="#FFFFFF" />
         </column>
         <text class="text-lg font-bold text-theme-on-surface">Ada Lovelace</text>

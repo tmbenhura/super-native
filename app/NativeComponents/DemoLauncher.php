@@ -57,7 +57,7 @@ class DemoLauncher extends NativeComponent
                 ['id' => 'gestures', 'title' => 'Gestures', 'subtitle' => 'Double-tap (@doubleTap) ', 'icon' => 'hand.tap.fill', 'color' => '#6366F1', 'url' => '/gestures'],
                 ['id' => 'transitions', 'title' => 'Page Transitions', 'subtitle' => 'Fade, slide, scale - every @navigate animation', 'icon' => 'arrow.left.arrow.right', 'color' => '#14B8A6', 'url' => '/transitions'],
                 ['id' => 'animate', 'title' => 'Animations', 'subtitle' => 'Awesome native animations', 'icon' => 'sparkles', 'color' => '#F59E0B', 'url' => '/animate'],
-                ['id' => 'glass', 'title' => 'Glass', 'subtitle' => 'Liquid Glass Demo', 'icon' => 'drop.fill', 'color' => '#0EA5E9', 'url' => '/glass'],
+//                ['id' => 'glass', 'title' => 'Glass', 'subtitle' => 'Liquid Glass Demo', 'icon' => 'drop.fill', 'color' => '#0EA5E9', 'url' => '/glass'],
                 ['id' => 'nativetabs', 'title' => 'Native Tabs', 'subtitle' => 'TabView-rendered bottom bar; Liquid Glass on iOS 26+', 'icon' => 'rectangle.split.3x1', 'color' => '#A855F7', 'url' => '/native-tabs'],
                 ['id' => 'drawer', 'title' => 'Side Drawer', 'subtitle' => 'X-style slide-out nav — modal + reveal, declared once on the layout', 'icon' => 'line.3.horizontal', 'color' => '#6366F1', 'url' => '/drawer'],
                 ['id' => 'syncupnative', 'title' => 'SyncUp Messaging', 'subtitle' => 'Login, chat threads, friends, profile (5 screens) — custom chrome', 'icon' => 'bubble.left.fill', 'color' => '#0891b2', 'url' => '/syncup-native/login'],

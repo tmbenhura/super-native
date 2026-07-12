@@ -10,17 +10,16 @@
     "repositories": {
 
         "mobile": {
-            "type": "vcs",
-            "url": "https://github.com/nativephp/mobile-air"
+            "type": "path",
+            "url": "../mobile-air"
         },
         "ui": {
-            "type": "vcs",
-            "url": "https://github.com/nativephp/native-ui"
+            "type": "path",
+            "url": "../plugins/nativephp/native-ui"
         },
         "plugins": {
             "type": "composer",
-            "url": "https://plugins.nativephp.com",
-            "exclude": ["nativephp/mobile-geolocation"]
+            "url": "https://plugins.nativephp.com"
         },
         "geolocation": {
             "type": "vcs",
@@ -34,8 +33,6 @@
         "laravel/tinker": "^3.0",
         "nativephp/mobile": "dev-element",
         "nativephp/mobile-camera": "*",
-        "nativephp/mobile-device": "^1.0",
-        "nativephp/mobile-dialog": "^1.0",
         "nativephp/native-ui": "*"
     },
     "require-dev": {

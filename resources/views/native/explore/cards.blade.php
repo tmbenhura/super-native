@@ -31,9 +31,9 @@
             ] as $row)
                 @php $sel = $this->{$row['field']}; @endphp
                 <pressable @press="toggleField('{{ $row['field'] }}')">
-                    <row class="items-center gap-1 px-3 py-2 rounded-full {{ $sel ? 'bg-teal-600 border-teal-600' : 'bg-theme-surface-variant border-theme-outline' }} border">
+                    <row class="items-center gap-1 px-3 py-2 rounded-full {{ $sel ? 'bg-theme-primary border-theme-primary' : 'bg-theme-surface-variant border-theme-outline' }} border">
                         <icon :name="$row['icon']" :size="14" :color="$sel ? '#FFFFFF' : '#475569'" :dark-color="$sel ? '#FFFFFF' : '#94A3B8'"/>
-                        <text class="text-sm font-medium {{ $sel ? 'text-white' : 'text-theme-on-surface' }}">{{ $row['label'] }}</text>
+                        <text class="text-sm font-medium {{ $sel ? 'text-theme-on-primary' : 'text-theme-on-surface' }}">{{ $row['label'] }}</text>
                     </row>
                 </pressable>
             @endforeach
@@ -41,17 +41,17 @@
 
         <divider class="my-2" />
 
-        {{-- BADGES — bright accent colors stay vivid in both modes --}}
+        {{-- BADGES — theme roles (primary / destructive / accent); amber PRO stays raw --}}
         <text class="text-lg font-semibold text-theme-on-background">Badge</text>
         <row class="gap-2 flex-wrap items-center">
-            <row class="px-2 py-0.5 rounded-full bg-blue-500 items-center">
-                <text class="text-xs font-semibold text-white">NEW</text>
+            <row class="px-2 py-0.5 rounded-full bg-theme-primary items-center">
+                <text class="text-xs font-semibold text-theme-on-primary">NEW</text>
             </row>
-            <row class="px-2 py-0.5 rounded-full bg-red-500 items-center">
-                <text class="text-xs font-semibold text-white">3</text>
+            <row class="px-2 py-0.5 rounded-full bg-theme-destructive items-center">
+                <text class="text-xs font-semibold text-theme-on-destructive">3</text>
             </row>
-            <row class="px-2 py-0.5 rounded-full bg-green-500 items-center">
-                <text class="text-xs font-semibold text-white">ONLINE</text>
+            <row class="px-2 py-0.5 rounded-full bg-theme-accent items-center">
+                <text class="text-xs font-semibold text-theme-on-accent">ONLINE</text>
             </row>
             <row class="px-2 py-0.5 rounded-full bg-amber-500 items-center">
                 <text class="text-xs font-semibold text-white">PRO</text>
@@ -64,8 +64,8 @@
         <text class="text-lg font-semibold text-theme-on-background">Profile card</text>
         <column class="w-full p-5 gap-3 bg-theme-surface rounded-2xl shadow">
             <row class="w-full gap-3 items-center">
-                <column class="w-[60] h-[60] rounded-full bg-purple-500 items-center justify-center">
-                    <text class="text-white text-xl font-bold">SR</text>
+                <column class="w-[60] h-[60] rounded-full bg-theme-secondary items-center justify-center">
+                    <text class="text-theme-on-secondary text-xl font-bold">SR</text>
                 </column>
                 <column class="flex-1 gap-0">
                     <text class="text-base font-bold text-theme-on-surface">Shane Rosenthal</text>

@@ -3,6 +3,7 @@
 namespace App\NativeComponents;
 
 use Illuminate\View\View;
+use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Facades\Camera;
 
@@ -33,6 +34,13 @@ class Counter extends NativeComponent
             $this->photo = $event->path;
         });
 
+    }
+
+    public function navigationOptions(): ?NavBarOptions
+    {
+        return NavBarOptions::make()
+            ->displayMode('inline')
+            ->font('Audiowide-Regular');
     }
 
     public function render(): View

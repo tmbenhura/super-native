@@ -46,26 +46,26 @@
                 <text class="text-white font-semibold">Teal Pill</text>
             </pressable>
             <pressable @press="increment"
-                              class="border-2 border-blue-500 rounded-lg px-5 py-2 items-center justify-center">
-                <text class="text-blue-500 font-semibold">Outlined</text>
+                              class="border-2 border-theme-primary rounded-lg px-5 py-2 items-center justify-center">
+                <text class="text-theme-primary font-semibold">Outlined</text>
             </pressable>
         </row>
 
         <row class="w-full gap-3 items-center">
             <pressable @press="increment"
-                              class="w-[48] h-[48] rounded-full bg-blue-500 items-center justify-center">
+                              class="w-[48] h-[48] rounded-full bg-theme-primary items-center justify-center">
                 <icon name="add" :size="24" color="#FFFFFF"/>
             </pressable>
             <pressable @press="decrement"
-                              class="w-[48] h-[48] rounded-full bg-red-500 items-center justify-center">
+                              class="w-[48] h-[48] rounded-full bg-theme-destructive items-center justify-center">
                 <icon name="minus.circle.fill" :size="24" color="#FFFFFF"/>
             </pressable>
             <pressable @press="increment"
-                              class="w-[48] h-[48] rounded-full bg-green-500 items-center justify-center">
+                              class="w-[48] h-[48] rounded-full bg-theme-accent items-center justify-center">
                 <icon name="check" :size="24" color="#FFFFFF"/>
             </pressable>
             <pressable @press="increment"
-                              class="w-[48] h-[48] rounded-full bg-purple-500 items-center justify-center">
+                              class="w-[48] h-[48] rounded-full bg-theme-secondary items-center justify-center">
                 <icon name="star" :size="24" color="#FFFFFF"/>
             </pressable>
             <pressable @press="increment"
@@ -81,8 +81,8 @@
         <row class="w-full gap-4 items-center justify-center">
             <button variant="destructive" size="lg" icon="minus.circle.fill" a11y-label="Decrement"
                            @press="decrement"/>
-            <column class="w-[80] h-[80] rounded-2xl bg-indigo-600 items-center justify-center">
-                <text class="text-white font-extrabold text-3xl">{{ $count }}</text>
+            <column class="w-[80] h-[80] rounded-2xl bg-theme-primary items-center justify-center">
+                <text class="text-theme-on-primary font-extrabold text-3xl">{{ $count }}</text>
             </column>
             <button variant="primary" size="lg" icon="add" a11y-label="Increment" @press="increment"/>
         </row>

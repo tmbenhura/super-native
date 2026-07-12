@@ -31,62 +31,64 @@ return [
 
     'theme' => [
 
+        // Matched to nativephp.com's light theme: white page, #272D48 navy ink,
+        // violet-600 primary accent, slate-200 borders, brand teal highlight.
         'light' => [
             // Primary brand color — used for filled buttons, active states, key accents.
-            'primary' => '#00AAFF',
-            'on-primary' => '#FFFFFF',
+            'primary' => 'violet-600',
+            'on-primary' => 'white',
 
             // Secondary / muted action color.
-            'secondary' => '#00AAFF',
-            'on-secondary' => '#FFFFFF',
+            'secondary' => 'teal-500',
+            'on-secondary' => 'white',
 
             // Surface = cards, sheets, dialogs. Background = page root.
-            'surface' => '#FFFFFF',
-            'on-surface' => '#000000',
-            'background' => '#FFFFFF',
-            'on-background' => '#000000',
+            'surface' => 'slate-50',
+            'on-surface' => '#272D48',
+            'background' => 'white',
+            'on-background' => '#272D48',
 
             // Surface variant = filled text fields, muted tonal surfaces.
             // on-surface-variant = muted label/hint text on those surfaces.
-            'surface-variant' => '#E5E7EB',
-            'on-surface-variant' => '#475569',
+            'surface-variant' => 'slate-200',
+            'on-surface-variant' => 'slate-800',
 
             // Outline = neutral borders (text fields, dividers, cards).
-            'outline' => '#CBD5E1',
+            'outline' => 'slate-200',
 
             // Destructive / error actions and messages.
-            'destructive' => '#DC2626',
-            'on-destructive' => '#FFFFFF',
+            'destructive' => 'red-600',
+            'on-destructive' => 'white',
 
             // Tertiary accent — for highlights, badges, emphasis not covered by primary.
-            'accent' => '#FB923C',
-            'on-accent' => '#FFFFFF',
+            'accent' => 'yellow-400',
+            'on-accent' => 'white',
         ],
 
+        // Matched to nativephp.com's dark theme: #050714 page, slate-950 cards,
+        // "cloud" navy (#2B2E53) tonal fills, violet-500 accents, teal #3EDAD7.
         'dark' => [
-            // Leave empty or partial to auto-derive from `light` (luminance inversion).
-            // Specify any token here to override the derived value.
-            'primary' => '#6617cf',
-            'on-primary' => '#FFFFFF',
+            'primary' => 'violet-500',
+            'on-primary' => 'white',
 
-            'secondary' => '#6617cf',
-            'on-secondary' => '#FFFFFF',
+            'secondary' => 'fuchsia-500',
+            'on-secondary' => 'white',
 
-            'surface' => '#1E293B',
-            'on-surface' => '#FFFFFF',
-            'background' => '#000000',
-            'on-background' => '#FFFFFF',
+            'surface' => 'slate-950',
+            'on-surface' => 'white',
+            'background' => '#050714',
+            'on-background' => 'white',
 
-            'surface-variant' => '#334155',
-            'on-surface-variant' => '#94A3B8',
+            'surface-variant' => '#2B2E53',
+            'on-surface-variant' => 'gray-400',
 
-            'outline' => '#475569',
+            'outline' => 'slate-700',
 
-            'destructive' => '#cf1729',
-            'on-destructive' => '#FFFFFF',
+            'destructive' => 'red-500',
+            'on-destructive' => 'white',
 
-            'accent' => '#FDBA74',
-            'on-accent' => '#0F172A',
+            'accent' => '#3EDAD7',
+            'on-accent' => '#050714',
         ],
 
         // Corner radii (points / dp).
@@ -101,9 +103,7 @@ return [
         'font-lg' => 20,
         'font-xl' => 24,
 
-        // 'System' resolves to the platform default (San Francisco on iOS, Roboto on Android).
-        // Use a specific family name to load a custom font.
-        'font-family' => 'System',
+        'font-family' => 'Geist+Pixel-Regular',
     ],
 
 ];

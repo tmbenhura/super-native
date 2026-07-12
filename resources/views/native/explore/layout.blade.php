@@ -6,27 +6,27 @@
         <text class="text-sm text-theme-on-surface-variant">flex-1 distributes remaining space equally.</text>
 
         <row class="w-full gap-2 h-[60]">
-            <column class="flex-1 bg-blue-500 rounded items-center justify-center">
-                <text class="text-white">flex-1</text>
+            <column class="flex-1 bg-theme-primary rounded items-center justify-center">
+                <text class="text-theme-on-primary">flex-1</text>
             </column>
-            <column class="flex-1 bg-green-500 rounded items-center justify-center">
-                <text class="text-white">flex-1</text>
+            <column class="flex-1 bg-theme-accent rounded items-center justify-center">
+                <text class="text-theme-on-accent">flex-1</text>
             </column>
-            <column class="flex-1 bg-purple-500 rounded items-center justify-center">
-                <text class="text-white">flex-1</text>
+            <column class="flex-1 bg-theme-secondary rounded items-center justify-center">
+                <text class="text-theme-on-secondary">flex-1</text>
             </column>
         </row>
 
         <text class="text-sm text-theme-on-surface-variant">Mix of fixed widths and flex-1.</text>
         <row class="w-full gap-2 h-[60]">
-            <column class="w-[60] bg-amber-500 rounded items-center justify-center">
-                <text class="text-white text-xs">60</text>
+            <column class="w-[60] bg-theme-primary rounded items-center justify-center">
+                <text class="text-theme-on-primary text-xs">60</text>
             </column>
-            <column class="flex-1 bg-rose-500 rounded items-center justify-center">
-                <text class="text-white">flex-1</text>
+            <column class="flex-1 bg-theme-secondary rounded items-center justify-center">
+                <text class="text-theme-on-secondary">flex-1</text>
             </column>
-            <column class="w-[100] bg-teal-500 rounded items-center justify-center">
-                <text class="text-white text-xs">100</text>
+            <column class="w-[100] bg-theme-accent rounded items-center justify-center">
+                <text class="text-theme-on-accent text-xs">100</text>
             </column>
         </row>
 
@@ -38,17 +38,17 @@
 
         <row class="w-full gap-6 items-center">
             <stack class="w-[100] h-[100]">
-                <column class="w-[100] h-[100] rounded-full bg-blue-500"/>
-                <column class="w-[60] h-[60] rounded-full bg-amber-400"/>
-                <column class="w-[24] h-[24] rounded-full bg-red-500"/>
+                <column class="w-[100] h-[100] rounded-full bg-theme-primary"/>
+                <column class="w-[60] h-[60] rounded-full bg-theme-secondary"/>
+                <column class="w-[24] h-[24] rounded-full bg-theme-accent"/>
             </stack>
 
             <stack class="w-[160] h-[80]">
-                <column class="w-[160] h-[80] rounded-lg bg-purple-600 items-center justify-center">
-                    <text class="text-white">Background</text>
+                <column class="w-[160] h-[80] rounded-lg bg-theme-primary items-center justify-center">
+                    <text class="text-theme-on-primary">Background</text>
                 </column>
-                <column class="w-[110] h-[40] rounded-lg bg-amber-400 items-center justify-center">
-                    <text class="text-amber-950 font-semibold">Foreground</text>
+                <column class="w-[110] h-[40] rounded-lg bg-theme-secondary items-center justify-center">
+                    <text class="text-theme-on-secondary font-semibold">Foreground</text>
                 </column>
             </stack>
         </row>
@@ -60,16 +60,16 @@
         <text class="text-sm text-theme-on-surface-variant">rect / circle — fill a frame with a color.</text>
 
         <row class="w-full gap-3">
-            <rect class="flex-1 h-[60] bg-blue-500 rounded"/>
-            <rect class="flex-1 h-[60] bg-green-500 rounded-lg"/>
-            <rect class="flex-1 h-[60] bg-purple-500 rounded-3xl"/>
+            <rect class="flex-1 h-[60] bg-theme-primary rounded"/>
+            <rect class="flex-1 h-[60] bg-theme-accent rounded-lg"/>
+            <rect class="flex-1 h-[60] bg-theme-secondary rounded-3xl"/>
         </row>
 
         <row class="w-full gap-3 items-center">
-            <circle class="w-[80] h-[80] bg-red-500"/>
-            <circle class="w-[60] h-[60] bg-amber-500"/>
-            <circle class="w-[40] h-[40] bg-emerald-500"/>
-            <circle class="w-[24] h-[24] bg-blue-500"/>
+            <circle class="w-[80] h-[80] bg-theme-destructive"/>
+            <circle class="w-[60] h-[60] bg-theme-secondary"/>
+            <circle class="w-[40] h-[40] bg-theme-accent"/>
+            <circle class="w-[24] h-[24] bg-theme-primary"/>
         </row>
 
         <divider class="my-2"/>
@@ -80,11 +80,11 @@
             <activity-indicator size="small"/>
             <activity-indicator size="medium"/>
             <activity-indicator size="large"/>
-            <activity-indicator size="large" class="text-yellow-500"/>
-            <activity-indicator size="large" class="text-red-500"/>
-            <activity-indicator size="large" class="text-purple-500"/>
-            <activity-indicator size="large" class="text-emerald-500"/>
-            <activity-indicator size="large" class="text-fuchsia-500"/>
+            <activity-indicator size="large" class="text-theme-primary"/>
+            <activity-indicator size="large" class="text-theme-secondary"/>
+            <activity-indicator size="large" class="text-theme-accent"/>
+            <activity-indicator size="large" class="text-theme-destructive"/>
+            <activity-indicator size="large" class="text-theme-on-surface-variant"/>
         </row>
 
         <divider class="my-2"/>
@@ -117,15 +117,15 @@
         {{-- 3-item basic --}}
         <row class="w-full h-[64] bg-theme-surface rounded-xl border border-theme-outline items-center">
             <column class="flex-1 items-center gap-1">
-                <icon name="home" :size="22" color="#3B82F6"/>
-                <text class="text-[11] text-blue-500 text-center font-semibold">Home</text>
+                <icon name="home" :size="22" class="text-theme-primary"/>
+                <text class="text-[11] text-theme-primary text-center font-semibold">Home</text>
             </column>
             <column class="flex-1 items-center gap-1">
-                <icon name="search" :size="22" color="#9CA3AF" dark-color="#94A3B8"/>
+                <icon name="search" :size="22" class="text-theme-on-surface-variant"/>
                 <text class="text-[11] text-theme-on-surface-variant text-center">Search</text>
             </column>
             <column class="flex-1 items-center gap-1">
-                <icon name="person" :size="22" color="#9CA3AF" dark-color="#94A3B8"/>
+                <icon name="person" :size="22" class="text-theme-on-surface-variant"/>
                 <text class="text-[11] text-theme-on-surface-variant text-center">Profile</text>
             </column>
         </row>
@@ -133,15 +133,15 @@
         <text class="text-sm text-theme-on-surface-variant">With badge + "news" indicator.</text>
         <row class="w-full h-[64] bg-theme-surface rounded-xl border border-theme-outline items-center">
             <column class="flex-1 items-center gap-1">
-                <icon name="home" :size="22" color="#3B82F6"/>
-                <text class="text-[11] text-blue-500 text-center font-semibold">Feed</text>
+                <icon name="home" :size="22" class="text-theme-primary"/>
+                <text class="text-[11] text-theme-primary text-center font-semibold">Feed</text>
             </column>
             <column class="flex-1 items-center gap-1">
                 <stack class="w-[32] h-[24]">
-                    <icon name="notifications" :size="22" color="#9CA3AF" dark-color="#94A3B8"/>
+                    <icon name="notifications" :size="22" class="text-theme-on-surface-variant"/>
                     <row class="w-[32] h-[24] items-start justify-end">
-                        <column class="w-[16] h-[14] rounded-full bg-red-500 items-center justify-center">
-                            <text class="text-[9] font-bold text-white">3</text>
+                        <column class="w-[16] h-[14] rounded-full bg-theme-destructive items-center justify-center">
+                            <text class="text-[9] font-bold text-theme-on-destructive">3</text>
                         </column>
                     </row>
                 </stack>
@@ -149,15 +149,15 @@
             </column>
             <column class="flex-1 items-center gap-1">
                 <stack class="w-[32] h-[24]">
-                    <icon name="chat" :size="22" color="#9CA3AF" dark-color="#94A3B8"/>
+                    <icon name="chat" :size="22" class="text-theme-on-surface-variant"/>
                     <row class="w-[32] h-[24] items-start justify-end">
-                        <column class="w-[8] h-[8] rounded-full bg-red-500"/>
+                        <column class="w-[8] h-[8] rounded-full bg-theme-destructive"/>
                     </row>
                 </stack>
                 <text class="text-[11] text-theme-on-surface-variant text-center">Messages</text>
             </column>
             <column class="flex-1 items-center gap-1">
-                <icon name="person" :size="22" color="#9CA3AF" dark-color="#94A3B8"/>
+                <icon name="person" :size="22" class="text-theme-on-surface-variant"/>
                 <text class="text-[11] text-theme-on-surface-variant text-center">Profile</text>
             </column>
         </row>
@@ -165,23 +165,23 @@
         <text class="text-sm text-theme-on-surface-variant">5-item nav with custom active color.</text>
         <row class="w-full h-[64] bg-theme-surface rounded-xl border border-theme-outline items-center">
             <column class="flex-1 items-center gap-1">
-                <icon name="home" :size="20" color="#9CA3AF" dark-color="#94A3B8"/>
+                <icon name="home" :size="20" class="text-theme-on-surface-variant"/>
                 <text class="text-[10] text-theme-on-surface-variant text-center">Home</text>
             </column>
             <column class="flex-1 items-center gap-1">
-                <icon name="search" :size="20" color="#9CA3AF" dark-color="#94A3B8"/>
+                <icon name="search" :size="20" class="text-theme-on-surface-variant"/>
                 <text class="text-[10] text-theme-on-surface-variant text-center">Search</text>
             </column>
             <column class="flex-1 items-center gap-1">
-                <icon name="add" :size="20" color="#E11D48"/>
-                <text class="text-[10] text-rose-600 text-center font-semibold">Post</text>
+                <icon name="add" :size="20" class="text-theme-secondary"/>
+                <text class="text-[10] text-theme-secondary text-center font-semibold">Post</text>
             </column>
             <column class="flex-1 items-center gap-1">
-                <icon name="bookmark" :size="20" color="#9CA3AF" dark-color="#94A3B8"/>
+                <icon name="bookmark" :size="20" class="text-theme-on-surface-variant"/>
                 <text class="text-[10] text-theme-on-surface-variant text-center">Saved</text>
             </column>
             <column class="flex-1 items-center gap-1">
-                <icon name="person" :size="20" color="#9CA3AF" dark-color="#94A3B8"/>
+                <icon name="person" :size="20" class="text-theme-on-surface-variant"/>
                 <text class="text-[10] text-theme-on-surface-variant text-center">Me</text>
             </column>
         </row>

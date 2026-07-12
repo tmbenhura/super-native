@@ -12,19 +12,19 @@
 
             <row class="w-full gap-4">
                 <column
-                    class="flex-1 h-[120] rounded-2xl items-center justify-center bg-purple-500"
+                    class="flex-1 h-[120] rounded-2xl items-center justify-center bg-theme-primary"
                     :opacity="$visible ? 1 : 0.15"
                     :animate-duration="$duration"
                     :animate-easing="$easing">
-                    <text class="text-white font-semibold">animated</text>
-                    <text class="text-white text-xs">{{ $duration }}ms · {{ $easing }}</text>
+                    <text class="text-theme-on-primary font-semibold">animated</text>
+                    <text class="text-theme-on-primary text-xs">{{ $duration }}ms · {{ $easing }}</text>
                 </column>
 
                 <column
-                    class="flex-1 h-[120] rounded-2xl items-center justify-center bg-slate-400"
+                    class="flex-1 h-[120] rounded-2xl items-center justify-center bg-theme-surface-variant"
                     :opacity="$visible ? 1 : 0.15">
-                    <text class="text-white font-semibold">snap</text>
-                    <text class="text-white text-xs">no animation</text>
+                    <text class="text-theme-on-surface font-semibold">snap</text>
+                    <text class="text-theme-on-surface text-xs">no animation</text>
                 </column>
             </row>
 
@@ -35,10 +35,10 @@
                 @foreach (['linear', 'ease-in', 'ease-out', 'ease-in-out'] as $opt)
                     <column
                         @press="setEasing('{{ $opt }}')"
-                        class="flex-1 py-2 rounded-lg items-center justify-center bg-sky-500"
+                        class="flex-1 py-2 rounded-lg items-center justify-center bg-theme-primary"
                         :opacity="$easing === $opt ? 1 : 0.55"
                         :animate-duration="200">
-                        <text class="text-white text-xs font-semibold">{{ $opt }}</text>
+                        <text class="text-theme-on-primary text-xs font-semibold">{{ $opt }}</text>
                     </column>
                 @endforeach
             </row>
@@ -48,10 +48,10 @@
                 @foreach ([150, 300, 600, 1200] as $ms)
                     <column
                         @press="setDuration({{ $ms }})"
-                        class="flex-1 py-2 rounded-lg items-center justify-center bg-sky-500"
+                        class="flex-1 py-2 rounded-lg items-center justify-center bg-theme-primary"
                         :opacity="$duration === $ms ? 1 : 0.55"
                         :animate-duration="200">
-                        <text class="text-white text-xs font-semibold">{{ $ms }}ms</text>
+                        <text class="text-theme-on-primary text-xs font-semibold">{{ $ms }}ms</text>
                     </column>
                 @endforeach
             </row>
@@ -69,11 +69,11 @@
 
             @foreach (['linear', 'ease-in', 'ease-out', 'ease-in-out'] as $curve)
                 <column
-                    class="w-full h-[44] rounded-xl items-center justify-center bg-indigo-500"
+                    class="w-full h-[44] rounded-xl items-center justify-center bg-theme-primary"
                     :opacity="$visible ? 1 : 0.1"
                     :animate-duration="800"
                     :animate-easing="$curve">
-                    <text class="text-white text-xs font-semibold">{{ $curve }}</text>
+                    <text class="text-theme-on-primary text-xs font-semibold">{{ $curve }}</text>
                 </column>
             @endforeach
 
@@ -95,11 +95,11 @@
             <row class="w-full gap-3 items-center justify-center">
                 @for ($i = 1; $i <= 5; $i++)
                     <column
-                        class="w-[40] h-[40] rounded-full items-center justify-center bg-emerald-500"
+                        class="w-[40] h-[40] rounded-full items-center justify-center bg-theme-accent"
                         :opacity="$step === $i ? 1 : 0.2"
                         :animate-duration="350"
                         animate-easing="ease-out">
-                        <text class="text-white text-sm font-bold">{{ $i }}</text>
+                        <text class="text-theme-on-accent text-sm font-bold">{{ $i }}</text>
                     </column>
                 @endfor
             </row>
@@ -123,11 +123,11 @@
                 @foreach (['Alpha', 'Beta', 'Gamma'] as $i => $name)
                     <column
                         @press="focus({{ $i }})"
-                        class="flex-1 h-[110] rounded-2xl items-center justify-center bg-rose-500"
+                        class="flex-1 h-[110] rounded-2xl items-center justify-center bg-theme-secondary"
                         :opacity="$focused === $i ? 1 : 0.25"
                         :animate-duration="300"
                         animate-easing="ease-out">
-                        <text class="text-white text-base font-semibold">{{ $name }}</text>
+                        <text class="text-theme-on-secondary text-base font-semibold">{{ $name }}</text>
                     </column>
                 @endforeach
             </row>
@@ -145,19 +145,19 @@
 
             <stack class="w-full h-[140]">
                 <column
-                    class="w-full h-full rounded-2xl items-center justify-center bg-sky-500"
+                    class="w-full h-full rounded-2xl items-center justify-center bg-theme-primary"
                     :opacity="$cross ? 0 : 1"
                     :animate-duration="500"
                     animate-easing="ease-in-out">
-                    <text class="text-white text-2xl font-bold">A</text>
+                    <text class="text-theme-on-primary text-2xl font-bold">A</text>
                 </column>
 
                 <column
-                    class="w-full h-full rounded-2xl items-center justify-center bg-amber-500"
+                    class="w-full h-full rounded-2xl items-center justify-center bg-theme-secondary"
                     :opacity="$cross ? 1 : 0"
                     :animate-duration="500"
                     animate-easing="ease-in-out">
-                    <text class="text-white text-2xl font-bold">B</text>
+                    <text class="text-theme-on-secondary text-2xl font-bold">B</text>
                 </column>
             </stack>
 
@@ -176,12 +176,12 @@
 
             <stack class="w-full h-[140]">
                 <column
-                    class="w-full h-full rounded-2xl items-center justify-center bg-fuchsia-500"
+                    class="w-full h-full rounded-2xl items-center justify-center bg-theme-secondary"
                     :opacity="$shown ? 1 : 0"
                     :translate-y="$shown ? 0 : 120"
                     :animate-duration="450"
                     animate-easing="ease-out">
-                    <text class="text-white text-base font-semibold">surprise!</text>
+                    <text class="text-theme-on-secondary text-base font-semibold">surprise!</text>
                 </column>
             </stack>
 
@@ -201,11 +201,11 @@
             <row class="w-full items-center justify-center h-[160]">
                 <column
                     @press="bump"
-                    class="w-[100] h-[100] rounded-2xl items-center justify-center bg-orange-500"
+                    class="w-[100] h-[100] rounded-2xl items-center justify-center bg-theme-accent"
                     :scale="$bumped ? 1.4 : 1.0"
                     :animate-duration="250"
                     animate-easing="ease-out">
-                    <text class="text-white text-base font-semibold">tap me</text>
+                    <text class="text-theme-on-accent text-base font-semibold">tap me</text>
                 </column>
             </row>
         </column>
@@ -222,7 +222,7 @@
 
             <row class="w-full items-center justify-center h-[160]">
                 <column
-                    class="w-[100] h-[100] rounded-2xl items-center justify-center bg-cyan-500"
+                    class="w-[100] h-[100] rounded-2xl items-center justify-center bg-theme-accent"
                     :rotate="$angle"
                     :animate-duration="500"
                     animate-easing="ease-in-out">
@@ -230,7 +230,7 @@
                         :size="50"
                         :ios="\App\Icons\Ios::ArrowUp"
                         :android="\App\Icons\Android::ArrowCircleUp"
-                        class="text-white text-base font-semibold" />
+                        class="text-theme-on-accent text-base font-semibold" />
                 </column>
             </row>
 
@@ -253,14 +253,14 @@
 
             <stack class="w-full h-[160]">
                 <column
-                    class="w-full h-[120] rounded-2xl items-center justify-center bg-violet-600 self-center"
+                    class="w-full h-[120] rounded-2xl items-center justify-center bg-theme-primary self-center"
                     :opacity="$toastShown ? 1 : 0"
                     :scale="$toastShown ? 1.0 : 0.7"
                     :translate-y="$toastShown ? 0 : -40"
                     :animate-duration="500"
                     animate-easing="ease-out">
-                    <text class="text-white text-lg font-bold">toast</text>
-                    <text class="text-white text-xs">opacity + scale + translate, in unison</text>
+                    <text class="text-theme-on-primary text-lg font-bold">toast</text>
+                    <text class="text-theme-on-primary text-xs">opacity + scale + translate, in unison</text>
                 </column>
             </stack>
 
@@ -281,28 +281,28 @@
             <row class="w-full gap-3">
                 <column
                     @press="bump"
-                    class="flex-1 h-[100] rounded-2xl items-center justify-center bg-orange-500"
+                    class="flex-1 h-[100] rounded-2xl items-center justify-center bg-theme-primary"
                     :press-scale="0.9">
-                    <text class="text-white font-semibold">scale</text>
-                    <text class="text-white text-xs">0.9</text>
+                    <text class="text-theme-on-primary font-semibold">scale</text>
+                    <text class="text-theme-on-primary text-xs">0.9</text>
                 </column>
 
                 <column
                     @press="bump"
-                    class="flex-1 h-[100] rounded-2xl items-center justify-center bg-rose-500"
+                    class="flex-1 h-[100] rounded-2xl items-center justify-center bg-theme-secondary"
                     :press-opacity="0.55">
-                    <text class="text-white font-semibold">opacity</text>
-                    <text class="text-white text-xs">0.55</text>
+                    <text class="text-theme-on-secondary font-semibold">opacity</text>
+                    <text class="text-theme-on-secondary text-xs">0.55</text>
                 </column>
 
                 <column
                     @press="bump"
-                    class="flex-1 h-[100] rounded-2xl items-center justify-center bg-emerald-500"
+                    class="flex-1 h-[100] rounded-2xl items-center justify-center bg-theme-accent"
                     :press-scale="0.92"
                     :press-translate-y="3"
                     :press-opacity="0.85">
-                    <text class="text-white font-semibold">combo</text>
-                    <text class="text-white text-xs">all three</text>
+                    <text class="text-theme-on-accent font-semibold">combo</text>
+                    <text class="text-theme-on-accent text-xs">all three</text>
                 </column>
             </row>
 
@@ -331,13 +331,13 @@
                     :press-scale="0.85">
                     {{-- outline heart, dimmed when liked --}}
                     <text
-                        class="text-[56] text-slate-400"
+                        class="text-[56] text-theme-on-surface-variant"
                         :opacity="$liked ? 0 : 1"
                         :animate-duration="200"
                         animate-easing="ease-out">♡</text>
                     {{-- filled heart, popped from 0 → 1.0 on like --}}
                     <text
-                        class="text-[56] text-rose-500"
+                        class="text-[56] text-theme-secondary"
                         :opacity="$liked ? 1 : 0"
                         :scale="$liked ? 1.0 : 0.4"
                         :rotate="$liked ? 0 : -25"
@@ -358,11 +358,11 @@
                 Tab slider
             </text>
 
-            <column class="w-full bg-gray-700 rounded-2xl">
+            <column class="w-full bg-theme-surface-variant rounded-2xl">
                 <stack class="w-full">
                     {{-- sliding indicator — 25% wide, translates by 88px per tab slot --}}
                     <column
-                        class="w-[88] h-[36] rounded-2xl bg-indigo-500 self-center"
+                        class="w-[88] h-[36] rounded-2xl bg-theme-primary self-center"
                         :translate-x="($activeTab - 1.5) * 88"
                         :animate-duration="350"
                         animate-easing="ease-in-out" />
@@ -374,7 +374,7 @@
                                 class="flex-1 h-full items-center justify-center"
                                 :opacity="$activeTab === $i ? 1 : 0.95"
                                 :animate-duration="200">
-                                <text class="text-sm font-semibold text-white">{{ $label }}</text>
+                                <text class="text-sm font-semibold text-theme-on-surface">{{ $label }}</text>
                             </column>
                         @endforeach
                     </row>
@@ -403,7 +403,7 @@
                                    :animate-duration="200"
                                    animate-easing="ease-in-out" />
                     {{-- on track (green) --}}
-                    <column class="w-full h-full rounded-full bg-green-500"
+                    <column class="w-full h-full rounded-full bg-theme-accent"
                                    :opacity="$switchOn ? 1 : 0"
                                    :animate-duration="200"
                                    animate-easing="ease-in-out" />
@@ -433,7 +433,7 @@
                 <stack class="w-[180] h-[160] items-center justify-end">
                     {{-- Three sub-actions, fanning out left / up / right --}}
                     <column
-                        class="w-[44] h-[44] rounded-full items-center justify-center bg-sky-500"
+                        class="w-[44] h-[44] rounded-full items-center justify-center bg-theme-secondary"
                         :opacity="$fabOpen ? 1 : 0"
                         :scale="$fabOpen ? 1 : 0"
                         :translate-x="$fabOpen ? -70 : 0"
@@ -441,26 +441,26 @@
                         :animate-duration="200"
                         animate-easing="ease-out"
                         :press-scale="0.85">
-                        <icon class="text-white text-base"
+                        <icon class="text-theme-on-secondary text-base"
                                      :android="\App\Icons\Android::Camera"
                                      :ios="\App\Icons\Ios::Camera "/>
                     </column>
 
                     <column
-                        class="w-[44] h-[44] rounded-full items-center justify-center bg-emerald-500"
+                        class="w-[44] h-[44] rounded-full items-center justify-center bg-theme-accent"
                         :opacity="$fabOpen ? 1 : 0"
                         :scale="$fabOpen ? 1 : 0"
                         :translate-y="$fabOpen ? -90 : 0"
                         :animate-duration="200"
                         animate-easing="ease-out"
                         :press-scale="0.85">
-                        <icon class="text-white text-base"
+                        <icon class="text-theme-on-accent text-base"
                                      :android="\App\Icons\Android::MusicNote"
                                      :ios="\App\Icons\Ios::MusicNote "/>
                     </column>
 
                     <column
-                        class="w-[44] h-[44] rounded-full items-center justify-center bg-amber-500"
+                        class="w-[44] h-[44] rounded-full items-center justify-center bg-theme-secondary"
                         :opacity="$fabOpen ? 1 : 0"
                         :scale="$fabOpen ? 1 : 0"
                         :translate-x="$fabOpen ? 70 : 0"
@@ -468,7 +468,7 @@
                         :animate-duration="200"
                         animate-easing="ease-out"
                         :press-scale="0.85">
-                        <icon class="text-white text-base"
+                        <icon class="text-theme-on-secondary text-base"
                                      :android="\App\Icons\Android::AttachFile"
                                      :ios="\App\Icons\Ios::Paperclip "/>
                     </column>
@@ -476,12 +476,12 @@
                     {{-- Main FAB — rotates 45° when open so + becomes × --}}
                     <column
                         @press="toggleFab"
-                        class="w-[60] h-[60] rounded-full items-center justify-center bg-violet-600"
+                        class="w-[60] h-[60] rounded-full items-center justify-center bg-theme-primary"
                         :rotate="$fabOpen ? 45 : 0"
                         :animate-duration="300"
                         animate-easing="ease-in-out"
                         :press-scale="0.9">
-                        <icon class="text-white text-base"
+                        <icon class="text-theme-on-primary text-base"
                              :android="\App\Icons\Android::PlusOne"
                                      :ios="\App\Icons\Ios::Plus "/>
                     </column>
@@ -502,10 +502,10 @@
 
             @php
                 $deck = [
-                    ['color' => 'bg-rose-500',    'label' => 'Hearts'],
-                    ['color' => 'bg-amber-500',   'label' => 'Diamonds'],
-                    ['color' => 'bg-emerald-500', 'label' => 'Clubs'],
-                    ['color' => 'bg-sky-500',     'label' => 'Spades'],
+                    ['color' => 'bg-theme-secondary', 'text' => 'text-theme-on-secondary', 'label' => 'Hearts'],
+                    ['color' => 'bg-theme-primary',   'text' => 'text-theme-on-primary',   'label' => 'Diamonds'],
+                    ['color' => 'bg-theme-accent',    'text' => 'text-theme-on-accent',    'label' => 'Clubs'],
+                    ['color' => 'bg-theme-primary',   'text' => 'text-theme-on-primary',   'label' => 'Spades'],
                 ];
             @endphp
 
@@ -522,7 +522,7 @@
                             :opacity="$depth === 0 ? 1 : (1.0 - ($depth * 0.45))"
                             :animate-duration="400"
                             animate-easing="ease-out">
-                            <text class="text-white text-2xl font-bold">{{ $card['label'] }}</text>
+                            <text class="{{ $card['text'] }} text-2xl font-bold">{{ $card['label'] }}</text>
                         </column>
                     @endforeach
                 </stack>
@@ -548,7 +548,7 @@
             <row class="w-full items-center justify-around h-[120]">
                 <column class="items-center gap-2">
                     <column
-                        class="w-[48] h-[48] rounded-full bg-rose-500"
+                        class="w-[48] h-[48] rounded-full bg-theme-secondary"
                         :opacity="0.3"
                         :animate-duration="900"
                         :animate-loop="true"
@@ -558,7 +558,7 @@
 
                 <column class="items-center gap-2">
                     <column
-                        class="w-[48] h-[48] rounded-full bg-sky-500"
+                        class="w-[48] h-[48] rounded-full bg-theme-primary"
                         :scale="1.3"
                         :animate-duration="1100"
                         :animate-loop="true"
@@ -568,7 +568,7 @@
 
                 <column class="items-center gap-2">
                     <column
-                        class="w-[48] h-[48] rounded-full bg-emerald-500"
+                        class="w-[48] h-[48] rounded-full bg-theme-accent"
                         :translate-y="-14"
                         :animate-duration="1300"
                         :animate-loop="true"
@@ -578,7 +578,7 @@
 
                 <column class="items-center gap-2">
                     <column
-                        class="w-[48] h-[48] rounded-2xl bg-amber-500"
+                        class="w-[48] h-[48] rounded-2xl bg-theme-secondary"
                         :rotate="20"
                         :animate-duration="700"
                         :animate-loop="true"
@@ -606,21 +606,21 @@
 
             <row class="w-full items-center justify-center gap-3 h-[80]">
                 <column
-                    class="w-[14] h-[14] rounded-full bg-violet-600"
+                    class="w-[14] h-[14] rounded-full bg-theme-primary"
                     :scale="1.6"
                     :opacity="0.4"
                     :animate-duration="600"
                     :animate-loop="true"
                     animate-easing="ease-in-out" />
                 <column
-                    class="w-[14] h-[14] rounded-full bg-violet-600"
+                    class="w-[14] h-[14] rounded-full bg-theme-primary"
                     :scale="1.6"
                     :opacity="0.4"
                     :animate-duration="720"
                     :animate-loop="true"
                     animate-easing="ease-in-out" />
                 <column
-                    class="w-[14] h-[14] rounded-full bg-violet-600"
+                    class="w-[14] h-[14] rounded-full bg-theme-primary"
                     :scale="1.6"
                     :opacity="0.4"
                     :animate-duration="840"
@@ -641,8 +641,8 @@
 
             <row class="w-full items-center justify-center h-[100]">
                 <stack class="w-[120] h-[80]">
-                    <column class="w-full h-[60] rounded-xl items-center justify-center bg-slate-700 self-center">
-                        <text class="text-white text-sm font-semibold">Inbox</text>
+                    <column class="w-full h-[60] rounded-xl items-center justify-center bg-theme-surface-variant self-center">
+                        <text class="text-theme-on-surface text-sm font-semibold">Inbox</text>
                     </column>
 
                     {{-- Badge wrapper holds the static position; only its
@@ -656,7 +656,7 @@
                         :translate-y="-20">
                         {{-- Outer ring — loops scale + opacity only --}}
                         <column
-                            class="w-full h-full rounded-full bg-rose-500"
+                            class="w-full h-full rounded-full bg-theme-destructive"
                             :scale="2.2"
                             :opacity="0.0"
                             :animate-duration="1400"
@@ -665,8 +665,8 @@
 
                         {{-- Solid dot stays put --}}
                         <column
-                            class="w-full h-full rounded-full bg-rose-500 items-center justify-center">
-                            <text class="text-white text-[10] font-bold">3</text>
+                            class="w-full h-full rounded-full bg-theme-destructive items-center justify-center">
+                            <text class="text-theme-on-destructive text-[10] font-bold">3</text>
                         </column>
                     </stack>
                 </stack>
@@ -693,12 +693,12 @@
 
                 <gesture-area :pan-y="$drag" class="w-full h-full items-center justify-center">
                     <column
-                        class="w-[200] h-[120] rounded-2xl items-center justify-center bg-fuchsia-500"
+                        class="w-[200] h-[120] rounded-2xl items-center justify-center bg-theme-secondary"
                         :translate-y="$drag->clamp(-60, 180)"
                         :opacity="$drag->interpolate([0, 180], [1, 0.3])"
                         :scale="$drag->interpolate([0, 180], [1, 0.75])">
-                        <text class="text-white text-lg font-bold">drag me</text>
-                        <text class="text-white text-xs">native UI thread · 0 PHP</text>
+                        <text class="text-theme-on-secondary text-lg font-bold">drag me</text>
+                        <text class="text-theme-on-secondary text-xs">native UI thread · 0 PHP</text>
                     </column>
                 </gesture-area>
             </stack>

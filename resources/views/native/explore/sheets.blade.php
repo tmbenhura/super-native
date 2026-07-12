@@ -9,19 +9,19 @@
 
         {{-- Bottom-sheet trigger row --}}
         <row class="w-full gap-2">
-            <column @press="openSmallSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-                <text class="text-white font-semibold">Small</text>
+            <column @press="openSmallSheet" class="flex-1 px-4 py-3 rounded-xl bg-theme-primary items-center">
+                <text class="text-theme-on-primary font-semibold">Small</text>
             </column>
-            <column @press="openMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-                <text class="text-white font-semibold">Medium</text>
+            <column @press="openMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-theme-primary items-center">
+                <text class="text-theme-on-primary font-semibold">Medium</text>
             </column>
-            <column @press="openCustomSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-                <text class="text-white font-semibold">40%</text>
+            <column @press="openCustomSheet" class="flex-1 px-4 py-3 rounded-xl bg-theme-primary items-center">
+                <text class="text-theme-on-primary font-semibold">40%</text>
             </column>
         </row>
 
-        <column @press="openActionSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-            <text class="text-white font-semibold">Action sheet (edit / share / delete)</text>
+        <column @press="openActionSheet" class="w-full px-4 py-3 rounded-xl bg-theme-primary items-center">
+            <text class="text-theme-on-primary font-semibold">Action sheet (edit / share / delete)</text>
         </column>
 
         <divider class="my-2" />
@@ -33,11 +33,11 @@
         </column>
 
         <row class="w-full gap-2">
-            <column @press="openDismissibleModal" class="flex-1 px-4 py-3 rounded-xl bg-[#A855F7] items-center">
-                <text class="text-white font-semibold">Dismissible</text>
+            <column @press="openDismissibleModal" class="flex-1 px-4 py-3 rounded-xl bg-theme-secondary items-center">
+                <text class="text-theme-on-secondary font-semibold">Dismissible</text>
             </column>
-            <column @press="openBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-[#EF4444] items-center">
-                <text class="text-white font-semibold">Blocking</text>
+            <column @press="openBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-theme-destructive items-center">
+                <text class="text-theme-on-destructive font-semibold">Blocking</text>
             </column>
         </row>
 
@@ -58,8 +58,8 @@
         <column class="w-full p-5 gap-3">
             <text class="text-xl font-bold text-theme-on-surface">Small sheet</text>
             <text class="text-sm text-theme-on-surface-variant">A short ~25%-tall sheet. Good for confirmations and single-prompt input.</text>
-            <column @press="closeSmallSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center mt-2">
-                <text class="text-white font-semibold">Close</text>
+            <column @press="closeSmallSheet" class="w-full px-4 py-3 rounded-xl bg-theme-primary items-center mt-2">
+                <text class="text-theme-on-primary font-semibold">Close</text>
             </column>
         </column>
     </bottom-sheet>
@@ -76,8 +76,8 @@
                 <column @press="closeMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-theme-surface-variant items-center">
                     <text class="font-semibold text-theme-on-surface">Cancel</text>
                 </column>
-                <column @press="closeMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-[#0EA5E9] items-center">
-                    <text class="text-white font-semibold">Save</text>
+                <column @press="closeMediumSheet" class="flex-1 px-4 py-3 rounded-xl bg-theme-primary items-center">
+                    <text class="text-theme-on-primary font-semibold">Save</text>
                 </column>
             </row>
         </column>
@@ -88,8 +88,8 @@
         <column class="w-full p-5 gap-3">
             <text class="text-xl font-bold text-theme-on-surface">Custom (40%)</text>
             <text class="text-sm text-theme-on-surface-variant">Numeric detent: `detents="0.4"` for a sheet that occupies 40% of the screen. Fixed (not draggable to other heights).</text>
-            <column @press="closeCustomSheet" class="w-full px-4 py-3 rounded-xl bg-[#0EA5E9] items-center mt-2">
-                <text class="text-white font-semibold">Close</text>
+            <column @press="closeCustomSheet" class="w-full px-4 py-3 rounded-xl bg-theme-primary items-center mt-2">
+                <text class="text-theme-on-primary font-semibold">Close</text>
             </column>
         </column>
     </bottom-sheet>
@@ -114,7 +114,7 @@
             <column @press="actionDelete" class="w-full px-5 py-4">
                 <row class="items-center gap-3">
                     <icon name="delete" :size="22" color="#EF4444" />
-                    <text class="text-base text-[#EF4444]">Delete</text>
+                    <text class="text-base text-theme-destructive">Delete</text>
                 </row>
             </column>
         </column>
@@ -127,8 +127,8 @@
         <column class="w-full p-6 gap-4 bg-theme-surface rounded-3xl">
             <text class="text-xl font-bold text-theme-on-surface">Dismissible modal</text>
             <text class="text-sm text-theme-on-surface-variant">Tap the backdrop or swipe to close. The framework fires `@dismiss` for you to flip `visible` back to false.</text>
-            <column @press="closeDismissibleModal" class="w-full px-4 py-3 rounded-xl bg-[#A855F7] items-center mt-2">
-                <text class="text-white font-semibold">OK</text>
+            <column @press="closeDismissibleModal" class="w-full px-4 py-3 rounded-xl bg-theme-secondary items-center mt-2">
+                <text class="text-theme-on-secondary font-semibold">OK</text>
             </column>
         </column>
     </modal>
@@ -142,8 +142,8 @@
                 <column @press="cancelBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-theme-surface-variant items-center">
                     <text class="font-semibold text-theme-on-surface">Cancel</text>
                 </column>
-                <column @press="confirmBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-[#EF4444] items-center">
-                    <text class="text-white font-semibold">Confirm</text>
+                <column @press="confirmBlockingModal" class="flex-1 px-4 py-3 rounded-xl bg-theme-destructive items-center">
+                    <text class="text-theme-on-destructive font-semibold">Confirm</text>
                 </column>
             </row>
         </column>

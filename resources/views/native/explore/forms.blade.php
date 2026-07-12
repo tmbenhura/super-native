@@ -5,19 +5,19 @@
         <column class="gap-1">
             <text class="text-xl text-theme-on-surface-variant">On release (blur)</text>
             <slider native:model.blur="slideBlur" :min="0" :max="100" class="w-full"/>
-            <text class="text-[20] text-black font-bold bg-gray-300 rounded-full text-center p-2 mt-4">{{ $slideBlur }}</text>
+            <text class="text-[20] text-theme-on-surface font-bold bg-theme-surface-variant rounded-full text-center p-2 mt-4">{{ $slideBlur }}</text>
         </column>
 
         <column class="gap-1">
             <text class="text-xl text-theme-on-surface-variant">Debounced (150ms)</text>
             <slider native:model.debounce.150ms="slideDebounced" :min="0" :max="100" class="w-full"/>
-            <text class="text-[20] text-black font-bold bg-gray-300 rounded-full text-center p-2 mt-4">{{ $slideDebounced }}</text>
+            <text class="text-[20] text-theme-on-surface font-bold bg-theme-surface-variant rounded-full text-center p-2 mt-4">{{ $slideDebounced }}</text>
         </column>
 
         <column class="gap-1">
             <text class="text-xl text-theme-on-surface-variant">Live (every drag tick)</text>
             <slider native:model.live="slideValue" :min="0" :max="100" class="w-full"/>
-            <text class="text-[20] text-black font-bold bg-gray-300 rounded-full text-center p-2 mt-4">{{ $slideValue }}</text>
+            <text class="text-[20] text-theme-on-surface font-bold bg-theme-surface-variant rounded-full text-center p-2 mt-4">{{ $slideValue }}</text>
         </column>
 
 
