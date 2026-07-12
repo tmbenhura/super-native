@@ -25,6 +25,6 @@ class ExploreTypography extends NativeComponent
 
     public function render(): View
     {
-        return view('explore.typography');
+        return view('native.explore.typography');
     }
 }

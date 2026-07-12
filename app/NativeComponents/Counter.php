@@ -5,6 +5,7 @@ namespace App\NativeComponents;
 use Illuminate\View\View;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
+use Native\Mobile\Edge\Transition;
 use Native\Mobile\Facades\Camera;
 
 class Counter extends NativeComponent
@@ -30,10 +31,9 @@ class Counter extends NativeComponent
 
     public function testCamera()
     {
-        Camera::getPhoto()->photoTaken(function ($event) {
-            $this->photo = $event->path;
+        Camera::getPhoto()->photoTaken(function($photo) {
+            $this->photo = $photo;
         });
-
     }
 
     public function navigationOptions(): ?NavBarOptions
