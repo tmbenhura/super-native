@@ -2,9 +2,7 @@
     <text class="text-[120] font-bold text-theme-on-surface-variant">
         {{ $count }}
     </text>
-    @if($photo)
-        <image :src="$photo" class="w-full h-full" />
-    @endif
+
     <row class="gap-8 ">
         <pressable @press="decrement" class="text-center px-8 py-4 shadow rounded bg-theme-secondary">
             <native:icon class="text-theme-on-secondary" :size="40" a11y-label="Decrement"
