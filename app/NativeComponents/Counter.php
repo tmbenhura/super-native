@@ -31,8 +31,8 @@ class Counter extends NativeComponent
 
     public function testCamera()
     {
-        Camera::getPhoto()->photoTaken(function($photo) {
-            $this->photo = $photo;
+        Camera::getPhoto()->photoTaken(function ($photo) {
+            $this->photo = $photo->path;
         });
     }
 
