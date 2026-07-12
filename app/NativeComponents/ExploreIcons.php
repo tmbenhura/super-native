@@ -4,18 +4,11 @@ namespace App\NativeComponents;
 
 use App\Icons\Android;
 use App\Icons\Ios;
-use Native\Mobile\Edge\Element;
-use Native\Mobile\Edge\Elements\Column;
-use Native\Mobile\Edge\Elements\Icon;
-use Native\Mobile\Edge\Elements\Pressable;
-use Native\Mobile\Edge\Elements\Row;
-use Native\Mobile\Edge\Elements\Text;
+use Illuminate\View\View;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Edge\Traits\HasVirtualListWindow;
 use Native\Mobile\Platform;
-use Nativephp\NativeUi\Elements\BottomSheet;
-use Nativephp\NativeUi\Elements\NativeVirtualList;
 
 /**
  * Catalog browser for the current platform's icon set — SF Symbols on
@@ -35,12 +28,8 @@ class ExploreIcons extends NativeComponent
 {
     use HasVirtualListWindow;
 
+    /** Cells per row — keep in sync with the slice in explore-icons-row.blade.php. */
     private const PER_ROW = 3;
-
-    private const CELL_SIZE = 84;
-
-    /** Fixed row height (CELL_SIZE + row bottom padding) — placeholders match exactly. */
-    private const ESTIMATED_ROW_HEIGHT = 96;
 
     public string $query = '';
 
@@ -55,6 +44,8 @@ class ExploreIcons extends NativeComponent
     public function navigationOptions(): ?NavBarOptions
     {
         return NavBarOptions::make()
+            ->displayMode('inline')
+            ->font('Audiowide-Regular')
             ->searchBar('Search icons...', 'findIcon');
     }
 
@@ -102,126 +93,30 @@ class ExploreIcons extends NativeComponent
         ];
     }
 
-    public function render(): Element
+    public function render(): View
     {
         $catalog = $this->catalog();
-        $cases = $catalog['cases'];
-        $total = count($cases);
+        $total = count($catalog['cases']);
         $rowCount = (int) ceil($total / self::PER_ROW);
 
-        $root = Column::make()->fill()->class('bg-theme-background');
+        $from = max(0, min($this->virtualWindowFrom, max(0, $rowCount - 1)));
+        $to = min(max(0, $rowCount - 1), max($from, $this->virtualWindowTo));
 
-        $root->addChild(
-            Text::make("{$catalog['heading']} — {$total} icons")
-                ->class('text-lg font-semibold text-theme-on-background px-5 pt-5')
-        );
+        // The virtual list's `item` view renders once per window index with
+        // only ['index'] in scope — share the filtered catalog so row views
+        // can slice it (see explore-icons-row.blade.php).
+        view()->share('iconCatalog', $catalog);
 
-        if ($total === 0) {
-            $root->addChild(
-                Text::make("No icons match \"{$this->query}\"")
-                    ->class('text-sm text-theme-on-surface-variant px-5 pt-3')
-            );
-
-            return $this->wrapWithChrome($root);
-        }
-
-        $from = max(0, min($this->virtualWindowFrom, $rowCount - 1));
-        $to = min($rowCount - 1, max($from, $this->virtualWindowTo));
-
-        $rows = [];
-        for ($i = $from; $i <= $to; $i++) {
-            $rows[] = $this->iconRow($cases, $i, $catalog['ios']);
-        }
-
-        $list = NativeVirtualList::make(...$rows)
-            ->fillWidth()
-            ->flexGrow(1)
-            ->class('px-5 py-3');
-        $list->applyAttributes([
-            'count' => $rowCount,
-            'window_from' => $from,
-            'window_to' => $to,
-            'estimated_row_height' => self::ESTIMATED_ROW_HEIGHT,
-            'overscan' => 40,
-            'on_window_change' => 'setVirtualWindow',
+        return view('native.explore-icons', [
+            'catalog' => $catalog,
+            'total' => $total,
+            'rowCount' => $rowCount,
+            'from' => $from,
+            'to' => $to,
+            'query' => $this->query,
+            'selectedCase' => $this->selectedCase($catalog['enum']),
+            'enumShort' => class_basename($catalog['enum']),
         ]);
-
-        $root->addChild($list);
-        $root->addChild($this->detailSheet($catalog));
-
-        // Element-returning render() skips the automatic fromView() chrome
-        // wrap — apply it explicitly so the StackLayout TopBar (back
-        // chevron, title, search bar) and safe area come back.
-        return $this->wrapWithChrome($root);
-    }
-
-    /**
-     * One logical list row: PER_ROW uniform square icon cells. The final
-     * row pads with empty cells so the grid columns stay aligned.
-     *
-     * @param  array<int, \UnitEnum>  $cases
-     */
-    private function iconRow(array $cases, int $rowIndex, bool $ios): Element
-    {
-        $row = Row::make()->fillWidth()->gap(8)->padding(0, 0, 12, 0)->key("icons-{$rowIndex}");
-        $slice = array_slice($cases, $rowIndex * self::PER_ROW, self::PER_ROW);
-
-        foreach ($slice as $case) {
-            $icon = $ios
-                ? Icon::make(ios: $case)->size(36)->class('text-slate-800 dark:text-white')
-                : Icon::make(android: $case)->size(36)->class('text-slate-800 dark:text-white');
-
-            $row->addChild(
-                Pressable::make($icon)
-                    ->onPress("showIcon('{$case->name}')")
-                    ->flexGrow(1)->flexBasis(0)->height(self::CELL_SIZE)
-                    ->center()->class('bg-theme-surface-variant rounded-lg')
-            );
-        }
-
-        for ($pad = count($slice); $pad < self::PER_ROW; $pad++) {
-            $row->addChild(Column::make()->flexGrow(1)->flexBasis(0));
-        }
-
-        return $row;
-    }
-
-    /**
-     * Bottom sheet with the tapped icon's enum reference and raw symbol
-     * name — always in the tree, visibility driven by [$selectedName].
-     *
-     * @param  array{heading: string, ios: bool, enum: class-string, cases: array<int, \UnitEnum>}  $catalog
-     */
-    private function detailSheet(array $catalog): Element
-    {
-        $case = $this->selectedCase($catalog['enum']);
-
-        $sheet = BottomSheet::make()
-            ->visible($case !== null)
-            ->detents('small')
-            ->onDismiss('closeIconSheet');
-
-        if ($case === null) {
-            return $sheet;
-        }
-
-        $preview = $catalog['ios']
-            ? Icon::make(ios: $case)->size(112)->class('text-slate-800 dark:text-white')
-            : Icon::make(android: $case)->size(112)->class('text-slate-800 dark:text-white');
-
-        $enumShort = class_basename($catalog['enum']);
-
-        $sheet->addChild(
-            Column::make(
-                $preview,
-                Text::make("{$enumShort}::{$case->name}")
-                    ->class('text-base font-semibold text-theme-on-surface text-center'),
-                Text::make($case->value)
-                    ->class('text-sm text-theme-on-surface-variant text-center'),
-            )->fillWidth()->gap(10)->padding(24)->center()
-        );
-
-        return $sheet;
     }
 
     private function selectedCase(string $enum): ?\UnitEnum
