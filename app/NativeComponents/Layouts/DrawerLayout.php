@@ -4,8 +4,8 @@ namespace App\NativeComponents\Layouts;
 
 use Native\Mobile\Edge\Layouts\NativeLayout;
 use Native\Mobile\Edge\NativeComponent;
-use Nativephp\NativeUi\Builders\Drawer;
-use Nativephp\NativeUi\Concerns\HasLayoutDrawer;
+use Native\Mobile\UI\Builders\Drawer;
+use Native\Mobile\UI\Concerns\HasLayoutDrawer;
 
 /**
  * Demo layout for the content-agnostic side drawer (X-style side nav).

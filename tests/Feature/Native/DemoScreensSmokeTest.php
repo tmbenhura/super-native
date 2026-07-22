@@ -23,6 +23,7 @@ it('renders the demo screen without errors', function (string $uri) {
     'menus' => '/explore/menus',
     'mail inbox' => '/mail-demo',
     'pull to refresh' => '/refreshable-demo',
+    'webview' => '/webview-demo',
     'gestures' => '/gestures',
     'transitions' => '/transitions',
     'glass' => '/glass',

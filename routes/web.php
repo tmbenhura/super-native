@@ -78,6 +78,7 @@ use App\NativeComponents\VibeDemo;
 use App\NativeComponents\VibeLogin;
 use App\NativeComponents\VibePresenceDemo;
 use App\NativeComponents\VibePrivateDemo;
+use App\NativeComponents\WebviewDemo;
 use App\NativeComponents\YouTubeChannel;
 use App\NativeComponents\YouTubeHome;
 use App\NativeComponents\YouTubeSearch;
@@ -121,6 +122,7 @@ Route::nativeGroup(StackLayout::class, function () {
     // Component showcases (broken out from explore)
     Route::native('/counter', Counter::class)->name('counter');
     Route::native('/reactivity', ReactivityDemo::class)->name('reactivity.demo');
+    Route::native('/webview-demo', WebviewDemo::class)->name('webview.demo');
     Route::native('/animate', Animate::class)->name('animate');
     Route::native('/gestures', GestureDemo::class)->name('gestures');
     Route::native('/mail-demo', MailDemo::class)->name('mail.demo');
@@ -233,3 +235,11 @@ Route::nativeGroup(DrawerLayout::class, function () {
 
 // ── Extras ──
 // (note: /benchmark is registered above inside the StackLayout group so it gets a back-chevron)
+
+// Plain web route — loaded by the webview demo's `php`-mode webview, where the
+// embedded runtime serves it with the app session and window.Native bridge.
+Route::get('/webview-embedded', function () {
+    return view('webview-embedded', [
+        'hits' => session()->increment('webview_embedded_hits'),
+    ]);
+})->name('webview.embedded');
