@@ -128,7 +128,7 @@ return [
         'storage/framework/sessions',
         'storage/framework/cache',
         'storage/framework/testing',
-        'storage/logs/*',
+        'storage/logs',
     ],
 
     'android' => [
