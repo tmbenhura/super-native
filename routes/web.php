@@ -45,6 +45,7 @@ use App\NativeComponents\NativeChromeDemo;
 use App\NativeComponents\NativeChromeDetail;
 use App\NativeComponents\NativeTabsHome;
 use App\NativeComponents\NativeTabsProfile;
+use App\NativeComponents\NumberSwitcherDemo;
 use App\NativeComponents\PerfDemo;
 use App\NativeComponents\PerfShowdown;
 use App\NativeComponents\Phase1KeyTest;
@@ -124,6 +125,7 @@ Route::nativeGroup(StackLayout::class, function () {
     Route::native('/reactivity', ReactivityDemo::class)->name('reactivity.demo');
     Route::native('/webview-demo', WebviewDemo::class)->name('webview.demo');
     Route::native('/animate', Animate::class)->name('animate');
+    Route::native('/number-switcher', NumberSwitcherDemo::class)->name('number.switcher');
     Route::native('/gestures', GestureDemo::class)->name('gestures');
     Route::native('/mail-demo', MailDemo::class)->name('mail.demo');
     Route::native('/refreshable-demo', RefreshableDemo::class)->name('refreshable.demo');

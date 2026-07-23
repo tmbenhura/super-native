@@ -24,6 +24,7 @@ it('renders the demo screen without errors', function (string $uri) {
     'mail inbox' => '/mail-demo',
     'pull to refresh' => '/refreshable-demo',
     'webview' => '/webview-demo',
+    'number switcher' => '/number-switcher',
     'gestures' => '/gestures',
     'transitions' => '/transitions',
     'glass' => '/glass',
