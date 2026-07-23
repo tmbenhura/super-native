@@ -11,7 +11,7 @@ use Native\Mobile\Edge\Elements\Text;
 use Native\Mobile\Edge\Layouts\Builders\NavBarOptions;
 use Native\Mobile\Edge\NativeComponent;
 use Native\Mobile\Edge\Traits\HasVirtualListWindow;
-use Nativephp\NativeUi\Elements\NativeVirtualList;
+use Native\Mobile\UI\Elements\NativeVirtualList;
 
 /**
  * Phase 4 — list virtualization verification screen.
